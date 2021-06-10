@@ -20,7 +20,39 @@ module.exports = {
                         presets: ["@babel/preset-env"]
                     }
                 }
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                    "style-loader",
+                    "css-loader"
+                ],
             }
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            implementation: require("sass"),
+                        },
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer",
+                                    ],
+                                ],
+                            },
+                        },
+                    },
+                ],
+            },
         ]
     }
 }
