@@ -1,0 +1,30 @@
+$colorMain: white;
+
+body {
+    background: red;
+    color: $colorMain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+//testujemy prefixy
+@keyframes test {
+    100% {
+        margin: 10px;
+    }
+}
+
+.tested {
+    .super1 {
+        display: block;
+        font-size: 10px;
+        color:blue;
+    }
+    .super2 {
+        color: yellow;
+    }
+}
+
+

@@ -1,3 +1,6 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
@@ -12,26 +15,40 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
+            test: /\.m?js$/,
+            exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
-                        presets: ["@babel/preset-env"]
+                        presets: [
+                            ['@babel/preset-env', { targets: "defaults" }]
+                        ]
                     }
                 }
             },
             {
                 test: /\.css$/i,
                 use: [
-                    "style-loader",
-                    "css-loader"
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    [
+                                        "autoprefixer",
+                                    ],
+                                ],
+                            },
+                        },
+                    },
                 ],
-            }
+            },
             {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     "css-loader",
                     {
                         loader: "sass-loader",
@@ -53,6 +70,27 @@ module.exports = {
                     },
                 ],
             },
-        ]
-    }
+            {
+                test: /\.(png|jpe?g|svg)$/i,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: { 
+                            context: "public",
+                            name: "/img/[name]-[hash].[ext]",
+                            publicPath: "/",
+                        },
+                    },
+                ],
+            },
+        ],
+    },
+    plugins: [
+        new MiniCssExtractPlugin(),
+        new HtmlWebpackPlugin({
+            title: "My App",
+            filename: "index.html",
+            template: "src/index.html"
+        })
+    ]
 }
