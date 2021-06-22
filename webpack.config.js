@@ -7,11 +7,15 @@ module.exports = {
     entry: "./src/js/app.js",
     output: {
         filename: "bundle.min.js",
-        path: path.resolve(__dirname, "./dist")
+        path: path.resolve(__dirname, "./dist"),
+        assetModuleFilename: 'assets/[name][ext][query]'
     },
     watch: false,
     mode: "development",
     devtool: "source-map",
+    experiments: {
+        topLevelAwait: true
+    },
     module: {
         rules: [
             {
@@ -71,17 +75,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|svg)$/i,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: { 
-                            context: "public",
-                            name: "/img/[name]-[hash].[ext]",
-                            publicPath: "/",
-                        },
-                    },
-                ],
+                test: /\.(png|jpg|svg)$/i,
+                type: 'asset/resource'
             },
         ],
     },

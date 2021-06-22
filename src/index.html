@@ -11,9 +11,15 @@
     <header class="header">
         <h1 class="header__logo">Logo</h1>
         <nav class="header__userpanel userpanel">
-            <figure class="userpanel__icon"></figure>
-            <figure class="userpanel__icon"></figure>
-            <figure class="userpanel__icon"></figure>
+            <a href="/" class="userpanel__link">
+               <img class="userpanel__icon" src="/assets/search.svg">
+            </a>
+            <a href="/" class="userpanel__link">
+                <img class="userpanel__icon" src="/assets/user.svg" >
+            </a>
+            <a href="/" class="userpanel__link">
+                <img class="userpanel__icon" src="/assets/basket.svg" >
+            </a>
         </nav>
     </header>
     
@@ -23,39 +29,34 @@
 
     <nav class="navigation">
         <ul class="navigation__list list">
-            <li class="list__element"></li>
-            <li class="list__element"></li>
-            <li class="list__element"></li>
-            <li class="list__element"></li>
+            <li class="list__element"><a href="/">Electronics</a></li>
+            <li class="list__element"><a href="/">Jewelery</a></li>
+            <li class="list__element"><a href="/">Men</a></li>
+            <li class="list__element"><a href="/">Woman</a></li>
         </ul>
     </nav>
 
-    <main class="recommend">
-        <header class="recommend__header">
-            <h1>Recommend</h1>
-        </header>
+    <main class="content">
+        <section class="content__recommend recommend">
+            <header class="recommend__header">
+                <h1>Recommend</h1>
+            </header>
 
-        <article class="recommend__products products">
-            <section class="products__element"></section>
-            <section class="products__element"></section>
-            <section class="products__element"></section>
-            <section class="products__element"></section>
-            <section class="products__element"></section>
-            <section class="products__element"></section>
-        </article>
+            <article class="recommend__products prodcuts">
+
+                <template class="recommend__template">
+                    <a class="recommend__product product">
+                        <img class="product__image">
+                        <p class="products__name"></p>
+                        <p class="products__price"></p>
+                    </a>
+                </template>
+
+            </article>
+        </section>
+
+
     </main>
-
-    <section class="bestsellers">
-        <header class="bestsellers__header">
-            <h1>Recommend</h1>
-        </header>
-
-        <article class="bestsellers__products products">
-            <section class="products__element"></section>
-            <section class="products__element"></section>
-        </article>
-    </section>
-
 </section>
 </body>
 </html>
