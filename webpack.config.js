@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 
 module.exports = {
-    entry: "./src/js/app.js",
+    entry: ['./src/js/app.js', './src/js/products.js'],
     output: {
         filename: "bundle.min.js",
         path: path.resolve(__dirname, "./dist"),
@@ -24,10 +24,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: [
-                            ['@babel/preset-env', { targets: "defaults" }],
-                        ],
-                        plugins: ['@babel/plugin-syntax-top-level-await'],
+                        "presets": ["@babel/preset-env"],
+                        "plugins": [
+                            ["@babel/transform-runtime"]
+                        ]
                     }
                 }
             },
