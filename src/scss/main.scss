@@ -158,21 +158,22 @@ body {
 }
 
 .prodcuts {
+    
     .product {
-        .image {
-            max-width: 150px;
-            height: 150px;
+        &__border {
+            max-width: 100px;
+            height: 100px;
             border: 1px solid #000;
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 5px;
+        }
 
-            &__img {
-                max-width: 100px;
-                height: auto;
-            }
-
-
+        &__image {
+            max-width: 60px;
+            height: auto;
+            max-height: 60px;
         }
     }
 }
