@@ -14,7 +14,7 @@ const getDataFromAPI = async question => {
 
         const reccomendProducts = document.querySelector(".recommend__products");
         
-        renderRandomProducts(data, reccomendProducts, 0);
+        renderRandomProducts(data, reccomendProducts, 6);
         
     } catch (error) {
         console.log(error);
