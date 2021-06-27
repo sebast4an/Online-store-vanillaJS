@@ -1,17 +1,35 @@
-const recommendProducts = document.querySelector(".recommend__products");
+const randomNumber = (min, max) => Math.floor(Math.random() * (max-min+1) + min);
 
-const products = getDataFromAPI("products");
-console.log(products);
+const renderRandomProducts = (data, where, howManyToAdd) => {
+    const fragment = document.createDocumentFragment();
 
-const value = `
-    <a class="recommend__product product">
-        <figure class="product__border">
-            <img class="product__image">
-        </figure>
-        <p class="product__name"></p>
-        <p class="product__price"></p>
-    </a>
-`;
+    const randomProduts = howManyToAdd => {
+        const productsArray = [];
+
+        
+
+        randomNumber(0, data.length);
+    }
 
 
-export {};
+    data.forEach(({id, title, price, image}) => {
+        const product = document.createElement("a");
+        product.classList.add(`product`)
+        product.classList.add(`product--id${id}`);
+        product.innerHTML = `
+                <figure class="product__border">
+                    <img class="product__img" src="${image}">
+                </figure>
+                <p class="product__name">${title}</p>
+                <p class="product__price">${price}</p>
+        `;
+        fragment.appendChild(product);
+    });
+
+    where.appendChild(fragment);
+};
+
+
+
+
+export {renderRandomProducts};
