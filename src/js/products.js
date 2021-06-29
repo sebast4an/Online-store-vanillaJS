@@ -12,8 +12,8 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
 
     const appendProducts = (data, key) => {
         const product = document.createElement("a");
-        product.classList.add(`product`)
-        product.classList.add(`product--id${data[key]["id"]}`);
+        product.classList.add(`product__element`)
+        product.classList.add(`product__element--id${data[key]["id"]}`);
         product.innerHTML = `
                 <figure class="product__border">
                     <img class="product__img" src="${data[key]["image"]}">
@@ -23,7 +23,7 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
         `;
         fragment.appendChild(product);
     }; 
-
+    console.log(data); console.log(numbersOfProducts);
     numbersOfProducts.forEach(key => appendProducts(data, key));
     where.appendChild(fragment);
 };

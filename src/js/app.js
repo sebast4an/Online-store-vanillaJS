@@ -13,7 +13,7 @@ const getDataFromAPI = async question => {
         const data = await response.json();
 
         const reccomendProducts = document.querySelector(".recommend__products");
-        
+
         renderRandomProducts(data, reccomendProducts, 6);
         
     } catch (error) {
