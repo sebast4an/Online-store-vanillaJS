@@ -13,12 +13,14 @@ const getDataFromAPI = async question => {
         const data = await response.json();
 
         const reccomendProducts = document.querySelector(".recommend__products");
-
+        console.log(data);
         renderRandomProducts(data, reccomendProducts, 6);
         
     } catch (error) {
         console.log(error);
     };
+
+
 
 };  getDataFromAPI("products");
 

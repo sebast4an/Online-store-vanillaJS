@@ -6,12 +6,13 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
 
     const randomProduts = howManyToAdd => {
         for (let i=0; numbersOfProducts.size<howManyToAdd; i++) {
-            numbersOfProducts.add(randomNumber(0, data.length));
+            const maximumNumber = data.length-1;   
+            numbersOfProducts.add(randomNumber(0, maximumNumber));
         };
     }; randomProduts(howManyToAdd);
 
     const appendProducts = (data, key) => {
-        const product = document.createElement("a");
+        const product = document.createElement("section");
         product.classList.add(`product__element`)
         product.classList.add(`product__element--id${data[key]["id"]}`);
         product.innerHTML = `
@@ -19,7 +20,12 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                     <img class="product__img" src="${data[key]["image"]}">
                 </figure>
                 <p class="product__name">${data[key]["title"]}</p>
-                <p class="product__price">${data[key]["price"]}</p>
+                <section class="product__price price">
+                    <p class="price__price">${data[key]["price"]} $</p>
+                    <button type="button" class="price__button">
+                    Add to cart
+                    </button>
+                </section>
         `;
         fragment.appendChild(product);
     }; 
