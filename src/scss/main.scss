@@ -166,7 +166,7 @@ body {
 
 .content {
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
 }
 
 .recommend {
@@ -258,13 +258,12 @@ body {
             }
 
             &__button {
-                border: none;
+                border: 1px solid $blackColor;
+                border-radius: 5px;
+                color: $blackColor;
+                padding: 5px 10px;
                 background: none;
                 cursor: pointer;
-
-                &--img {
-                    padding: 2px;
-                }
             }
         }
     }
