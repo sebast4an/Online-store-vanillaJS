@@ -24,7 +24,8 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                     <section class="product__price price">
                         <p class="price__price">${data[key]["price"]} $</p>
                         <button type="button" class="price__button">
-                            Buy
+                            <span>Add</span> 
+                            <img class="price__button--img" src="assets/add-basket.svg">
                         </button>
                     </section>
                 </header>

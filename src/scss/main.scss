@@ -64,7 +64,6 @@ label {
 body {
     margin: 0 auto;
     padding: 0;
-    width: 100vw;
 }
 
 .icon {
@@ -205,7 +204,7 @@ body {
             border-radius: 15px;
             display: grid;
             grid-template-columns: auto;
-            grid-template-rows: 65% 35%;
+            grid-template-rows: 64% 36%;
             overflow: hidden;
         }
 
@@ -229,7 +228,7 @@ body {
 
         &__header {
             grid-area: 2 / 1 / 3 / 2;
-            background-color: $greyColor;
+            background-color: #f0f0f0;
         }
 
         &__name {
@@ -238,7 +237,7 @@ body {
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-
+            color: $blackColor;
             padding: 0 10px;
             margin: 12px 4px;
             text-align: left;
@@ -254,16 +253,45 @@ body {
             margin: 0;
 
             &__price {
-                
+                color: $blueColor;
+                font-weight: 400;
             }
 
             &__button {
                 border: 1px solid $blackColor;
                 border-radius: 5px;
-                color: $blackColor;
-                padding: 5px 10px;
+                padding: 5px 16px;
                 background: none;
                 cursor: pointer;
+                transition: background .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
+                display: flex;
+                justify-content: space-between;
+                align-content: center;
+                align-items: center;
+
+                span {
+                    color: $blackColor;
+                    margin: 2px;
+                }
+
+                img {
+                    width: 15px;
+                    height: auto;
+                    margin: 2px;
+                }
+
+                &:hover {
+                    background-color: $blueColor;
+                    border: 1px solid $whiteColor;
+
+                    span {
+                        color: $whiteColor;
+                    }
+
+                    img {
+                        filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%) contrast(92%);
+                    }
+                }
             }
         }
     }
