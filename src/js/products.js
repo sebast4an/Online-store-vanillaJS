@@ -1,15 +1,17 @@
 const randomNumber = (min, max) => Math.floor(Math.random() * (max-min+1) + min);
 
+const randomContent = (howMany, maxNumber) => {
+    const uniquesNumbersNoDuplicates = new Set();
+
+    for (let i=0; uniquesNumbersNoDuplicates.size<howMany; i++) { 
+        uniquesNumbersNoDuplicates.add(randomNumber(0, maxNumber));
+    };
+    return uniquesNumbersNoDuplicates;
+}; 
+
 const renderRandomProducts = (data, where, howManyToAdd) => {
     const fragment = document.createDocumentFragment();
-    const numbersOfProducts = new Set();
-
-    const randomProduts = howManyToAdd => {
-        for (let i=0; numbersOfProducts.size<howManyToAdd; i++) {
-            const maximumNumber = data.length-1;   
-            numbersOfProducts.add(randomNumber(0, maximumNumber));
-        };
-    }; randomProduts(howManyToAdd);
+    const numbersOfProducts = randomContent(howManyToAdd, data.length-1);
 
     const appendProducts = (data, key) => {
         const product = document.createElement("section");
@@ -32,10 +34,25 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
         `;
         fragment.appendChild(product);
     }; 
-    console.log(data); console.log(numbersOfProducts);
     numbersOfProducts.forEach(key => appendProducts(data, key));
     where.appendChild(fragment);
 };
 
 
-export {renderRandomProducts};
+const getDataFromAPI = async question => {
+    const URL = `https://fakestoreapi.com/${question}/`;
+
+    try {
+        const response = await fetch(URL);
+        const data = await response.json();
+        const reccomendProducts = document.querySelector(".recommend__products");
+
+        renderRandomProducts(data, reccomendProducts, 6);    
+    } catch (error) {
+
+        //TODO: Type special notification for error (view error for user)!
+        console.log(error);
+    };
+};  
+
+export {randomNumber, randomContent, getDataFromAPI};

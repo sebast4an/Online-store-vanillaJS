@@ -4,26 +4,11 @@ import "../assets/icons/user.svg";
 import "../assets/icons/basket.svg";
 import "../assets/icons/add-basket.svg"
 
-import {renderRandomProducts} from "./products";
+import {getDataFromAPI} from "./products";
+import {getCommentsFromAPI} from "./comments";
 
-const getDataFromAPI = async question => {
-    const URL = `https://fakestoreapi.com/${question}/`;
-
-    try {
-        const response = await fetch(URL);
-        const data = await response.json();
-
-        const reccomendProducts = document.querySelector(".recommend__products");
-        console.log(data);
-        renderRandomProducts(data, reccomendProducts, 6);
-        
-    } catch (error) {
-        console.log(error);
-    };
-
-
-
-};  getDataFromAPI("products");
+getDataFromAPI("products");
+getCommentsFromAPI();
 
 
 
