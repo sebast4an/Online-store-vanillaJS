@@ -8,7 +8,7 @@ const renderComments = (howManyToRender) => {
     const appendComments = () => {
         const comment = document.createElement("div");
         comment.classList.add(`comments__element`);
-        comment.classList.add(`comments__element--${ }`); 
+        comment.classList.add(`comments__element--${key}`); 
                                                 //TODO: Add data element.
     }
 

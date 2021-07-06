@@ -66,6 +66,36 @@ body {
     padding: 0;
 }
 
+.progress {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    @keyframes rotate-center {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+    &__animate {
+        height: 40px;
+        width: 40px;
+        background-color: #c75050;
+        border-radius: 50px;
+        border-bottom: 10px solid #303F9F;
+        animation: rotate-center 1s infinite both;
+    }
+
+    &__info {
+
+    }
+}
+
+
 .icon {
     width: 25px;
     height: 25px;
@@ -194,7 +224,7 @@ body {
     .product {
         display: grid;
         grid-template-rows: auto;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(162px, 1fr));
         grid-gap: 10px;
 
         &__element {

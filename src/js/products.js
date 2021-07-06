@@ -35,19 +35,29 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
         fragment.appendChild(product);
     }; 
     numbersOfProducts.forEach(key => appendProducts(data, key));
+    where.innerHTML = ``;
     where.appendChild(fragment);
 };
 
 
 const getDataFromAPI = async question => {
     const URL = `https://fakestoreapi.com/${question}/`;
+    
+    const recommendProducts = document.querySelector(".recommend__products");
+    recommendProducts.innerHTML = `
+                <section class="progress">
+                    <div class="progress__animate"> 
+                    </div>
+                    <p class="progress__info">
+                        Loading data. Please wait.
+                    </p>
+                </section>
+    `;
 
     try {
         const response = await fetch(URL);
         const data = await response.json();
-        const reccomendProducts = document.querySelector(".recommend__products");
-
-        renderRandomProducts(data, reccomendProducts, 6);    
+        // renderRandomProducts(data, recommendProducts, 6);    
     } catch (error) {
 
         //TODO: Type special notification for error (view error for user)!
