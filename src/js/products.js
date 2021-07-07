@@ -21,10 +21,14 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                 <figure class="product__border">
                     <img class="product__img" src="${data[key]["image"]}">
                 </figure>
-                <header class="product__header" >
-                    <h3 class="product__name">${data[key]["title"]}</h3>
+                <header class="product__header">
+                    <h3 class="product__name">
+                        ${data[key]["title"]}
+                    </h3>
                     <section class="product__price price">
-                        <p class="price__price">${data[key]["price"]} $</p>
+                        <p class="price__price">
+                            ${data[key]["price"]}
+                        </p>
                         <button type="button" class="price__button">
                             <span>Add</span> 
                             <img class="price__button--img" src="assets/add-basket.svg">
@@ -39,25 +43,28 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
     where.appendChild(fragment);
 };
 
+const loaderAnimate = where => {
+    where.innerHTML = `
+        <section class="progress">
+            <div class="progress__animate">
+            </div>
+            <p class="progress__info">
+                Loading data. Please wait.
+            </p>
+        </section>
+    `;
+};
 
 const getDataFromAPI = async question => {
     const URL = `https://fakestoreapi.com/${question}/`;
     
     const recommendProducts = document.querySelector(".recommend__products");
-    recommendProducts.innerHTML = `
-                <section class="progress">
-                    <div class="progress__animate"> 
-                    </div>
-                    <p class="progress__info">
-                        Loading data. Please wait.
-                    </p>
-                </section>
-    `;
+    loaderAnimate(recommendProducts);
 
     try {
         const response = await fetch(URL);
         const data = await response.json();
-        // renderRandomProducts(data, recommendProducts, 6);    
+        renderRandomProducts(data, recommendProducts, 6);    
     } catch (error) {
 
         //TODO: Type special notification for error (view error for user)!
@@ -65,4 +72,4 @@ const getDataFromAPI = async question => {
     };
 };  
 
-export {randomNumber, randomContent, getDataFromAPI};
+export {randomContent, loaderAnimate, getDataFromAPI};

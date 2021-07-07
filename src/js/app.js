@@ -8,7 +8,7 @@ import {getDataFromAPI} from "./products";
 import {getCommentsFromAPI} from "./comments";
 
 getDataFromAPI("products");
-
+getCommentsFromAPI();
 
 
 
