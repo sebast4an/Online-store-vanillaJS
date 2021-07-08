@@ -100,8 +100,8 @@ body {
         height: 100%;
         border-radius: 50%;
         border: 5px solid $blueColor;
-        border-color: $blueColor $greyColor $blueColor $greyColor;
-        animation: loading 1.5s linear infinite;
+        border-color: $blueColor transparent $blueColor transparent;
+        animation: loading .9s linear infinite;
     }
 
     &__info {
@@ -339,4 +339,29 @@ body {
             }
         }
     }
+}
+
+/*  post is comments element  */
+.post {
+
+    border: 1px solid $greyColor;
+    border-radius: 5px;
+    padding: 15px;
+
+    &__element {
+        border-bottom: 2px solid $greyColor;
+    }
+
+    &__header {
+
+        &--name {
+
+        }
+
+    }
+
+    &__body {
+
+    }
+
 }
