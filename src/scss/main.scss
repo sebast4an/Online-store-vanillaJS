@@ -345,23 +345,40 @@ body {
 .post {
 
     border: 1px solid $greyColor;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px;
 
     &__element {
-        border-bottom: 2px solid $greyColor;
+        margin: 25px auto;
+        border-bottom: 1px solid $greyColor;
+
+        &:last-child {
+            border:none;
+        }
     }
 
-    &__header {
+    &__email {
+        padding: 0 10px;
+        text-transform: lowercase;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        &--name {
-
+        &::first-letter {
+            text-transform: uppercase;
         }
 
+        &--icon {
+            filter: invert(18%) sepia(0%) saturate(1892%) hue-rotate(134deg) brightness(88%) contrast(79%);
+        }
     }
 
     &__body {
-
+        background-color: $greyColor;
+        border-radius: 10px;
+        padding: 20px;
+        line-height: 150%;
+        text-align: justify;
     }
 
 }

@@ -6,19 +6,15 @@ const renderComments = (data) => {
     const commentsNumber = randomContent(4, data.length-1);    
 
     const appendComments = (data, key) => {
-        console.log(data);
         const commentPost = document.createElement("div");
         commentPost.classList.add(`post__element`);
         commentPost.classList.add(`post__element--${data[key]["postId"]}`); 
         commentPost.innerHTML = `
-            <header class="post__header">
-                <h2 class="post__header--name">
-                    ${data[key]["name"]}
-                </h2>
-                <h3 class="post__header--email">
-                    ${data[key]["email"]}
-                </h3>
-            </header>
+            
+            <h3 class="post__email">
+                <img class="post__email--icon" src="assets/mail.svg" style="fill: #000">
+                ${data[key]["email"]}
+            </h3>
             <p class="post__body">
                 ${data[key]["body"]}
             </p>
