@@ -55,16 +55,16 @@ const loaderAnimate = where => {
     `;
 };
 
-const getDataFromAPI = async question => {
+const getDataFromAPI = async (question, where, howMany) => {
     const URL = `https://fakestoreapi.com/${question}/`;
     
-    const recommendProducts = document.querySelector(".recommend__products");
-    loaderAnimate(recommendProducts);
+    
+    loaderAnimate(where);
 
     try {
         const response = await fetch(URL);
         const data = await response.json();
-        renderRandomProducts(data, recommendProducts, 6);    
+        renderRandomProducts(data, where, howMany);    
     } catch (error) {
 
         //TODO: Type special notification for error (view error for user)!

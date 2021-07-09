@@ -8,8 +8,13 @@ import "../assets/icons/mail.svg"
 import {getDataFromAPI} from "./products";
 import {getCommentsFromAPI} from "./comments";
 
-getDataFromAPI("products");
+
+const recommendProducts = document.querySelector(".recommend__products");
+const bestsellersProducts = document.querySelector(".bestsellers__products");
+
+getDataFromAPI("products", recommendProducts, 6);
 getCommentsFromAPI();
+getDataFromAPI("products", bestsellersProducts, 4);
 
 
 
