@@ -3,16 +3,21 @@ $blackColor: #3A3A3A;
 $blueColor: #303F9F;
 $whiteColor: #E8EAF6;
 $greyColor: #D8D8D8;
+$greenColor: #46ce7f;
 $bgColor: #fff;
+$footerColor: #585858;
 $fontFamily: 'Roboto', sans-serif;
+
+
+@import "mixin"; 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 
 *, *::before, *::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 /*  Typography and global settings  */
 html, body, button, input {
@@ -140,169 +145,6 @@ body {
 /*  end of typography and global settings  */
 
 
-/*  mixins  */
-@mixin logo() {
-    font-weight: 900;
-    font-size: 35px;
-    line-height: 41px;
-    text-transform: uppercase;
-    color: $blueColor;
-    margin: 0;
-}
-
-@mixin highlightedInfo() {
-    color: $blueColor;
-    border-radius: 5px;
-
-    &__title {
-        color: $whiteColor;
-        font-weight: 900;
-        font-size: 35px;
-        line-height: 41px;
-        text-transform: uppercase;
-    }
-
-    &__subtitle {
-        color: $greyColor;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 19px;
-        text-transform: lowercase;
-    }
-
-    &__description {
-        color: $greyColor;
-        font-weight: 300;
-        font-size: 13px;
-        line-height: 15px;
-        text-transform: capitalize;
-    }
-}
-
-@mixin productsStyle($min, $max) {
-
-    .product {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(auto-fit, minmax($min, $max));
-        grid-gap: 10px;
-
-        &__element {
-            width: 100%;
-            height: 300px;
-            border: 1px solid $greyColor;
-            border-radius: 15px;
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: 64% 36%;
-            overflow: hidden;
-        }
-
-        &__border {
-            grid-area: 1 / 1 / 2 / 2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 15px;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        &__img {
-            height: auto;
-            max-height: 120px;
-            max-width: 100%;
-        }
-
-        &__header {
-            grid-area: 2 / 1 / 3 / 2;
-            background-color: #f0f0f0;
-        }
-
-        &__name {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: $blackColor;
-            padding: 0 10px;
-            margin: 12px 4px;
-            text-align: left;
-            height: 30%;
-        }
-
-        .price {
-            width: 100%;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
-            align-items: center;
-            margin: 0;
-
-            &__price {
-                color: $blueColor;
-                font-weight: 400;
-            }
-
-            &__button {
-                border: 1px solid $blackColor;
-                border-radius: 5px;
-                padding: 5px 16px;
-                background: none;
-                cursor: pointer;
-                transition: background .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
-                display: flex;
-                justify-content: space-between;
-                align-content: center;
-                align-items: center;
-
-                span {
-                    color: $blackColor;
-                    margin: 2px;
-                }
-
-                img {
-                    width: 15px;
-                    height: auto;
-                    margin: 2px;
-                }
-
-                &:hover {
-                    background-color: $blueColor;
-                    border: 1px solid $whiteColor;
-
-                    span {
-                        color: $whiteColor;
-                    }
-
-                    img {
-                        filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%) contrast(92%);
-                    }
-                }
-            }
-        }
-    }
-}
-
-@mixin inputStyle($width) {
-    border-radius: 5px;
-    border: 1px solid $whiteColor;
-    background-color: $whiteColor;
-    height: 42px;
-    width: $width;
-    color: $blackColor;
-    outline: none;
-}
-
-@mixin buttonStyle($primaryColor) {
-
-
-}
-/*  end of mixins  */
-
-
 
 .header {
     display: flex;
@@ -407,26 +249,30 @@ body {
 }
 
 .newsletter {
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(88,88,88,1) 50%);
+    background: $bgColor;
+    background: linear-gradient(180deg, $bgColor 50%, $footerColor 50%);
     margin: 25px auto 0 auto;
     padding: 0 20px;
 
     &__box {
-        padding: 0 20px;
+        padding: 0 10%;
         background-color: $blueColor;
         border-radius: 10px;
-        border: 1px solid lighten($blueColor, 10%);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 350px;
     }
 
     &__header {
-
+        
         &--title {
             color: $whiteColor;
             text-transform: uppercase;
             font-weight: 700;
             font-size: 35px;
-            margin: 40px 0 10px 0;
+            margin: 0 0 10px 0;
         }
 
         &--subtitle {
@@ -442,6 +288,7 @@ body {
         flex-flow: column nowrap;
         align-items: flex-start;
         margin: 0 0 20px 0;
+        width: 100%;
 
         &__label {
             color: $whiteColor;
@@ -451,37 +298,80 @@ body {
         &__input {
             position: relative;
             width: 100%;
+            border-radius: 5px;
+            border: 1px solid $whiteColor;
+            background-color: $whiteColor;
 
             &--input {
-                @include inputStyle(90%);
+                height: 40px;
+                margin: 1px;
+                color: $blackColor;
+                outline: none;
+                border: none;
+                padding: 5px;
+                background-color: $whiteColor;
+                width: calc(100% - 40px);
             }
 
             &--button {
+                cursor: pointer;
                 position: absolute;
-                right: 40px;
-                top: 4px;
-                border-radius: 50%;
-                height: 35px;
+                right: 2px;
+                top: 2px;
+                border-radius: 4px;
+                height: 38px;
                 width: 35px;
                 background-color: $blueColor;
                 border: 0;
                 color: $whiteColor;
+                border: 1px solid darken($blueColor, 10%);
+                transition: background .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
+
+                &:hover {
+                    background-color: $greenColor;
+                    color: darken($greenColor, 30%);
+                    border-color: darken($greenColor, 10%);
+                }
             }
-
-        }
-
-        &__button {
-
         }
     }
 
     &__description {
-        width: 90%;
         text-align: justify;
         font-size: 13px;
         font-weight: 300;
         color: $greyColor;
-        margin: 0 0 20px 0;
+        margin: 0;
     }
+
+}
+
+.footer {
+    background-color: $footerColor;
+    color: $whiteColor;
+    margin: 0 auto;
+    padding: 2px 20px;
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &--icon {
+            margin: 0 20px 0 0;
+        }
+
+        &--content {
+            font-size: 20px;
+            font-weight: 300;
+            color: $whiteColor;
+        }
+    }
+
+    h1 {
+        color: $whiteColor;
+    }
+
+
 
 }
