@@ -3,6 +3,7 @@ $blackColor: #3A3A3A;
 $blueColor: #303F9F;
 $whiteColor: #E8EAF6;
 $greyColor: #D8D8D8;
+$bgColor: #fff;
 $fontFamily: 'Roboto', sans-serif;
 
 *, *::before, *::after {
@@ -64,6 +65,7 @@ label {
 body {
     margin: 0 auto;
     padding: 0;
+    background-color: $bgColor;
 }
 
 .progress {
@@ -283,6 +285,21 @@ body {
         }
     }
 }
+
+@mixin inputStyle($width) {
+    border-radius: 5px;
+    border: 1px solid $whiteColor;
+    background-color: $whiteColor;
+    height: 42px;
+    width: $width;
+    color: $blackColor;
+    outline: none;
+}
+
+@mixin buttonStyle($primaryColor) {
+
+
+}
 /*  end of mixins  */
 
 
@@ -387,4 +404,84 @@ body {
 
 .bestsellers {
     @include productsStyle(300px, 1fr);
+}
+
+.newsletter {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(88,88,88,1) 50%);
+    margin: 25px auto 0 auto;
+    padding: 0 20px;
+
+    &__box {
+        padding: 0 20px;
+        background-color: $blueColor;
+        border-radius: 10px;
+        border: 1px solid lighten($blueColor, 10%);
+    }
+
+    &__header {
+
+        &--title {
+            color: $whiteColor;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 35px;
+            margin: 40px 0 10px 0;
+        }
+
+        &--subtitle {
+            color: $greyColor;
+            text-transform: lowercase;
+            font-size: 16px;
+            margin: 0 0 30px 0;
+        }
+    }
+
+    .form {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        margin: 0 0 20px 0;
+
+        &__label {
+            color: $whiteColor;
+            font-size: 16px;
+        }
+
+        &__input {
+            position: relative;
+            width: 100%;
+
+            &--input {
+                @include inputStyle(90%);
+            }
+
+            &--button {
+                position: absolute;
+                right: 40px;
+                top: 4px;
+                border-radius: 50%;
+                height: 35px;
+                width: 35px;
+                background-color: $blueColor;
+                border: 0;
+                color: $whiteColor;
+            }
+
+        }
+
+        &__button {
+
+        }
+    }
+
+    &__description {
+        width: 90%;
+        text-align: justify;
+        font-size: 13px;
+        font-weight: 300;
+        color: $greyColor;
+        margin: 0 0 20px 0;
+    }
+
 }

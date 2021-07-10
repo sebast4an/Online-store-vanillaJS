@@ -27,7 +27,7 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                     </h3>
                     <section class="product__price price">
                         <p class="price__price">
-                            ${data[key]["price"]}
+                            ${data[key]["price"]} $
                         </p>
                         <button type="button" class="price__button">
                             <span>Add</span> 
