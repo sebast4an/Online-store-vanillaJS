@@ -350,12 +350,27 @@ body {
     background-color: $footerColor;
     color: $whiteColor;
     margin: 0 auto;
-    padding: 2px 20px;
+    padding: 1px 0 0 0 ;
+    
+    &__header {
+        padding: 0 20px;
+
+        &--title {
+
+            color: $whiteColor;
+        }
+    }
+
+    &__info {
+        padding: 2px 20px;
+        margin: 0 0 30px 0;
+    }
 
     &__box {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
 
         &--icon {
             margin: 0 20px 0 0;
@@ -368,9 +383,64 @@ body {
         }
     }
 
-    h1 {
-        color: $whiteColor;
+    &__gmap {
+        margin: 0;
+        min-height: 350px;
+        position: relative;
+
+
+        &--frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+
+        }
     }
+
+    /*  colors for social links hover  */
+    $fbColor: #4267B2;
+    $instaColor: #8a3ab9;
+    $twColor: #00acee;
+    $gmapsColor: #1EA362;
+
+    .social {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        background-color: $blueColor;
+
+        &__box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            width: 25%;
+            transition: background-color .3s ease-in-out;
+                     
+            &.fb:hover {
+                background-color: $fbColor;
+            }
+
+            &.insta:hover {
+                background-color: $instaColor;
+            }
+
+            &.tw:hover {
+                background-color: $twColor;
+            }
+
+            &.gmaps:hover {
+                background-color: $gmapsColor;
+            }
+        }
+    }
+
 
 
 

@@ -4,9 +4,13 @@ import "../assets/icons/user.svg";
 import "../assets/icons/basket.svg";
 import "../assets/icons/add-basket.svg";
 import "../assets/icons/mail.svg";
-import "../assets/icons/phone.svg"
-import "../assets/icons/mail.svg"
-import "../assets/icons/clock.svg"
+import "../assets/icons/phone.svg";
+import "../assets/icons/mail.svg";
+import "../assets/icons/clock.svg";
+import "../assets/icons/facebook.svg";
+import "../assets/icons/instagram.svg";
+import "../assets/icons/twitter.svg";
+import "../assets/icons/map-pin.svg";
 
 import {getDataFromAPI} from "./products";
 import {getCommentsFromAPI} from "./comments";
