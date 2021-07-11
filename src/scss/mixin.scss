@@ -1,4 +1,18 @@
-/*  mixins  */
+/* Color filters (for SVG)  */
+@mixin equivalentBlackColor() {
+    filter: invert(22%) sepia(0%) saturate(0%) hue-rotate(204deg) brightness(110%) contrast(106%);
+}
+
+@mixin equivalentBlueColor() {
+    filter: invert(23%) sepia(90%) saturate(1633%) hue-rotate(220deg) brightness(77%) contrast(93%);
+}
+
+@mixin equivalentWhiteColor() {
+    filter: invert(89%) sepia(5%) saturate(1344%) hue-rotate(200deg) brightness(107%) contrast(93%);
+}
+/* End of color filters (for SVG)  */
+
+
 @mixin logo() {
     font-weight: 900;
     font-size: 35px;
@@ -37,8 +51,8 @@
     }
 }
 
-@mixin productsStyle($min, $max) {
 
+@mixin productsStyle($min, $max) {
     .product {
         display: grid;
         grid-template-rows: auto;

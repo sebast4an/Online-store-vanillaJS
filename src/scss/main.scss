@@ -8,6 +8,13 @@ $bgColor: #fff;
 $footerColor: #585858;
 $fontFamily: 'Roboto', sans-serif;
 
+/*  colors for social links hover  */
+$fbColor: #4267B2;
+$instaColor: #8a3ab9;
+$twColor: #00acee;
+$gmapsColor: #1EA362;
+/*  end of for social links hover  */
+
 
 @import "mixin"; 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
@@ -73,6 +80,7 @@ body {
     background-color: $bgColor;
 }
 
+/*  animate  */
 .progress {
     display: flex;
     flex-flow: column wrap;
@@ -111,17 +119,13 @@ body {
         animation: loading .9s linear infinite;
     }
 
-    &__info {
-
-    }
 }
-
+/*  end of animate  */
 
 .icon {
     width: 25px;
     height: 25px;
 }
-
 
 .header__bottomline {
     margin: 35px 0;
@@ -139,9 +143,7 @@ body {
         height: 100%;
         border-bottom: 1px solid $greyColor;
     }
-
 }
-
 /*  end of typography and global settings  */
 
 
@@ -163,11 +165,24 @@ body {
         align-items: center;
         margin: 0;
 
-        &__icon {
-            margin: 2px 6px;
-            padding: 2px;
-            width: 35px;
-            height: 35px;
+        &__link {
+            transition: transform .2s ease-in-out, filter .2s ease-in-out;
+
+            &--icon {
+                margin: 2px 6px;
+                padding: 2px;
+                width: 35px;
+                height: 35px;
+            }
+
+            &:hover {
+                transform: scale(115%);
+
+                .userpanel__link--icon {
+                    @include equivalentBlackColor;
+                }
+            }
+
         } 
     }
 }
@@ -240,7 +255,7 @@ body {
 
         &--icon {
             margin: 0 10px 0 0;
-            filter: invert(18%) sepia(0%) saturate(1892%) hue-rotate(134deg) brightness(88%) contrast(79%);
+            @include equivalentWhiteColor;
         }
     }
 
@@ -409,11 +424,7 @@ body {
         }
     }
 
-    /*  colors for social links hover  */
-    $fbColor: #4267B2;
-    $instaColor: #8a3ab9;
-    $twColor: #00acee;
-    $gmapsColor: #1EA362;
+
 
     .social {
         display: flex;
