@@ -13,7 +13,7 @@ const renderComments = (data) => {
             
             <h3 class="post__email">
                 <img class="post__email--icon" src="assets/mail.svg" style="fill: #000">
-                ${data[key]["email"]}
+                <span> ${data[key]["email"]} </span>
             </h3>
             <p class="post__body">
                 ${data[key]["body"]}

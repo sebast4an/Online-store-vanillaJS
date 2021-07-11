@@ -178,6 +178,7 @@ body {
     border: 3px solid #000;
     border-radius: 5px;
     margin: 0 auto;
+    background: url("https://source.unsplash.com/random") center/100%;
 }
 
 .navigation {
@@ -226,11 +227,19 @@ body {
         align-items: center;
         justify-content: space-between;
 
+        span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+
         &::first-letter {
             text-transform: uppercase;
         }
 
         &--icon {
+            margin: 0 10px 0 0;
             filter: invert(18%) sepia(0%) saturate(1892%) hue-rotate(134deg) brightness(88%) contrast(79%);
         }
     }
@@ -245,7 +254,7 @@ body {
 }
 
 .bestsellers {
-    @include productsStyle(300px, 1fr);
+    @include productsStyle(200px, 1fr);
 }
 
 .newsletter {
