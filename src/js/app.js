@@ -25,6 +25,13 @@ getDataFromAPI("products", bestsellersProducts, 4);
 
 
 
+const hamburgerMenu = () => {
+    const button = document.querySelector(".navigation__hamburger");
+    button.addEventListener(`click`, () => {
+        const hamburger = document.querySelector(".hamburger__icon");
+        hamburger.classList.toggle("hamburger__icon--animate");
 
+    });
+}; hamburgerMenu();
 
 
