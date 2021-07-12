@@ -195,6 +195,65 @@ body {
     background: url("https://source.unsplash.com/random") center/100%;
 }
 
+
+.navigation {
+    background-color: $blueColor;
+    height: 65px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+    .hamburger {
+        height: 40px;
+        width: 200px;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 1fr;
+        place-items: center;
+        background: none;
+        border: 0;
+        color: $whiteColor;
+
+        &__icon {
+            grid-area: 1 / 1 / 2 / 2;
+            width: 100%;
+            margin: 0 20px;
+            
+            &--line {
+                background-color: $whiteColor;
+                height: 2px;
+
+                &:first-child {
+                    transform: translateY(-8px);
+                }
+
+                &:last-child {
+                    transform: translateY(8px);
+                }
+            }
+        }
+
+        &__title {
+            grid-area: 1 / 2 / 2 / 3;
+            font-size: 16px;
+        }
+    }
+
+    .list {
+        display: none;
+        list-style: none;
+    }
+
+}
+
+
+
+/*
 .navigation {
     background-color: $blueColor;
     height: 65px;
@@ -226,6 +285,8 @@ body {
         }
     }
 }
+
+*/
 
 .content {
     margin: 0;
