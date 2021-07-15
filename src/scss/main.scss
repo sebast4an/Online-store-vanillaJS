@@ -207,6 +207,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    overflow: hidden;
 
     .hamburger {
         height: 40px;
@@ -267,10 +268,36 @@ body {
             }
         }
 
+        @keyframes hamburerTitleAnimate {
+            0% {
+                transform: translateY(100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes hamburerTitleAnimate2 {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
         &__title {
             grid-area: 1 / 2 / 2 / 3;
             font-size: 16px;
+            animation: hamburerTitleAnimate .6s ease-in-out;
+            
+            &--animation {
+                animation: hamburerTitleAnimate2 .6s ease-in-out;
+            }
         }
+
+
+
     }
 
     .list {

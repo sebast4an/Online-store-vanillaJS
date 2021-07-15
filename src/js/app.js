@@ -23,15 +23,19 @@ getDataFromAPI("products", recommendProducts, 6);
 getCommentsFromAPI();
 getDataFromAPI("products", bestsellersProducts, 4);
 
-
-
-const hamburgerMenu = () => {
+//IIFE?!
+(() => {
     const button = document.querySelector(".navigation__hamburger");
-    button.addEventListener(`click`, () => {
-        const hamburger = document.querySelector(".hamburger__icon");
-        hamburger.classList.toggle("hamburger__icon--animate");
 
-    });
-}; hamburgerMenu();
+    const animateHamburgerButton = () => {
+        const hamburgerIcon = document.querySelector(".hamburger__icon");
+        hamburgerIcon.classList.toggle("hamburger__icon--animate");
 
+        const hamburgerName = document.querySelector(".hamburger__title");
+        hamburgerName.classList.toggle("hamburger__title--animation");
 
+        if (hamburgerName.innerText == "Menu") hamburgerName.innerText = "Hide menu";
+        else hamburgerName.innerText = "Menu";
+    };   button.addEventListener(`click`, animateHamburgerButton);
+
+})();
