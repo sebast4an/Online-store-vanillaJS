@@ -31,11 +31,21 @@ getDataFromAPI("products", bestsellersProducts, 4);
         const hamburgerIcon = document.querySelector(".hamburger__icon");
         hamburgerIcon.classList.toggle("hamburger__icon--animate");
 
-        const hamburgerName = document.querySelector(".hamburger__title");
-        hamburgerName.classList.toggle("hamburger__title--animation");
+        const hamburgerList = document.querySelector(".navigation__list");
+        hamburgerList.classList.toggle("list--active");
 
-        if (hamburgerName.innerText == "Menu") hamburgerName.innerText = "Hide menu";
-        else hamburgerName.innerText = "Menu";
+        const hamburgerName = document.querySelector(".hamburger__title");
+        hamburgerName.style.animation = "hamburerTitleAnimate3 .2s ease-in-out reverse both";
+        
+        setTimeout(() => {
+            hamburgerName.style.animation = "";
+            hamburgerName.classList.toggle("hamburger__title--animation");      
+            if (hamburgerName.innerText == "Menu") hamburgerName.innerText = "Hide menu";
+            else hamburgerName.innerText = "Menu";
+        }, 500);
+        
+
+
     };   button.addEventListener(`click`, animateHamburgerButton);
 
 })();

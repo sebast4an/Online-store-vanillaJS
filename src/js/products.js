@@ -45,10 +45,10 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
 
 const loaderAnimate = where => {
     where.innerHTML = `
-        <section class="progress">
-            <div class="progress__animate">
+        <section class="loading">
+            <div class="loading__animate">
             </div>
-            <p class="progress__info">
+            <p class="loading__info">
                 Loading data. Please wait.
             </p>
         </section>
