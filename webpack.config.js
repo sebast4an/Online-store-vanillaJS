@@ -4,14 +4,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require("path");
 
 module.exports = {
+    target: "web",
     entry: ['./src/js/app.js', './src/js/products.js', './src/js/comments.js'],
     output: {
         filename: "bundle.min.js",
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, `dist`),
         assetModuleFilename: 'assets/[name][ext][query]'
     },
-    watch: false,
-    mode: "development",
+    devServer: {
+        contentBase: path.resolve(__dirname, `dist`),
+    },
     devtool: "source-map",
     experiments: {
         topLevelAwait: true

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "serve": "webpack serve --liveReload --hot"
+    "serve": "webpack serve --mode development"
   },
   "browserslist": [
     "defaults"
