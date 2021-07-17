@@ -1,4 +1,3 @@
-# Online Store 
-vanillaJS, Webpack, restAPI and async
- 
+# Online Store
 
+vanillaJS, Webpack, restAPI and async
