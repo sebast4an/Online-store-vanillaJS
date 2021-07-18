@@ -1,19 +1,43 @@
 @media (min-width: 600px) {
-    .post {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 10px;
-
-
-        &__element {
-            max-width: 100%;
-            margin: 5px auto;
-            border-bottom: 1px solid $greyColor;
-        }
-
-        &__body {
-            align-content: stretch;
-        }
+    .content,
+    .newsletter {
+        padding: 0 50px;
     }
+
+    .footer {
+        &__header,
+        &__info {
+            padding: 0 50px;
+        }
+
+        &__gmap {
+            min-height: 450px;
+        }
+
+        .social {
+            padding: 0 20px;
+        }
+
+    }
+}
+
+
+@media (min-width: 700px) {
+    .content,
+    .newsletter {
+        padding: 0 70px;
+    }
+
+    .footer {
+        &__header,
+        &__info {
+            padding: 0 70px;
+        }
+
+        .social {
+            padding: 0 40px;
+        }
+
+    }
+
 }
