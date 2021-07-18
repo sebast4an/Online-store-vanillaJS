@@ -1,31 +1,30 @@
 @media (min-width: 500px) {
-    .recommend {
-        @include productsStyleWithRowPrice(215px, 1fr);
-      }
+  .recommend {
+    @include productsStyleWithRowPrice(215px, 1fr);
+  }
 
-      .post {
-        display: grid;
-        grid-template-rows: auto;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 10px;
+  .post {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
 
-        &__element {
-            max-width: 100%;
-            margin: 5px auto;
-            border-bottom: 1px solid $greyColor;
-        }
-
-        &__body {
-            align-content: stretch;
-        }
+    &__element {
+      max-width: 100%;
+      margin: 5px auto;
+      border-bottom: 1px solid $greyColor;
     }
+
+    &__body {
+      align-content: stretch;
+    }
+  }
 }
 
 @media (min-width: 552px) {
-    .newsletter {
-        &__box {
-            padding: 0 15%;
-        }
+  .newsletter {
+    &__box {
+      padding: 0 15%;
     }
+  }
 }
-

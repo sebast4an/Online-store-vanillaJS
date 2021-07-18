@@ -1,9 +1,9 @@
 import { loaderAnimate, randomContent } from './products';
 
-const renderComments = (data) => {
+const renderComments = (data, howMany) => {
   const comments = document.querySelector('.comments__posts');
   const fragment = document.createDocumentFragment();
-  const commentsNumber = randomContent(4, data.length - 1);
+  const commentsNumber = randomContent(howMany, data.length - 1);
 
   const appendComments = (data, key) => {
     const commentPost = document.createElement('div');
@@ -26,7 +26,7 @@ const renderComments = (data) => {
   comments.appendChild(fragment);
 };
 
-const getCommentsFromAPI = async () => {
+const getCommentsFromCommentsAPI = async (howMany) => {
   const URL = `https://jsonplaceholder.typicode.com/comments`;
 
   const comments = document.querySelector('.comments__posts');
@@ -35,10 +35,10 @@ const getCommentsFromAPI = async () => {
   try {
     const response = await fetch(URL);
     const data = await response.json();
-    renderComments(data);
+    renderComments(data, howMany);
   } catch (error) {
-    console.log(error);
+    comments.innerText = 'Error loading data. Please reload page.';
   }
 };
 
-export { getCommentsFromAPI };
+export { getCommentsFromCommentsAPI };

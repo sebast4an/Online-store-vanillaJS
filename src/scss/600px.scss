@@ -1,43 +1,39 @@
 @media (min-width: 600px) {
-    .content,
-    .newsletter {
-        padding: 0 50px;
+  .content,
+  .newsletter {
+    padding: 0 50px;
+  }
+
+  .footer {
+    &__header,
+    &__info {
+      padding: 0 50px;
     }
 
-    .footer {
-        &__header,
-        &__info {
-            padding: 0 50px;
-        }
-
-        &__gmap {
-            min-height: 450px;
-        }
-
-        .social {
-            padding: 0 20px;
-        }
-
+    &__gmap {
+      min-height: 450px;
     }
+
+    .social {
+      padding: 0 20px;
+    }
+  }
 }
 
-
 @media (min-width: 700px) {
-    .content,
-    .newsletter {
-        padding: 0 70px;
+  .content,
+  .newsletter {
+    padding: 0 70px;
+  }
+
+  .footer {
+    &__header,
+    &__info {
+      padding: 0 70px;
     }
 
-    .footer {
-        &__header,
-        &__info {
-            padding: 0 70px;
-        }
-
-        .social {
-            padding: 0 40px;
-        }
-
+    .social {
+      padding: 0 40px;
     }
-
+  }
 }

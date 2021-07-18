@@ -240,6 +240,10 @@
 
   &__element {
     margin: 25px auto;
+    height: 300px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
 
     &:not(:last-child) {
       border-bottom: 1px solid $greyColor;
@@ -275,6 +279,13 @@
     padding: 20px;
     line-height: 150%;
     text-align: justify;
+    height: 100%;
+    max-height: 212px;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 

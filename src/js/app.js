@@ -1,4 +1,7 @@
+// scss
 import '../scss/main.scss';
+
+//svg
 import '../assets/icons/search.svg';
 import '../assets/icons/user.svg';
 import '../assets/icons/basket.svg';
@@ -12,44 +15,24 @@ import '../assets/icons/instagram.svg';
 import '../assets/icons/twitter.svg';
 import '../assets/icons/map-pin.svg';
 
-import { getDataFromAPI } from './products';
-import { getCommentsFromAPI } from './comments';
+//js
+import './menu';
+import { getDataFromStoreAPI } from './products';
+import { getCommentsFromCommentsAPI } from './comments';
 
-const recommendProducts = document.querySelector('.recommend__products');
-const bestsellersProducts = document.querySelector('.bestsellers__products');
-
-getDataFromAPI('products', recommendProducts, 6);
-getCommentsFromAPI();
-getDataFromAPI('products', bestsellersProducts, 4);
-
-// IIFE?!
 (() => {
-  const button = document.querySelector('.navigation__hamburger');
+  const recommendProducts = document.querySelector('.recommend__products');
+  getDataFromStoreAPI('products', recommendProducts, 6);
 
-  const animateHamburgerButton = () => {
-    const hamburgerIcon = document.querySelector('.hamburger__icon');
-    hamburgerIcon.classList.toggle('hamburger__icon--animate');
+  const bestsellersProducts = document.querySelector('.bestsellers__products');
+  getDataFromStoreAPI('products', bestsellersProducts, 4);
 
-    const hamburgerList = document.querySelector('.navigation__list');
-    hamburgerList.style.animation =
-      'hamburgerListAnimation2 .3s ease-in-out reverse both';
-
-    setTimeout(() => {
-      hamburgerList.style.animation = '';
-      hamburgerList.classList.toggle('list--active');
-    }, 300);
-
-    const hamburgerName = document.querySelector('.hamburger__title');
-    hamburgerName.style.animation =
-      'hamburerTitleAnimate3 .2s ease-in-out reverse both';
-
-    setTimeout(() => {
-      hamburgerName.style.animation = '';
-      hamburgerName.classList.toggle('hamburger__title--animation');
-      if (hamburgerName.innerText == 'Menu')
-        hamburgerName.innerText = 'Hide menu';
-      else hamburgerName.innerText = 'Menu';
-    }, 500);
+  console.log(window.innerWidth);
+  const howManyCommentsToDisplay = () => {
+    if (window.innerWidth > 1040) getCommentsFromCommentsAPI(8);
+    else if (window.innerWidth > 809) getCommentsFromCommentsAPI(6);
+    else getCommentsFromCommentsAPI(4);
   };
-  button.addEventListener(`click`, animateHamburgerButton);
+  howManyCommentsToDisplay();
+  window.addEventListener('resize', howManyCommentsToDisplay);
 })();

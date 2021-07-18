@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
   target: 'web',
-  entry: ['./src/js/app.js', './src/js/products.js', './src/js/comments.js'],
+  entry: './src/js/app.js',
   output: {
     filename: 'bundle.min.js',
     path: path.resolve(__dirname, `dist`),

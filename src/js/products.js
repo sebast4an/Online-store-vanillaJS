@@ -56,7 +56,7 @@ const loaderAnimate = (where) => {
     `;
 };
 
-const getDataFromAPI = async (question, where, howMany) => {
+const getDataFromStoreAPI = async (question, where, howMany) => {
   const URL = `https://fakestoreapi.com/${question}/`;
 
   loaderAnimate(where);
@@ -66,9 +66,8 @@ const getDataFromAPI = async (question, where, howMany) => {
     const data = await response.json();
     renderRandomProducts(data, where, howMany);
   } catch (error) {
-    //TODO: Type special notification for error (view error for user)!
-    console.log(error);
+    where.innerText = 'Error loading data. Please reload page.';
   }
 };
 
-export { randomContent, loaderAnimate, getDataFromAPI };
+export { randomContent, loaderAnimate, getDataFromStoreAPI };
