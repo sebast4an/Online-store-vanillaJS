@@ -29,7 +29,7 @@ import { getCommentsFromCommentsAPI } from './comments';
 
   console.log(window.innerWidth);
   const howManyCommentsToDisplay = () => {
-    if (window.innerWidth > 1040) getCommentsFromCommentsAPI(8);
+    if (window.innerWidth > 1018) getCommentsFromCommentsAPI(8);
     else if (window.innerWidth > 809) getCommentsFromCommentsAPI(6);
     else getCommentsFromCommentsAPI(4);
   };
