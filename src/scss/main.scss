@@ -1,153 +1,6 @@
-/*  Variables  */
-$blackColor: #3a3a3a;
-$blueColor: #303f9f;
-$whiteColor: #e8eaf6;
-$greyColor: #d8d8d8;
-$greenColor: #46ce7f;
-$bgColor: #fff;
-$footerColor: #585858;
-$fontFamily: 'Roboto', sans-serif;
+@import "global-settings";
 
-/*  colors for social links hover  */
-$fbColor: #4267b2;
-$instaColor: #8a3ab9;
-$twColor: #00acee;
-$gmapsColor: #1ea362;
-/*  end of for social links hover  */
-
-@import 'mixin';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/*  Typography and global settings  */
-html,
-body,
-button,
-input {
-  font-family: $fontFamily;
-}
-
-h1 {
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 400;
-  color: $blackColor;
-}
-
-h2 {
-  font-weight: 300;
-  font-size: 22px;
-  line-height: 26px;
-  color: $whiteColor;
-}
-
-h3 {
-  color: $blackColor;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 16px;
-}
-
-a,
-li {
-  color: $whiteColor;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 19px;
-  text-decoration: none;
-}
-
-p {
-  color: $blackColor;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 16px;
-}
-
-label {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
-  text-transform: capitalize;
-}
-
-body {
-  margin: 0 auto;
-  padding: 0;
-  background-color: $bgColor;
-}
-
-/*  loading animate  */
-.loading {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-
-  @keyframes loading {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  &__animate {
-    position: relative;
-    display: block;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-  }
-
-  &__animate::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 5px solid $blueColor;
-    border-color: $blueColor transparent $blueColor transparent;
-    animation: loading 0.9s linear infinite;
-  }
-}
-/*  end of animate  */
-
-.icon {
-  width: 25px;
-  height: 25px;
-}
-
-.header__bottomline {
-  margin: 35px 0;
-
-  &--title {
-    position: relative;
-  }
-
-  &--title::after {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 100%;
-    border-bottom: 1px solid $greyColor;
-  }
-}
-/*  end of typography and global settings  */
-
+/* website */
 .header {
   display: flex;
   flex-flow: row nowrap;
@@ -370,40 +223,6 @@ body {
   }
 }
 
-/*
-.navigation {
-    background-color: $blueColor;
-    height: 65px;
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-
-    .list {
-        width: 100%;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        
-        &__element {
-            padding: 20px;
-            transition: background-color .2s ease-in-out, transform .2s ease-in-out;
-            
-            &:hover {
-                background-color: lighten($blueColor, 20%);
-                transform: scale(110%);
-            }
-        }
-    }
-}
-
-*/
 
 .content {
   margin: 0;
@@ -411,7 +230,7 @@ body {
 }
 
 .recommend {
-  @include productsStyle(155px, 1fr);
+  @include productsStyleWithRowPrice(163px, 1fr);
 }
 
 /*  post is comments element  */
@@ -462,7 +281,7 @@ body {
 }
 
 .bestsellers {
-  @include productsStyle(200px, 1fr);
+  @include productsStyleWithRowPrice(200px, 1fr);
 }
 
 .newsletter {
@@ -655,3 +474,8 @@ body {
   }
 }
 
+/*  Breakpoint  */
+
+@import "377px"; /*  dpr 1-3  */
+@import "400px"; /*  menu  */
+@import "550px"; /* */

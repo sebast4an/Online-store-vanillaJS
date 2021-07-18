@@ -1,0 +1,5 @@
+@media (min-width: 500px) {
+    .recommend {
+        @include productsStyleWithRowPrice(215px, 1fr);
+      }
+}
