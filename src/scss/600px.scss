@@ -1,0 +1,19 @@
+@media (min-width: 600px) {
+    .post {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 10px;
+
+
+        &__element {
+            max-width: 100%;
+            margin: 5px auto;
+            border-bottom: 1px solid $greyColor;
+        }
+
+        &__body {
+            align-content: stretch;
+        }
+    }
+}
