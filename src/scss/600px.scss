@@ -1,17 +1,6 @@
 @media (min-width: 600px) {
-  .content,
   .newsletter {
     padding: 0 50px;
-  }
-
-  .post {
-    width: calc(100vw - 50px);
-
-    &__element {
-      &:last-child {
-        padding-right: 50px;
-      }
-    }
   }
 
   .footer {
