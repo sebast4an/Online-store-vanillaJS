@@ -229,29 +229,35 @@
 }
 
 .recommend {
-  @include productsStyleWithRowPrice(163px, 1fr);
+  @include productsGridInLine(240px);
 }
 
 /*  post is comments element  */
 .post {
-  border: 1px solid $greyColor;
-  border-radius: 10px;
-  padding: 15px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  overflow: auto;
+  width: calc(100vw - 20px);
+
 
   &__element {
     margin: 25px auto;
+    width: 220px;
     height: 302px;
     display: flex;
     flex-flow: column nowrap;
     justify-self: flex-end;
     justify-content: flex-start;
+    border-bottom: 1px solid $greyColor;
 
     &:nth-child(n+5) {
-      display: none;
+      display: block;
     }
 
-    &:not(:last-child) {
-      border-bottom: 1px solid $greyColor;
+    &:last-child {
+      padding-right: 20px;
     }
   }
 
@@ -300,7 +306,7 @@
 }
 
 .bestsellers {
-  @include productsStyleWithRowPrice(200px, 1fr);
+  @include productsGrid(200px, 1fr);
 }
 
 .newsletter {

@@ -4,6 +4,16 @@
     padding: 0 50px;
   }
 
+  .post {
+    width: calc(100vw - 50px);
+
+    &__element {
+      &:last-child {
+        padding-right: 50px;
+      }
+    }
+  }
+
   .footer {
     &__header,
     &__info {
@@ -17,55 +27,5 @@
     .social {
       padding: 0 20px;
     }
-  }
-}
-
-@media (min-width: 700px) {
-  .content,
-  .newsletter {
-    padding: 0 70px;
-  }
-
-  .footer {
-    &__header,
-    &__info {
-      padding: 0 70px;
-    }
-
-    .social {
-      padding: 0 40px;
-    }
-  }
-}
-
-@media (min-width: 793px) {
-  .post {
-    &__element {
-      &:nth-child(n+5) {
-        display: block;
-      }
-
-      &:nth-child(n+7) {
-        display: none;
-      }
-    }
-
-  }
-}
-
-@media (min-width: 1002px) {
-  .post {
-    &__element {
-      display: block;
-
-      &:nth-child(n+5) {
-        display: block;
-      }
-
-      &:nth-child(n+7) {
-        display: block;
-      }     
-    }
-
   }
 }

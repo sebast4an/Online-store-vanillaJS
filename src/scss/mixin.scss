@@ -53,7 +53,9 @@
   }
 }
 
-@mixin productsStyleWithColumnPrice($min, $max) {
+
+
+@mixin productsGrid($min, $max) {
   .product {
     display: grid;
     grid-template-rows: auto;
@@ -112,9 +114,10 @@
 
     .price {
       display: flex;
-      flex-flow: column wrap;
-      justify-content: space-evenly;
+      flex-flow: row wrap;
+      justify-content: space-around;
       align-items: center;
+      height: 70px;
 
       &__price {
         color: $blueColor;
@@ -164,25 +167,18 @@
   }
 }
 
-@mixin productsStyleWithRowPrice($min, $max) {
-  @include productsStyleWithColumnPrice($min, $max);
+@mixin productsGridInLine($width) {
+  @include productsGrid(0, 0);
 
   .product {
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    overflow: auto;
+    width: calc(100vw - 20px);
+  
     &__element {
-      grid-template-rows: 64% 36%;
-    }
-
-    &__name {
-      height: 33%;
-    }
-
-    .price {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-items: center;
-      align-content: center;
-      margin: 0;
+      width: $width;
     }
   }
 }
+
