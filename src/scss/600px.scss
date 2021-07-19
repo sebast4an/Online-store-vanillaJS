@@ -52,3 +52,20 @@
 
   }
 }
+
+@media (min-width: 1002px) {
+  .post {
+    &__element {
+      display: block;
+
+      &:nth-child(n+5) {
+        display: block;
+      }
+
+      &:nth-child(n+7) {
+        display: block;
+      }     
+    }
+
+  }
+}
