@@ -37,3 +37,18 @@
     }
   }
 }
+
+@media (min-width: 793px) {
+  .post {
+    &__element {
+      &:nth-child(n+5) {
+        display: block;
+      }
+
+      &:nth-child(n+7) {
+        display: none;
+      }
+    }
+
+  }
+}

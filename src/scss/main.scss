@@ -240,10 +240,15 @@
 
   &__element {
     margin: 25px auto;
-    height: 300px;
+    height: 302px;
     display: flex;
     flex-flow: column nowrap;
+    justify-self: flex-end;
     justify-content: flex-start;
+
+    &:nth-child(n+5) {
+      display: none;
+    }
 
     &:not(:last-child) {
       border-bottom: 1px solid $greyColor;
@@ -256,6 +261,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0;
 
     span {
       white-space: nowrap;
@@ -280,12 +286,16 @@
     line-height: 150%;
     text-align: justify;
     height: 100%;
-    max-height: 212px;
-    display: -webkit-box;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    max-height: 214px;
+
+    span {
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
   }
 }
 

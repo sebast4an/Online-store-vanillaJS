@@ -16,7 +16,7 @@ const renderComments = (data, howMany) => {
                 <span> ${data[key]['email']} </span>
             </h3>
             <p class="post__body">
-                ${data[key]['body']}
+                <span> ${data[key]['body']} </span>
             </p>
         `;
     fragment.appendChild(commentPost);
