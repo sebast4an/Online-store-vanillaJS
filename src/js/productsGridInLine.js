@@ -1,27 +1,29 @@
 (() => {
   const product = document.querySelector('.product');
-  let activeScroll = false;
+  let isactiveScroll = false;
   let positionStart;
-  let lastPosition;
+  let scrollLeft;
 
   product.addEventListener('mousedown', (event) => {
     event.preventDefault();
-    activeScroll = true;
+    isactiveScroll = true;
+
+    product.classList.add('active');
     positionStart = event.pageX - product.offsetLeft;
-    lastPosition = product.scrollLeft;
+    scrollLeft = product.scrollLeft;
   });
 
   product.addEventListener('mouseup', (event) => {
     event.preventDefault();
-    activeScroll = false;
+    isactiveScroll = false;
   });
 
   product.addEventListener('mousemove', (event) => {
     event.preventDefault();
-    if (activeScroll !== true) return;
+    if (isactiveScroll !== true) return;
 
-    let position = event.pageX - product.offsetLeft;
-    let curr = positionStart - position;
-    product.scrollLeft = curr;
+    const x = event.pageX - product.offsetLeft;
+    const walk = x - positionStart;
+    product.scrollLeft = scrollLeft - walk;
   });
 })();

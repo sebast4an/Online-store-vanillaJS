@@ -250,10 +250,9 @@
     justify-content: flex-start;
     border-bottom: 1px solid $greyColor;
 
-    &:nth-child(n+5) {
+    &:nth-child(n + 5) {
       display: block;
     }
-
   }
 
   &__email {
@@ -296,7 +295,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
   }
 }
 

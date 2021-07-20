@@ -53,8 +53,6 @@
   }
 }
 
-
-
 @mixin productsGrid($min, $max) {
   .product {
     display: grid;
@@ -176,12 +174,10 @@
     grid-auto-flow: column;
     overflow: auto;
     cursor: -webkit-grab;
-  
+
     &__element {
       width: $width;
       overflow: hidden;
-
     }
   }
 }
-
