@@ -2,13 +2,13 @@
   const product = document.querySelector('.product');
   let activeScroll = false;
   let positionStart;
+  let lastPosition;
 
   product.addEventListener('mousedown', (event) => {
     event.preventDefault();
     activeScroll = true;
-
     positionStart = event.pageX - product.offsetLeft;
-    event.pageX - product.offsetLeft;
+    lastPosition = product.scrollLeft;
   });
 
   product.addEventListener('mouseup', (event) => {
