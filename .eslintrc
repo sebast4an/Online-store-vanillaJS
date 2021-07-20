@@ -2,6 +2,7 @@
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "plugins": ["prettier"],
   "rules": {
+    "arrow-parens": ["as-needed", { "requireForBlockBody": true }],
     "prettier/prettier": ["error", { "singleQuote": true }]
   },
   "env": {

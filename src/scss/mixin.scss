@@ -175,9 +175,12 @@
     grid-template-columns: auto;
     grid-auto-flow: column;
     overflow: auto;
+    cursor: -webkit-grab;
   
     &__element {
       width: $width;
+      overflow: hidden;
+
     }
   }
 }
