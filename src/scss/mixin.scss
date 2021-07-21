@@ -172,12 +172,25 @@
   .product {
     grid-template-columns: auto;
     grid-auto-flow: column;
-    overflow: auto;
     cursor: -webkit-grab;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 0 10px 15px 20px;
 
     &__element {
       width: $width;
       overflow: hidden;
     }
+
+    &:after {
+      content: "";
+      width: 10px;
+      background-color: transparent;
+      height: 350px;
+      /* WTHELL?? Beacuse.. */
+    }
+
+
+
   }
 }

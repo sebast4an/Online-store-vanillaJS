@@ -1,12 +1,12 @@
 (() => {
   const product = document.querySelector('.product');
-  let isactiveScroll = false;
+  let isScrollActive = false;
   let positionStart;
   let scrollLeft;
 
   product.addEventListener('mousedown', (event) => {
     event.preventDefault();
-    isactiveScroll = true;
+    isScrollActive = true;
 
     product.classList.add('active');
     positionStart = event.pageX - product.offsetLeft;
@@ -15,15 +15,15 @@
 
   product.addEventListener('mouseup', (event) => {
     event.preventDefault();
-    isactiveScroll = false;
+    isScrollActive = false;
   });
 
   product.addEventListener('mousemove', (event) => {
     event.preventDefault();
-    if (isactiveScroll !== true) return;
+    if (isScrollActive !== true) return;
 
-    const x = event.pageX - product.offsetLeft;
-    const walk = x - positionStart;
+    const current = event.pageX - product.offsetLeft;
+    const walk = current - positionStart;
     product.scrollLeft = scrollLeft - walk;
   });
 })();

@@ -229,6 +229,8 @@
 
 .recommend {
   @include productsGridInLine(240px);
+  overflow: hidden;
+  max-height: 430px;
 }
 
 /*  post is comments element  */
