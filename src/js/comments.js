@@ -11,10 +11,10 @@ const renderComments = (data, howMany) => {
     commentPost.classList.add(`post__element--${data[key]['postId']}`);
     commentPost.innerHTML = `
             
-            <h3 class="post__email">
+            <h2 class="post__email">
                 <img class="post__email--icon" src="assets/mail.svg" style="fill: #000">
                 <span> ${data[key]['email']} </span>
-            </h3>
+            </h2>
             <p class="post__body">
                 <span> ${data[key]['body']} </span>
             </p>

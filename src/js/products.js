@@ -22,9 +22,9 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                     <img class="product__img" src="${data[key]['image']}">
                 </figure>
                 <header class="product__header">
-                    <h3 class="product__name">
+                    <h2 class="product__name">
                         ${data[key]['title']}
-                    </h3>
+                    </h2>
                     <section class="product__price price">
                         <p class="price__price">
                             ${data[key]['price']} $
