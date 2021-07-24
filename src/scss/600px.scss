@@ -16,7 +16,27 @@
     &__box {
       padding: 0 15%;
     }
+
+    &__header {
+      &--title {
+        font-size: 2.5rem;
+      }
+
+      &--subtitle {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
   }
+
+  .form__label {
+    font-size: 1.1rem;
+  }
+
+  
 
   .footer {
      &__info {
