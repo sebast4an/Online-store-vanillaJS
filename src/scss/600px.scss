@@ -18,3 +18,22 @@
     }
   }
 }
+@media (min-width: 677px) {
+  .bestsellers {
+    .product {
+      &__element:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 888px) {
+  .bestsellers {
+    .product {
+      &__element:last-child  {
+        display: grid;
+      }
+    }
+  }
+}
