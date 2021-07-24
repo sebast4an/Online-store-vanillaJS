@@ -6,8 +6,7 @@
     hamburgerIcon.classList.toggle('hamburger__icon--animate');
 
     const hamburgerList = document.querySelector('.navigation__list');
-    hamburgerList.style.animation =
-      'hamburgerListAnimation2 .3s ease-in-out reverse both';
+    hamburgerList.style.animation = 'hamburgerListAnimation2 .3s ease-in-out reverse both';
 
     setTimeout(() => {
       hamburgerList.style.animation = '';
@@ -15,14 +14,12 @@
     }, 300);
 
     const hamburgerName = document.querySelector('.hamburger__title');
-    hamburgerName.style.animation =
-      'hamburerTitleAnimate3 .2s ease-in-out reverse both';
+    hamburgerName.style.animation = 'hamburerTitleAnimate3 .2s ease-in-out reverse both';
 
     setTimeout(() => {
       hamburgerName.style.animation = '';
       hamburgerName.classList.toggle('hamburger__title--animation');
-      if (hamburgerName.innerText == 'Menu')
-        hamburgerName.innerText = 'Hide menu';
+      if (hamburgerName.innerText == 'Menu') hamburgerName.innerText = 'Hide menu';
       else hamburgerName.innerText = 'Menu';
     }, 500);
   };

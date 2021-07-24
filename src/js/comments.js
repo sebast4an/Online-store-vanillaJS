@@ -21,12 +21,12 @@ const renderComments = (data, howMany) => {
         `;
     fragment.appendChild(commentPost);
   };
-  commentsNumber.forEach((key) => appendComments(data, key));
+  commentsNumber.forEach(key => appendComments(data, key));
   comments.innerHTML = '';
   comments.appendChild(fragment);
 };
 
-const getCommentsFromCommentsAPI = async (howMany) => {
+const getCommentsFromCommentsAPI = async howMany => {
   const URL = `https://jsonplaceholder.typicode.com/comments`;
 
   const comments = document.querySelector('.comments__posts');

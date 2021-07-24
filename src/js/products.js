@@ -1,5 +1,4 @@
-const randomNumber = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const randomContent = (howMany, maxNumber) => {
   const uniquesNumbersNoDuplicates = new Set();
@@ -39,12 +38,12 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
         `;
     fragment.appendChild(product);
   };
-  numbersOfProducts.forEach((key) => appendProducts(data, key));
+  numbersOfProducts.forEach(key => appendProducts(data, key));
   where.innerHTML = ``;
   where.appendChild(fragment);
 };
 
-const loaderAnimate = (where) => {
+const loaderAnimate = where => {
   where.innerHTML = `
         <section class="loading">
             <div class="loading__animate">

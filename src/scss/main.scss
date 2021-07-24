@@ -233,69 +233,81 @@
   max-height: 430px;
 }
 
-/*  post is comments element  */
-.post {
-  display: grid;
-  grid-template-columns: auto;
-  grid-auto-flow: column;
-  grid-gap: 10px;
-  overflow: auto;
-  padding: 0 20px;
+.comments {
+  height: 430px;
+  overflow: hidden;
 
-  &__element {
-    margin: 25px auto;
-    width: 220px;
-    height: 302px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-self: flex-end;
-    justify-content: flex-start;
-    border-bottom: 1px solid $greyColor;
+  .post {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+    overflow: auto;
+    padding: 0 20px;
+    cursor: grab;
 
-    &:nth-child(n + 5) {
-      display: block;
-    }
-  }
-
-  &__email {
-    padding: 0 10px;
-    text-transform: lowercase;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-
-    span {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    &:after {
+      content: '';
+      width: 10px;
+      background-color: transparent;
+      height: 350px;
     }
 
-    &::first-letter {
-      text-transform: uppercase;
+    &__element {
+      margin: 25px auto;
+      width: 220px;
+      height: 302px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-self: flex-end;
+      justify-content: flex-start;
+      border-bottom: 1px solid $greyColor;
+
+      &:nth-child(n + 5) {
+        display: block;
+      }
     }
 
-    &--icon {
-      margin: 0 10px 0 0;
-      @include equivalentWhiteColor;
+    &__email {
+      padding: 0 10px;
+      text-transform: lowercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+
+      &--icon {
+        margin: 0 10px 0 0;
+        @include equivalentWhiteColor;
+      }
     }
-  }
 
-  &__body {
-    background-color: $greyColor;
-    border-radius: 10px;
-    padding: 20px;
-    line-height: 150%;
-    text-align: justify;
-    height: 100%;
-    max-height: 214px;
+    &__body {
+      background-color: $greyColor;
+      border-radius: 10px;
+      padding: 20px;
+      line-height: 150%;
+      text-align: justify;
+      height: 100%;
+      max-height: 214px;
 
-    span {
-      display: -webkit-box;
-      -webkit-line-clamp: 8;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      span {
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
@@ -350,14 +362,14 @@
       font-size: 16px;
     }
 
-    &__input {
+    .input {
       position: relative;
       width: 100%;
       border-radius: 5px;
       border: 1px solid $whiteColor;
       background-color: $whiteColor;
 
-      &--input {
+      &__input {
         height: 40px;
         margin: 1px;
         color: $blackColor;
@@ -368,7 +380,7 @@
         width: calc(100% - 40px);
       }
 
-      &--button {
+      &__button {
         cursor: pointer;
         position: absolute;
         right: 2px;
@@ -380,8 +392,13 @@
         border: 0;
         color: $whiteColor;
         border: 1px solid darken($blueColor, 10%);
-        transition: background 0.3s ease-in-out, color 0.3s ease-in-out,
-          border 0.3s ease-in-out;
+        opacity: 0;
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out,
+          opacity 0.5s ease-in-out;
+
+        &--active {
+          opacity: 1;
+        }
 
         &:hover {
           background-color: $greenColor;

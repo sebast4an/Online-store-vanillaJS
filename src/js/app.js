@@ -17,7 +17,7 @@ import '../assets/icons/map-pin.svg';
 
 //js
 import './menu';
-import './productsGridInLine';
+import './grabAndScroll';
 import './input';
 import { getDataFromStoreAPI } from './products';
 import { getCommentsFromCommentsAPI } from './comments';

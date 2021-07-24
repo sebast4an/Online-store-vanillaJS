@@ -1,0 +1,34 @@
+const addGrabAndScroll = where => {
+  let isScrollActive = false;
+  let positionStart;
+  let scrollLeft;
+
+  where.addEventListener('mousedown', event => {
+    event.preventDefault();
+    isScrollActive = true;
+
+    where.classList.add('active');
+    positionStart = event.pageX - where.offsetLeft;
+    scrollLeft = where.scrollLeft;
+  });
+
+  where.addEventListener('mouseup', event => {
+    event.preventDefault();
+    isScrollActive = false;
+  });
+
+  where.addEventListener('mousemove', event => {
+    event.preventDefault();
+    if (isScrollActive !== true) return;
+
+    const current = event.pageX - where.offsetLeft;
+    const walk = current - positionStart;
+    where.scrollLeft = scrollLeft - walk;
+  });
+};
+
+const product = document.querySelector('.product');
+addGrabAndScroll(product);
+
+const post = document.querySelector('.post');
+addGrabAndScroll(post);

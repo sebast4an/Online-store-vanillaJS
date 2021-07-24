@@ -1,17 +1,14 @@
 /* Color filters (for SVG)  */
 @mixin equivalentBlackColor() {
-  filter: invert(22%) sepia(0%) saturate(0%) hue-rotate(204deg) brightness(110%)
-    contrast(106%);
+  filter: invert(22%) sepia(0%) saturate(0%) hue-rotate(204deg) brightness(110%) contrast(106%);
 }
 
 @mixin equivalentBlueColor() {
-  filter: invert(23%) sepia(90%) saturate(1633%) hue-rotate(220deg)
-    brightness(77%) contrast(93%);
+  filter: invert(23%) sepia(90%) saturate(1633%) hue-rotate(220deg) brightness(77%) contrast(93%);
 }
 
 @mixin equivalentWhiteColor() {
-  filter: invert(89%) sepia(5%) saturate(1344%) hue-rotate(200deg)
-    brightness(107%) contrast(93%);
+  filter: invert(89%) sepia(5%) saturate(1344%) hue-rotate(200deg) brightness(107%) contrast(93%);
 }
 /* End of color filters (for SVG)  */
 
@@ -130,8 +127,7 @@
         padding: 5px 16px;
         background: none;
         cursor: pointer;
-        transition: background 0.3s ease-in-out, color 0.3s ease-in-out,
-          border 0.3s ease-in-out;
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
         display: flex;
         justify-content: space-between;
         align-content: center;
@@ -157,8 +153,8 @@
           }
 
           img {
-            filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg)
-              brightness(111%) contrast(92%);
+            filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%)
+              contrast(92%);
           }
         }
       }
@@ -172,7 +168,7 @@
   .product {
     grid-template-columns: auto;
     grid-auto-flow: column;
-    cursor: -webkit-grab;
+    cursor: grab;
     overflow: hidden;
     overflow-x: scroll;
     padding: 0 10px 15px 20px;
@@ -183,14 +179,10 @@
     }
 
     &:after {
-      content: "";
+      content: '';
       width: 10px;
       background-color: transparent;
       height: 350px;
-      /* WTHELL?? Beacuse.. */
     }
-
-
-
   }
 }
