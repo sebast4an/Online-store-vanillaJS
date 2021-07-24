@@ -7,7 +7,6 @@ const addGrabAndScroll = where => {
     event.preventDefault();
     isScrollActive = true;
 
-    where.classList.add('active');
     positionStart = event.pageX - where.offsetLeft;
     scrollLeft = where.scrollLeft;
   });
