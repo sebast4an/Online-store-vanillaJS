@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px 0;
+    
   }
 
   .hamburger {
@@ -27,7 +28,8 @@
     align-items: center;
 
     &__element {
-      padding: 20px;
+      padding: 17px;
+      border-radius: 4px;
       transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
       border: 0;
       width: auto;

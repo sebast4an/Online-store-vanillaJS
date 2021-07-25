@@ -46,10 +46,6 @@
     &__gmap {
       min-height: 450px;
     }
-
-    .social {
-      padding: 0 20px;
-    }
   }
 }
 
@@ -64,6 +60,44 @@
     &__box {
       padding: 0 18%;
     }
+
+    &__header {
+      &--title {
+        font-size: 3rem;
+      }
+
+      &--subtitle {
+        font-size: 1.4rem;
+      }
+    }
+
+  }
+}
+
+@media (min-width: 850px) {
+  .newsletter {
+    margin: 100px 0 0 0;
+    padding: 0 14%;
+    
+    &__box {
+      padding: 0 17%;
+      min-height: 500px;
+    }
+
+    &__header {
+      margin: 20px 0;
+    }
+
+    &__description {
+      margin: 20px 0;
+    }
+  }
+
+  .footer {
+    &__header,
+    &__info {
+      padding: 0 14%;
+   }
   }
 
 }
@@ -73,5 +107,17 @@
     &__element:last-child {
       display: grid;
     }
+  }
+}
+
+@media (min-width: 1150px) {
+
+  .header {
+    margin: 10px 8%;
+  }
+
+  .baner {
+    width: 85%;
+    margin: 0 auto;
   }
 }

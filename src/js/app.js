@@ -15,10 +15,14 @@ import '../assets/icons/instagram.svg';
 import '../assets/icons/twitter.svg';
 import '../assets/icons/map-pin.svg';
 
+//img
+import '../assets/img/test_baner.jpg';
+
 //js
 import './menu';
 import './grabAndScroll';
 import './input';
+import './occasion';
 import { getDataFromStoreAPI } from './products';
 import { getCommentsFromCommentsAPI } from './comments';
 

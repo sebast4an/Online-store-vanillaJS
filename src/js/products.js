@@ -57,7 +57,6 @@ const loaderAnimate = where => {
 
 const getDataFromStoreAPI = async (question, where, howMany) => {
   const URL = `https://fakestoreapi.com/${question}/`;
-
   loaderAnimate(where);
 
   try {
