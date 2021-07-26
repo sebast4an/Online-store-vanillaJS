@@ -1,19 +1,5 @@
 @media (min-width: 400px) {
   /*  navigation */
-  .navigation {
-    background-color: $blueColor;
-    height: 65px;
-    position: sticky;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-    
-  }
-
   .hamburger {
     display: none;
   }

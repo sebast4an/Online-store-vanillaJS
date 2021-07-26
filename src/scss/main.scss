@@ -64,7 +64,7 @@
   height: 65px;
   position: sticky;
   z-index: 1;
-  top: 0;
+  top: -1px;
   left: 0;
   display: flex;
   justify-content: center;
@@ -253,15 +253,68 @@
   margin: 0 20px;
   border: 4px solid $blueColor;
   border-radius: 10px;
+  text-align: center;
 
-  &__box {
+  &__product {
     padding: 20px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 0 45px 0;
+
+    &--title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #3a3a3a;
+    }
+
+    &--saving {
+      background-color: darken($greyColor, 10%);
+      color: $bgColor;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
   }
 
   &__img {
     max-width: 80px;
     height: auto;
   }
+
+  &__details {
+    &--name {
+      font-weight: 500;
+    }
+
+    &--previous-price {
+      text-decoration: line-through;
+      font-size: 1.3rem;
+    }
+
+    &--promo-price {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: $blueColor;
+    }
+  }
+  &__count {
+    margin: 45px 0 0 0;
+    text-align: right;
+    font-size: 0.8rem;
+
+    &--timer {
+      background-color: darken($greyColor, 10%);
+      color: $bgColor;
+      padding: 4px;
+      border-radius: 4px;
+    }
+  }
+
 }
 
 
