@@ -1,6 +1,8 @@
-const renderOccastion = (data, discountInPercent) => {
-  const container = document.querySelector('.occasion');
+import { loaderAnimate } from './globalFunctions';
 
+const containerOccasion = document.querySelector('.occasion');
+
+const renderOccastion = (data, discountInPercent) => {
   const occasionProduct = document.createElement('section');
   occasionProduct.classList.add('occasion__product');
   occasionProduct.innerHTML = `
@@ -27,7 +29,8 @@ const renderOccastion = (data, discountInPercent) => {
               <span class="occasion__count--timer">12</span>
             </section>
             `;
-  container.append(occasionProduct);
+  containerOccasion.innerHTML = '';
+  containerOccasion.append(occasionProduct);
 };
 
 const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
@@ -36,7 +39,8 @@ const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
   try {
     const response = await fetch(URL);
     const data = await response.json();
-    console.log(data);
+
+    loaderAnimate(containerOccasion);
     renderOccastion(data, discountInPercent);
   } catch (error) {
     console.log(error);

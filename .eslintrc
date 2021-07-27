@@ -6,7 +6,7 @@
       "error",
       { "singleQuote": true, "printWidth": 100, "arrowParens": "avoid" }
     ],
-    "arrow-parens": ["error", "as-needed"]
+    "arrow-parens": ["warn", "as-needed"]
   },
   "env": {
     "browser": true,

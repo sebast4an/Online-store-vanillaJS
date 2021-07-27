@@ -1,13 +1,4 @@
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
-const randomContent = (howMany, maxNumber) => {
-  const uniquesNumbersNoDuplicates = new Set();
-
-  for (let i = 0; uniquesNumbersNoDuplicates.size < howMany; i++) {
-    uniquesNumbersNoDuplicates.add(randomNumber(0, maxNumber));
-  }
-  return uniquesNumbersNoDuplicates;
-};
+import { randomContent, loaderAnimate } from './globalFunctions';
 
 const renderRandomProducts = (data, where, howManyToAdd) => {
   const fragment = document.createDocumentFragment();
@@ -43,18 +34,6 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
   where.appendChild(fragment);
 };
 
-const loaderAnimate = where => {
-  where.innerHTML = `
-        <section class="loading">
-            <div class="loading__animate">
-            </div>
-            <p class="loading__info">
-                Loading data. Please wait.
-            </p>
-        </section>
-    `;
-};
-
 const getDataFromStoreAPI = async (question, where, howMany) => {
   const URL = `https://fakestoreapi.com/${question}/`;
   loaderAnimate(where);
@@ -68,4 +47,4 @@ const getDataFromStoreAPI = async (question, where, howMany) => {
   }
 };
 
-export { randomContent, loaderAnimate, getDataFromStoreAPI };
+export { getDataFromStoreAPI };

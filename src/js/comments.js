@@ -1,4 +1,4 @@
-import { loaderAnimate, randomContent } from './products';
+import { loaderAnimate, randomContent } from './globalFunctions';
 
 const renderComments = (data, howMany) => {
   const comments = document.querySelector('.comments__posts');
