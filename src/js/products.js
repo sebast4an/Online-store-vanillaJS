@@ -9,24 +9,30 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
     product.classList.add(`product__element`);
     product.classList.add(`product__element--id${data[key]['id']}`);
     product.innerHTML = `
-                <figure class="product__border">
+                  <figure class="product__border">
                     <img class="product__img" src="${data[key]['image']}">
-                </figure>
-                <header class="product__header">
+                  </figure>
+                  <header class="product__header">
                     <h2 class="product__name">
-                        ${data[key]['title']}
+                      ${data[key]['title']}
                     </h2>
                     <section class="product__price price">
                         <p class="price__price">
-                            ${data[key]['price']} $
+                          ${data[key]['price']} $
                         </p>
                         <button type="button" class="price__button">
                             <span>Add</span> 
                             <img class="price__button--img" src="assets/add-basket.svg">
                         </button>
                     </section>
-                </header>
+                  </header>
         `;
+    product.addEventListener('click', e => {
+      e.preventDefault();
+      console.log(`click me? I'am a ${data[key]['id']}`);
+      window.history.pushState({ page: 'another' }, `one`, `${data[key]['id']}`);
+      renderTest();
+    });
     fragment.appendChild(product);
   };
   numbersOfProducts.forEach(key => appendProducts(data, key));
@@ -45,6 +51,11 @@ const getDataFromStoreAPI = async (question, where, howMany) => {
   } catch (error) {
     where.innerText = 'Error loading data. Please reload page.';
   }
+};
+
+const renderTest = () => {
+  const content = document.querySelector('.content');
+  content.innerHTML = '<h1>Works?</h1>';
 };
 
 export { getDataFromStoreAPI };
