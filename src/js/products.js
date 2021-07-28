@@ -35,7 +35,7 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
 };
 
 const getDataFromStoreAPI = async (question, where, howMany) => {
-  const URL = `https://fakestoreapi.com/${question}/`;
+  const URL = `https://fakestoreapi.com/${question}`;
   loaderAnimate(where);
 
   try {
