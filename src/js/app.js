@@ -19,6 +19,7 @@ import '../assets/icons/map-pin.svg';
 import '../assets/img/test_baner.jpg';
 
 //js
+import './routing';
 import './menu';
 import './grabAndScroll';
 import './input';

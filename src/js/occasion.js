@@ -8,7 +8,7 @@ const renderOccastion = (data, discountInPercent) => {
   occasionProduct.innerHTML = `
             <header class="occasion__header">
                 <h2 class="occasion__header--title">Occasion of the day</h2>
-
+                <a href="/product">TEST</a>
             </header>
             <img class="occasion__img" src="${data.image}">
             <section class="occasion__details">

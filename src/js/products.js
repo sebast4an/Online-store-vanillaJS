@@ -27,12 +27,6 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                     </section>
                   </header>
         `;
-    product.addEventListener('click', e => {
-      e.preventDefault();
-      console.log(`click me? I'am a ${data[key]['id']}`);
-      window.history.pushState({ page: 'another' }, `one`, `${data[key]['id']}`);
-      renderTest();
-    });
     fragment.appendChild(product);
   };
   numbersOfProducts.forEach(key => appendProducts(data, key));
@@ -51,11 +45,6 @@ const getDataFromStoreAPI = async (question, where, howMany) => {
   } catch (error) {
     where.innerText = 'Error loading data. Please reload page.';
   }
-};
-
-const renderTest = () => {
-  const content = document.querySelector('.content');
-  content.innerHTML = '<h1>Works?</h1>';
 };
 
 export { getDataFromStoreAPI };
