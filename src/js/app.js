@@ -27,7 +27,7 @@ import './occasion';
 import { getDataFromStoreAPI } from './products';
 import { getCommentsFromCommentsAPI } from './comments';
 
-(() => {
+window.addEventListener('DOMContentLoaded', () => {
   const recommendProducts = document.querySelector('.recommend__products');
   getDataFromStoreAPI('products', recommendProducts, 6);
 
@@ -35,4 +35,4 @@ import { getCommentsFromCommentsAPI } from './comments';
   getDataFromStoreAPI('products', bestsellersProducts, 4);
 
   getCommentsFromCommentsAPI(8);
-})();
+});
