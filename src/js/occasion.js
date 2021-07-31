@@ -1,14 +1,12 @@
 import { loaderAnimate } from './globalFunctions';
 
-const containerOccasion = document.querySelector('.occasion');
-
-const renderOccastion = (data, discountInPercent) => {
+const renderOccastion = (data, where, discountInPercent) => {
   const occasionProduct = document.createElement('section');
   occasionProduct.classList.add('occasion__product');
   occasionProduct.innerHTML = `
             <header class="occasion__header">
                 <h2 class="occasion__header--title">Occasion of the day</h2>
-                <a class="occasion__header--title-link" href="/product">TEST</a>
+                <a class="occasion__header--title-link" href="/test">TEST</a>
             </header>
             <img class="occasion__img" src="${data.image}">
             <section class="occasion__details">
@@ -29,14 +27,8 @@ const renderOccastion = (data, discountInPercent) => {
               <span class="occasion__count--timer">12</span>
             </section>
             `;
-  containerOccasion.innerHTML = '';
-  containerOccasion.append(occasionProduct);
-
-  const bb = document.querySelector('.occasion__header--title-link');
-  bb.addEventListener('click', e => {
-    e.preventDefault();
-    history.pushState({ pageID: 'test' }, 'Test', '/test');
-  });
+  where.innerHTML = '';
+  where.append(occasionProduct);
 };
 
 const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
@@ -46,11 +38,13 @@ const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
     const response = await fetch(URL);
     const data = await response.json();
 
+    const containerOccasion = document.querySelector('.occasion');
     loaderAnimate(containerOccasion);
-    renderOccastion(data, discountInPercent);
+    renderOccastion(data, containerOccasion, discountInPercent);
   } catch (error) {
     console.log(error);
   }
 };
-
 getSelectedProductFromStoreAPI(12, 5);
+
+export { getSelectedProductFromStoreAPI };

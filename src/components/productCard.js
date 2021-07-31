@@ -1,3 +1,3 @@
-export const productCard = `
-<section class="occasion">
-</section>`;
+export const productComponent = `
+        <section class="occasion">
+        </section>`;
