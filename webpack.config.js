@@ -14,6 +14,10 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, `dist`),
+    hot: true,
+    historyApiFallback: {
+      index: 'index.html',
+    },
   },
   devtool: 'source-map',
   experiments: {

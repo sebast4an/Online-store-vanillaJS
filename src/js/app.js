@@ -27,10 +27,6 @@ import './occasion';
 import { getDataFromStoreAPI } from './products';
 import { getCommentsFromCommentsAPI } from './comments';
 
-window.addEventListener('locationchange', function () {
-  console.log('location changed!');
-});
-
 window.addEventListener('DOMContentLoaded', () => {
   const recommendProducts = document.querySelector('.recommend__products');
   if (!recommendProducts) return;
@@ -41,9 +37,4 @@ window.addEventListener('DOMContentLoaded', () => {
   else getDataFromStoreAPI('products', bestsellersProducts, 4);
 
   getCommentsFromCommentsAPI(8);
-
-  window.addEventListener('popstate', function (event) {
-    // Log the state data to the console
-    console.log(event.state);
-  });
 });
