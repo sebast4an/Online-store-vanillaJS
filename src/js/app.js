@@ -27,12 +27,23 @@ import './occasion';
 import { getDataFromStoreAPI } from './products';
 import { getCommentsFromCommentsAPI } from './comments';
 
+window.addEventListener('locationchange', function () {
+  console.log('location changed!');
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   const recommendProducts = document.querySelector('.recommend__products');
-  getDataFromStoreAPI('products', recommendProducts, 6);
+  if (!recommendProducts) return;
+  else getDataFromStoreAPI('products', recommendProducts, 6);
 
   const bestsellersProducts = document.querySelector('.bestsellers__products');
-  getDataFromStoreAPI('products', bestsellersProducts, 4);
+  if (!bestsellersProducts) return;
+  else getDataFromStoreAPI('products', bestsellersProducts, 4);
 
   getCommentsFromCommentsAPI(8);
+
+  window.addEventListener('popstate', function (event) {
+    // Log the state data to the console
+    console.log(event.state);
+  });
 });

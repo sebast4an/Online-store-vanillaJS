@@ -8,7 +8,7 @@ const renderOccastion = (data, discountInPercent) => {
   occasionProduct.innerHTML = `
             <header class="occasion__header">
                 <h2 class="occasion__header--title">Occasion of the day</h2>
-                <a href="/product">TEST</a>
+                <a class="occasion__header--title-link" href="/product">TEST</a>
             </header>
             <img class="occasion__img" src="${data.image}">
             <section class="occasion__details">
@@ -31,6 +31,12 @@ const renderOccastion = (data, discountInPercent) => {
             `;
   containerOccasion.innerHTML = '';
   containerOccasion.append(occasionProduct);
+
+  const bb = document.querySelector('.occasion__header--title-link');
+  bb.addEventListener('click', e => {
+    e.preventDefault();
+    history.pushState({ pageID: 'test' }, 'Test', '/test');
+  });
 };
 
 const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
@@ -47,4 +53,4 @@ const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
   }
 };
 
-console.log(getSelectedProductFromStoreAPI(12, 5));
+getSelectedProductFromStoreAPI(12, 5);

@@ -26,8 +26,12 @@ const addGrabAndScroll = where => {
   });
 };
 
-const product = document.querySelector('.product');
-addGrabAndScroll(product);
+(() => {
+  const product = document.querySelector('.product');
+  if (!product) return;
+  else addGrabAndScroll(product);
 
-const post = document.querySelector('.post');
-addGrabAndScroll(post);
+  const post = document.querySelector('.post');
+  if (!post) return;
+  else addGrabAndScroll(post);
+})();

@@ -2,6 +2,8 @@ import { loaderAnimate, randomContent } from './globalFunctions';
 
 const renderComments = (data, howMany) => {
   const comments = document.querySelector('.comments__posts');
+  if (!comments) return;
+
   const fragment = document.createDocumentFragment();
   const commentsNumber = randomContent(howMany, data.length - 1);
 
@@ -29,8 +31,10 @@ const renderComments = (data, howMany) => {
 const getCommentsFromCommentsAPI = async howMany => {
   const URL = `https://jsonplaceholder.typicode.com/comments`;
 
+  // Correction the function for one declaration "where"
   const comments = document.querySelector('.comments__posts');
-  loaderAnimate(comments);
+  if (!comments) return;
+  else loaderAnimate(comments);
 
   try {
     const response = await fetch(URL);

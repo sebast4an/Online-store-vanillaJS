@@ -1,4 +1,4 @@
-export const mainCompotent = `
+export const mainComponent = `
 <section class="content__recommend recommend">
     <header class="recommend__header header__bottomline">
       <h1 class="header__bottomline--title">Recommend</h1>

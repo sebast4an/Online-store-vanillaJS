@@ -8,6 +8,5 @@
 
   newsletterInput.addEventListener('keyup', () => {
     if (newsletterInput.value.length == 0) button.classList.remove('input__button--active');
-    console.log(newsletterInput.value);
   });
 })();

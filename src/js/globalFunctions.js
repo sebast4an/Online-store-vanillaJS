@@ -10,6 +10,8 @@ export const randomContent = (howMany, maxNumber) => {
 };
 
 export const loaderAnimate = where => {
+  if (!where) return;
+
   where.innerHTML = `
         <section class="loading">
             <div class="loading__animate">
