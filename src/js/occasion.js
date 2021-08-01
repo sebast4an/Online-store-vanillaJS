@@ -1,6 +1,6 @@
 import { loaderAnimate } from './globalFunctions';
 
-const renderOccastion = (data, where, discountInPercent) => {
+const renderOccasion = (data, where, discountInPercent) => {
   const occasionProduct = document.createElement('section');
   occasionProduct.classList.add('occasion__product');
   occasionProduct.innerHTML = `
@@ -31,7 +31,7 @@ const renderOccastion = (data, where, discountInPercent) => {
   where.append(occasionProduct);
 };
 
-const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
+const getOccasionFromAPI = async (productId, discountInPercent) => {
   const URL = `https://fakestoreapi.com/products/${productId}`;
 
   try {
@@ -40,11 +40,14 @@ const getSelectedProductFromStoreAPI = async (productId, discountInPercent) => {
 
     const containerOccasion = document.querySelector('.occasion');
     loaderAnimate(containerOccasion);
-    renderOccastion(data, containerOccasion, discountInPercent);
+    renderOccasion(data, containerOccasion, discountInPercent);
   } catch (error) {
     console.log(error);
   }
 };
-getSelectedProductFromStoreAPI(12, 5);
 
-export { getSelectedProductFromStoreAPI };
+const occasionComponent = `
+        <section class="occasion">
+        </section>`;
+
+export { getOccasionFromAPI, occasionComponent };

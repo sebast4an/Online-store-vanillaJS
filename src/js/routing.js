@@ -1,30 +1,44 @@
-import { mainComponent } from '../components/main';
-import { productComponent } from '../components/productCard';
+import { mainComponent, mainLoader } from '../components/main';
+import { occasionComponent, getOccasionFromAPI } from './occasion';
 
 (() => {
+  const content = document.querySelector('.content');
+
   const routes = {
     '/': mainComponent,
-    '/test': productComponent,
+    '/test': occasionComponent,
   };
 
-  const rootDiv = document.querySelector('.content');
-  rootDiv.innerHTML = routes[window.location.pathname];
-
-  const onNavigate = pathname => {
+  const loaderComponents = pathname => {
     window.history.pushState({}, pathname, window.location.origin + pathname);
-    rootDiv.innerHTML = routes[pathname];
+
+    if (pathname == '/test') {
+      content.innerHTML = routes[pathname];
+      getOccasionFromAPI(15, 2);
+    } else {
+      content.innerHTML = routes[pathname];
+      mainLoader();
+    }
   };
+
+  //first website loading
+  content.innerHTML = routes[window.location.pathname];
+  loaderComponents(window.location.pathname);
 
   const allLinks = document.querySelectorAll('a');
   allLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      if (!link.getAttribute('href')) onNavigate('/');
-      else onNavigate(link.getAttribute('href'));
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      if (!href) {
+        loaderComponents('/');
+      } else {
+        loaderComponents(href);
+      }
     });
   });
 
   window.addEventListener('popstate', () => {
-    console.log('url changed');
-    rootDiv.innerHTML = routes[window.location.pathname];
+    loaderComponents(window.location.pathname);
   });
 })();

@@ -21,7 +21,6 @@
   margin: 0;
 }
 
-
 @mixin productsGrid($min, $max) {
   .product {
     display: grid;
@@ -80,7 +79,7 @@
       height: 27%;
     }
   }
-  
+
   .price {
     display: flex;
     flex-flow: row wrap;

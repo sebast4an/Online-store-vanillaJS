@@ -22,3 +22,32 @@ export const loaderAnimate = where => {
         </section>
     `;
 };
+
+export const addGrabAndScroll = where => {
+  const place = document.querySelector(where);
+  let isScrollActive = false;
+  let positionStart;
+  let scrollLeft;
+
+  place.addEventListener('mousedown', event => {
+    event.preventDefault();
+    isScrollActive = true;
+
+    positionStart = event.pageX - place.offsetLeft;
+    scrollLeft = place.scrollLeft;
+  });
+
+  place.addEventListener('mouseup', event => {
+    event.preventDefault();
+    isScrollActive = false;
+  });
+
+  place.addEventListener('mousemove', event => {
+    event.preventDefault();
+    if (isScrollActive !== true) return;
+
+    const current = event.pageX - place.offsetLeft;
+    const walk = current - positionStart;
+    place.scrollLeft = scrollLeft - walk;
+  });
+};

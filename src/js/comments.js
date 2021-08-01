@@ -1,4 +1,4 @@
-import { loaderAnimate, randomContent } from './globalFunctions';
+import { loaderAnimate, randomContent, addGrabAndScroll } from './globalFunctions';
 
 const renderComments = (data, howMany) => {
   const comments = document.querySelector('.comments__posts');
@@ -34,7 +34,10 @@ const getCommentsFromCommentsAPI = async howMany => {
   // Correction the function for one declaration "where"
   const comments = document.querySelector('.comments__posts');
   if (!comments) return;
-  else loaderAnimate(comments);
+  else {
+    loaderAnimate(comments);
+    addGrabAndScroll('.post');
+  }
 
   try {
     const response = await fetch(URL);

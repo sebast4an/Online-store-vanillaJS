@@ -1,6 +1,4 @@
-(() => {
-  const button = document.querySelector('.navigation__hamburger');
-
+window.addEventListener('DOMContentLoaded', () => {
   const animateHamburgerButton = () => {
     const hamburgerIcon = document.querySelector('.hamburger__icon');
     hamburgerIcon.classList.toggle('hamburger__icon--animate');
@@ -23,5 +21,6 @@
       else hamburgerName.innerText = 'Menu';
     }, 500);
   };
+  const button = document.querySelector('.navigation__hamburger');
   button.addEventListener(`click`, animateHamburgerButton);
-})();
+});

@@ -20,21 +20,8 @@ import '../assets/img/test_baner.jpg';
 
 //js
 import './routing';
-import './menu';
-import './grabAndScroll';
+import './navigation';
 import './input';
 import './occasion';
-import { getDataFromStoreAPI } from './products';
-import { getCommentsFromCommentsAPI } from './comments';
-
-window.addEventListener('DOMContentLoaded', () => {
-  const recommendProducts = document.querySelector('.recommend__products');
-  if (!recommendProducts) return;
-  else getDataFromStoreAPI('products', recommendProducts, 6);
-
-  const bestsellersProducts = document.querySelector('.bestsellers__products');
-  if (!bestsellersProducts) return;
-  else getDataFromStoreAPI('products', bestsellersProducts, 4);
-
-  getCommentsFromCommentsAPI(8);
-});
+import './products';
+import './comments';

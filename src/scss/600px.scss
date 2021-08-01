@@ -13,7 +13,6 @@
   .occasion {
     margin: 0 50px;
   }
-   
 
   .newsletter {
     padding: 0 50px;
@@ -40,10 +39,8 @@
     font-size: 1.1rem;
   }
 
-  
-
   .footer {
-     &__info {
+    &__info {
       padding: 0 50px;
     }
 
@@ -74,7 +71,6 @@
         font-size: 1.4rem;
       }
     }
-
   }
 }
 
@@ -82,7 +78,7 @@
   .newsletter {
     margin: 100px 0 0 0;
     padding: 0 14%;
-    
+
     &__box {
       padding: 0 17%;
       min-height: 500px;
@@ -101,9 +97,8 @@
     &__header,
     &__info {
       padding: 0 14%;
-   }
+    }
   }
-
 }
 
 @media (min-width: 947px) {
@@ -115,7 +110,6 @@
 }
 
 @media (min-width: 1150px) {
-
   .header {
     margin: 10px 8%;
   }
