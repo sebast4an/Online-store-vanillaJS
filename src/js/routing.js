@@ -1,23 +1,23 @@
-import { mainComponent, mainLoader } from '../components/main';
-import { occasionComponent, getOccasionFromAPI } from './occasion';
+import { homeComponent, homeLoader } from '../components/home';
+import { allProductsComponent, allProductsLoader } from '../components/allProducts';
 
 (() => {
   const content = document.querySelector('.content');
 
   const routes = {
-    '/': mainComponent,
-    '/test': occasionComponent,
+    '/': homeComponent,
+    '/electronics': allProductsComponent,
   };
 
   const loaderComponents = pathname => {
     window.history.pushState({}, pathname, window.location.origin + pathname);
 
-    if (pathname == '/test') {
+    if (pathname == '/electronics') {
+      allProductsLoader();
       content.innerHTML = routes[pathname];
-      getOccasionFromAPI(15, 2);
     } else {
       content.innerHTML = routes[pathname];
-      mainLoader();
+      homeLoader();
     }
   };
 
@@ -25,6 +25,7 @@ import { occasionComponent, getOccasionFromAPI } from './occasion';
   content.innerHTML = routes[window.location.pathname];
   loaderComponents(window.location.pathname);
 
+  //this loop gets all link and add routing
   const allLinks = document.querySelectorAll('a');
   allLinks.forEach(link => {
     link.addEventListener('click', e => {

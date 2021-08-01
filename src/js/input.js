@@ -1,4 +1,4 @@
-(() => {
+window.addEventListener('DOMContentLoaded', () => {
   const newsletterInput = document.querySelector('#newsletter__input');
   const button = document.querySelector('.newsletter .form .input__button');
 
@@ -9,4 +9,4 @@
   newsletterInput.addEventListener('keyup', () => {
     if (newsletterInput.value.length == 0) button.classList.remove('input__button--active');
   });
-})();
+});

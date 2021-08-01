@@ -2,7 +2,7 @@ import { getDataFromStoreAPI } from '../js/products';
 import { getCommentsFromCommentsAPI } from '../js/comments';
 import { getOccasionFromAPI } from '../js/occasion';
 
-const mainComponent = `
+const homeComponent = `
 <section class="content__recommend recommend">
     <header class="recommend__header header__bottomline">
       <h1 class="header__bottomline--title">Recommend</h1>
@@ -30,11 +30,11 @@ const mainComponent = `
     <article class="bestsellers__products product"></article>
   </section>`;
 
-const mainLoader = () => {
+const homeLoader = () => {
   getDataFromStoreAPI('products', '.recommend__products', 6);
   getOccasionFromAPI(15, 2);
   getDataFromStoreAPI('products', '.bestsellers__products', 4);
   getCommentsFromCommentsAPI(8);
 };
 
-export { mainComponent, mainLoader };
+export { homeComponent, homeLoader };
