@@ -11,13 +11,14 @@ import { allProductsComponent, allProductsLoader } from '../components/allProduc
 
   const loaderComponents = pathname => {
     window.history.pushState({}, pathname, window.location.origin + pathname);
+    content.innerHTML = routes[pathname];
 
-    if (pathname == '/electronics') {
-      allProductsLoader();
-      content.innerHTML = routes[pathname];
-    } else {
-      content.innerHTML = routes[pathname];
-      homeLoader();
+    switch (pathname) {
+      case '/electronics':
+        allProductsLoader();
+        break;
+      default:
+        homeLoader();
     }
   };
 
