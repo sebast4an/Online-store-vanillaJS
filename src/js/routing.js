@@ -1,5 +1,5 @@
 import { homeComponent, homeLoader } from '../components/home';
-import { allProductsComponent, allProductsLoader } from '../components/allProducts';
+import { allProductsComponent, allProductsLoader } from '../components/allProductsFromCategory';
 
 (() => {
   const content = document.querySelector('.content');

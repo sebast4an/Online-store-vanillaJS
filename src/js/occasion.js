@@ -46,8 +46,4 @@ const getOccasionFromAPI = async (productId, discountInPercent) => {
   }
 };
 
-const occasionComponent = `
-        <section class="occasion">
-        </section>`;
-
-export { getOccasionFromAPI, occasionComponent };
+export { getOccasionFromAPI };

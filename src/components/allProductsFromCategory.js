@@ -3,7 +3,7 @@ import { baseURL } from '../js/globalFunctions';
 export const allProductsComponent = `
   <section class="content__all-products all-products">
     <header class="all-products__header header__bottomline">
-      <h1 class="header__bottomline--title">Electronics</h1>
+      <h1 class="all-products__header--name header__bottomline--title">Category name</h1>
     </header>
 
     <article class="all-products__products product"></article>
@@ -11,7 +11,10 @@ export const allProductsComponent = `
 `;
 
 export const allProductsLoader = () => {
-  const renderProducts = data => {
+  const renderProducts = (data, question) => {
+    const categoryName = document.querySelector('.all-products__header--name');
+    categoryName.innerText = question;
+
     const fragment = document.createDocumentFragment();
 
     const appendProducts = ({ id, title, image, price }) => {
@@ -36,13 +39,11 @@ export const allProductsLoader = () => {
                         </button>
                     </section>
                   </header>
-        `;
+      `;
       fragment.appendChild(product);
     };
-    if (!data) console.log(`what's wrong?`);
-    else {
-      data.forEach(value => appendProducts(value));
-    }
+    if (!data) return;
+    else data.forEach(value => appendProducts(value));
 
     const allProducts = document.querySelector('.all-products__products');
     allProducts.innerHTML = '';
@@ -50,15 +51,15 @@ export const allProductsLoader = () => {
   };
 
   const getAllProductsFromAPI = async question => {
-    const URL = baseURL + question;
+    const URL = `${baseURL}products/category/${question}`;
 
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      renderProducts(data);
+      renderProducts(data, question);
     } catch (error) {
       console.log(error);
     }
   };
-  getAllProductsFromAPI('products');
+  getAllProductsFromAPI('electronics');
 };

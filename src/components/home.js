@@ -11,7 +11,7 @@ const homeComponent = `
     <article class="recommend__products product"></article>
   </section>
 
-  <section class="occasion">
+  <section class="content__occasion occasion">
   </section>
 
   <section class="content__comments comments">
@@ -31,7 +31,7 @@ const homeComponent = `
   </section>`;
 
 const homeLoader = () => {
-  getDataFromStoreAPI('products', '.recommend__products', 6);
+  getDataFromStoreAPI('products', '.recommend__products', 10);
   getOccasionFromAPI(15, 2);
   getDataFromStoreAPI('products', '.bestsellers__products', 4);
   getCommentsFromCommentsAPI(8);
