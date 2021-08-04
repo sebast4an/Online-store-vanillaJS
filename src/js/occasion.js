@@ -39,6 +39,7 @@ const getOccasionFromAPI = async (productId, discountInPercent) => {
     const data = await response.json();
 
     const containerOccasion = document.querySelector('.occasion');
+    if (!containerOccasion) return;
     loaderAnimate(containerOccasion);
     renderOccasion(data, containerOccasion, discountInPercent);
   } catch (error) {

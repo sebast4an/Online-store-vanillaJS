@@ -1,6 +1,6 @@
-import { baseURL } from '../js/globalFunctions';
+import { baseURL, loaderAnimate } from '../js/globalFunctions';
 
-export const allProductsComponent = `
+export const categoryProductsComponent = `
   <section class="content__all-products all-products">
     <header class="all-products__header header__bottomline">
       <h1 class="all-products__header--name header__bottomline--title">Category name</h1>
@@ -10,11 +10,8 @@ export const allProductsComponent = `
   </section>
 `;
 
-export const allProductsLoader = () => {
-  const renderProducts = (data, question) => {
-    const categoryName = document.querySelector('.all-products__header--name');
-    categoryName.innerText = question;
-
+export const categoryProductsLoader = question => {
+  const renderProducts = (data, where) => {
     const fragment = document.createDocumentFragment();
 
     const appendProducts = ({ id, title, image, price }) => {
@@ -44,22 +41,27 @@ export const allProductsLoader = () => {
     };
     if (!data) return;
     else data.forEach(value => appendProducts(value));
-
-    const allProducts = document.querySelector('.all-products__products');
-    allProducts.innerHTML = '';
-    allProducts.appendChild(fragment);
+    where.innerHTML = '';
+    where.appendChild(fragment);
   };
 
-  const getAllProductsFromAPI = async question => {
+  const getProductsFromAPI = async question => {
     const URL = `${baseURL}products/category/${question}`;
+
+    const categoryName = document.querySelector('.all-products__header--name');
+    categoryName.innerText = question;
+
+    const allProducts = document.querySelector('.all-products__products');
+    if (!allProducts) return;
+    loaderAnimate(allProducts);
 
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      renderProducts(data, question);
+      renderProducts(data, allProducts);
     } catch (error) {
       console.log(error);
     }
   };
-  getAllProductsFromAPI('electronics');
+  getProductsFromAPI(question);
 };

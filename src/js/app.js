@@ -18,14 +18,16 @@ import '../assets/icons/map-pin.svg';
 //img
 import '../assets/img/test_baner.jpg';
 
-//js components
-import '../components/home';
-import '../components/allProductsFromCategory';
-
 //js
 import './navigation';
 import './input';
 import './occasion';
 import './products';
 import './comments';
+
+//js components
+import '../components/home';
+import '../components/categoryProducts';
+
+//js routing
 import './routing';
