@@ -43,7 +43,7 @@ const getDataFromStoreAPI = async (question, place, howMany) => {
   try {
     const response = await fetch(URL);
     const data = await response.json();
-    console.log(data);
+
     renderRandomProducts(data, where, howMany);
     addGrabAndScroll('.product');
   } catch (error) {

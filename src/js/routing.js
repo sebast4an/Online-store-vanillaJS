@@ -27,12 +27,12 @@ import { categoryProductsComponent, categoryProductsLoader } from '../components
         categoryProductsLoader('jewelery');
         break;
       case '/men%27s%20clothing':
-        document.title = `Online Store - ${pathname.slice(1)}`;
+        document.title = `Online Store - ${decodeURI(pathname.slice(1))}`;
         content.innerHTML = routes[pathname];
         categoryProductsLoader('men%27s%20clothing');
         break;
       case '/women%27s%20clothing':
-        document.title = `Online Store - ${pathname.slice(1)}`;
+        document.title = `Online Store - ${decodeURI(pathname.slice(1))}`;
         content.innerHTML = routes[pathname];
         categoryProductsLoader('women%27s%20clothing');
         break;

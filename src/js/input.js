@@ -1,4 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
+  //search input
+  const search = document.querySelector('.search');
+  console.log(search);
+
+  //newsletter input
   const newsletterInput = document.querySelector('#newsletter__input');
   const button = document.querySelector('.newsletter .form .input__button');
 

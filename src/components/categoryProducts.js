@@ -47,9 +47,8 @@ export const categoryProductsLoader = question => {
 
   const getProductsFromAPI = async question => {
     const URL = `${baseURL}products/category/${question}`;
-
     const categoryName = document.querySelector('.all-products__header--name');
-    categoryName.innerText = question;
+    categoryName.innerText = decodeURI(question);
 
     const allProducts = document.querySelector('.all-products__products');
     if (!allProducts) return;
