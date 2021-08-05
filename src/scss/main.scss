@@ -18,7 +18,11 @@
   align-items: center;
   margin: 0;
 
+  &__button,
   &__link {
+    background-color: $bgColor;
+    border: 0;
+    padding: 0;
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 
     &--icon {
@@ -28,45 +32,27 @@
       height: 35px;
     }
 
-    &--input {
-      display: none;
-    }
-
     &:hover {
       transform: scale(115%);
 
+      .userpanel__button--icon,
       .userpanel__link--icon {
         @include equivalentBlackColor;
       }
     }
-
   }
 }
 
 .search {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0 auto;
-  background-color: $greyColor;
-  width: calc(100vw - 17px);
-  height: 100px;
-  z-index: 1;
+  &__dialog {
+    display: flex;
 
-  &__input {
-    display: block;
-    width: 75%;
+    &__input {
+      display: block;
+      width: 75%;
+    }
   }
-
-  &:hover {
-    transform: unset;
-  }
-
 }
-
 
 .baner {
   width: 90%;

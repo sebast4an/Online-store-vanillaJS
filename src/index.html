@@ -11,21 +11,27 @@
       <header class="header">
         <h1 class="header__logo">Logo</h1>
         <nav class="header__userpanel userpanel">
-          <a href="#search" class="userpanel__link search">
-            <input type="text" class="userpanel__link--input search__input" />
-            <img class="userpanel__link--icon" src="assets/search.svg" />
-          </a>
+          <button href="#search" class="userpanel__button search">
+            <img class="userpanel__link--icon" src="/assets/search.svg" />
+          </button>
           <a href="/" class="userpanel__link userpanel">
-            <img class="userpanel__link--icon" src="assets/user.svg" />
+            <img class="userpanel__link--icon" src="/assets/user.svg" />
           </a>
           <a href="/" class="userpanel__link basket">
-            <img class="userpanel__link--icon" src="assets/basket.svg" />
+            <img class="userpanel__link--icon" src="/assets/basket.svg" />
           </a>
         </nav>
       </header>
 
+      <dialog class="search__dialog">
+        <input type="text" class="search__dialog--input" />
+        <button class="search__dialog--button">
+          <img class="search__dialog--icon" src="/assets/basket.svg" />
+        </button>
+      </dialog>
+
       <section class="baner">
-        <img class="baner__img" src="assets/test_baner.jpg" />
+        <img class="baner__img" src="/assets/test_baner.jpg" />
       </section>
 
       <nav class="navigation">
