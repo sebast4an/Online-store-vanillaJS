@@ -1,6 +1,5 @@
 @import 'global-settings';
 
-/*  header  */
 .header {
   display: flex;
   flex-flow: row nowrap;
@@ -19,7 +18,11 @@
   align-items: center;
   margin: 0;
 
+  &__button,
   &__link {
+    background-color: $bgColor;
+    border: 0;
+    padding: 0;
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 
     &--icon {
@@ -32,15 +35,84 @@
     &:hover {
       transform: scale(115%);
 
+      .userpanel__button--icon,
       .userpanel__link--icon {
         @include equivalentBlackColor;
       }
     }
   }
 }
-/* end of header */
 
-/*  baner  */
+.search {
+  &__dialog {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    background-color: darken($blueColor, 25%);
+    border-radius: 8px;
+    border: 1px solid darken($blueColor, 35%);
+    box-shadow: inset 1px 1px 0 0 darken($blueColor, 5%), 0 3px 8px 0 #1f2023;
+    width: 80%;
+    height: 50%;
+    z-index: 2;
+
+    &--input {
+      margin: 20px 0 20px 20px;
+      width: 75%;
+      height: 15%;
+      background-color: darken($blueColor, 35%);
+      border-radius: 8px 0 0 8px;
+      border: 2px solid $greenColor;
+      border-right: 0;
+      color: $whiteColor;
+      padding: 5px 20px;
+
+      &::placeholder {
+        color: darken($greyColor, 50%);
+      }
+
+    }
+
+    &--button {
+      margin: 20px 20px 20px 0;
+      border-radius: 0 8px 8px 0;
+      width: 10%;
+      height: 15%;
+      border: 0;
+      border: 2px solid $greenColor;
+      background-color: darken($blueColor, 35%);
+      
+      img {
+        @include equivalentGreenColor();
+      }
+
+    }
+
+  }
+
+  &__behind {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: calc(100vw - 15px);
+    height: 100vh;
+    background-color: $blackColor;
+    opacity: .8;
+    z-index: 1;
+  }
+
+}
+
 .baner {
   width: 90%;
   margin: 0 auto;
@@ -56,9 +128,7 @@
     margin: 0 auto;
   }
 }
-/* end of baner */
 
-/*  navigation  */
 .navigation {
   background-color: $blueColor;
   height: 65px;
@@ -234,174 +304,11 @@
     }
   }
 }
-/* end of navigation */
 
-/*  !content  */
 .content {
   margin: 0;
 }
 
-/*  recommend  */
-.recommend {
-  @include productsGridInLine(240px);
-  overflow: hidden;
-  max-height: 430px;
-}
-/* end of reccomend */
-
-.occasion {
-  margin: 0 20px;
-  border: 4px solid $blueColor;
-  border-radius: 10px;
-  text-align: center;
-
-  &__product {
-    padding: 20px;
-  }
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0 0 45px 0;
-
-    &--title {
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: #3a3a3a;
-    }
-
-    &--saving {
-      background-color: darken($greyColor, 10%);
-      color: $bgColor;
-      padding: 20px;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-  }
-
-  &__img {
-    max-width: 80px;
-    height: auto;
-  }
-
-  &__details {
-    &--name {
-      font-weight: 500;
-      margin: 0 10%;
-    }
-
-    &--previous-price {
-      text-decoration: line-through;
-      font-size: 1.3rem;
-    }
-
-    &--promo-price {
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: $blueColor;
-    }
-  }
-  &__count {
-    margin: 45px 0 0 0;
-    text-align: right;
-    font-size: 0.8rem;
-
-    &--timer {
-      background-color: darken($greyColor, 10%);
-      color: $bgColor;
-      padding: 4px;
-      border-radius: 4px;
-    }
-  }
-}
-
-/*  comments  */
-.comments {
-  height: 430px;
-  overflow: hidden;
-}
-
-.post {
-  display: grid;
-  grid-template-columns: auto;
-  grid-auto-flow: column;
-  grid-gap: 10px;
-  overflow: auto;
-  padding: 0 20px;
-  cursor: grab;
-
-  &:after {
-    content: '';
-    width: 10px;
-    background-color: transparent;
-    height: 350px;
-  }
-
-  &__element {
-    margin: 25px auto;
-    width: 220px;
-    height: 302px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-self: flex-end;
-    justify-content: flex-start;
-    border-bottom: 1px solid $greyColor;
-  }
-
-  &__email {
-    padding: 0 10px;
-    text-transform: lowercase;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-
-    span {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    &::first-letter {
-      text-transform: uppercase;
-    }
-
-    &--icon {
-      margin: 0 10px 0 0;
-      @include equivalentWhiteColor;
-    }
-  }
-
-  &__body {
-    background-color: $greyColor;
-    border-radius: 10px;
-    padding: 20px;
-    line-height: 150%;
-    text-align: justify;
-    height: 100%;
-    max-height: 214px;
-
-    span {
-      display: -webkit-box;
-      -webkit-line-clamp: 7;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
-}
-/*  end of comments  */
-
-/*  bestsellers  */
-.bestsellers {
-  @include productsGrid(200px, 1fr);
-}
-/* end of bestsellers */
-/* !end of content */
-
-/*  newsletter */
 .newsletter {
   background: $bgColor;
   background: linear-gradient(178deg, $bgColor 50%, $footerColor 50.2%);
@@ -503,9 +410,7 @@
     }
   }
 }
-/* end of newsletter */
 
-/*  footer */
 .footer {
   background-color: $footerColor;
   color: $whiteColor;
@@ -597,8 +502,10 @@
     background-color: $gmapsColor;
   }
 }
-/* end of footer */
+
+/*  Components  */
+@import 'components';
 
 /*  Breakpoint  */
-@import '400px'; /*  menu                               */
-@import '600px'; /*  content, newsletter, footer        */
+@import './breakpoints/400px'; /*  menu                               */
+@import './breakpoints/600px.scss'; /*  content, newsletter, footer        */

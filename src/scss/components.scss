@@ -1,0 +1,162 @@
+/*  home.js  */
+
+.recommend {
+  @include productsGridInLine(240px);
+  overflow: hidden;
+  max-height: 430px;
+}
+
+.occasion {
+  margin: 0 20px;
+  border: 4px solid $blueColor;
+  border-radius: 10px;
+  text-align: center;
+
+  &__product {
+    padding: 20px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 0 45px 0;
+
+    &--title {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #3a3a3a;
+    }
+
+    &--saving {
+      background-color: darken($greyColor, 10%);
+      color: $bgColor;
+      padding: 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__img {
+    max-width: 80px;
+    height: auto;
+  }
+
+  &__details {
+    &--name {
+      font-weight: 500;
+      margin: 0 10%;
+    }
+
+    &--previous-price {
+      text-decoration: line-through;
+      font-size: 1.3rem;
+    }
+
+    &--promo-price {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: $blueColor;
+    }
+  }
+  &__count {
+    margin: 45px 0 0 0;
+    text-align: right;
+    font-size: 0.8rem;
+
+    &--timer {
+      background-color: darken($greyColor, 10%);
+      color: $bgColor;
+      padding: 4px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.comments {
+  height: 430px;
+  overflow: hidden;
+}
+
+.post {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  overflow: auto;
+  padding: 0 20px;
+  cursor: grab;
+
+  &:after {
+    content: '';
+    width: 10px;
+    background-color: transparent;
+    height: 350px;
+  }
+
+  &__element {
+    margin: 25px auto;
+    width: 220px;
+    height: 302px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-self: flex-end;
+    justify-content: flex-start;
+    border-bottom: 1px solid $greyColor;
+  }
+
+  &__email {
+    padding: 0 10px;
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &--icon {
+      margin: 0 10px 0 0;
+      @include equivalentWhiteColor;
+    }
+  }
+
+  &__body {
+    background-color: $greyColor;
+    border-radius: 10px;
+    padding: 20px;
+    line-height: 150%;
+    text-align: justify;
+    height: 100%;
+    max-height: 214px;
+
+    span {
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.bestsellers {
+  @include productsGrid(200px, 1fr);
+}
+/* ---------------- */
+
+/*  allProducts.js  */
+.all-products {
+  @include productsGrid(200px, 1fr);
+}
+
+/*  */

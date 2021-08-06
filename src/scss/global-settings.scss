@@ -7,7 +7,6 @@ $greenColor: #46ce7f;
 $bgColor: #fff;
 $footerColor: #585858;
 $fontFamily: 'Roboto', sans-serif;
-/*  -----------------------------  */
 
 /*  colors for social links hover  */
 $fbColor: #4267b2;
@@ -21,6 +20,7 @@ $gmapsColor: #1ea362;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 /*  Typography and global settings  */
+html,
 *,
 *::before,
 *::after {
@@ -97,6 +97,7 @@ body {
 
   &--title {
     position: relative;
+    text-transform: capitalize;
   }
 
   &--title::after {
@@ -109,9 +110,8 @@ body {
     border-bottom: 1px solid $greyColor;
   }
 }
-/*  end of typography and global settings  */
+/*  ------------------------ */
 
-/*  loading data animate  */
 .loading {
   display: flex;
   flex-flow: column wrap;
@@ -149,4 +149,3 @@ body {
     animation: loading 0.9s linear infinite;
   }
 }
-/*  end of loading data animate   */

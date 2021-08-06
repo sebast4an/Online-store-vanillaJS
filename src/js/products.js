@@ -1,4 +1,4 @@
-import { randomContent, loaderAnimate, addGrabAndScroll } from './globalFunctions';
+import { baseURL, randomContent, loaderAnimate, addGrabAndScroll } from './globalFunctions';
 
 const renderRandomProducts = (data, where, howManyToAdd) => {
   const fragment = document.createDocumentFragment();
@@ -35,7 +35,7 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
 };
 
 const getDataFromStoreAPI = async (question, place, howMany) => {
-  const URL = `https://fakestoreapi.com/${question}`;
+  const URL = baseURL + question;
   const where = document.querySelector(place);
   if (!where) return;
   loaderAnimate(where);
@@ -43,6 +43,7 @@ const getDataFromStoreAPI = async (question, place, howMany) => {
   try {
     const response = await fetch(URL);
     const data = await response.json();
+
     renderRandomProducts(data, where, howMany);
     addGrabAndScroll('.product');
   } catch (error) {

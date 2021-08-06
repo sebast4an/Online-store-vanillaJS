@@ -2,8 +2,9 @@
   .header__bottomline,
   .recommend .product,
   .bestsellers .product,
+  .all-products .product,
   .post {
-    padding: 0 50px;
+    padding: 0 3.5rem;
 
     &:after {
       width: 40px;
@@ -11,13 +12,14 @@
   }
 
   .occasion {
-    margin: 0 50px;
+    margin: 0 3.5rem;
   }
 
   .newsletter {
-    padding: 0 50px;
+    padding: 0 3.5rem;
     &__box {
-      padding: 0 15%;
+      padding: 0 5rem;
+      min-width: 400px;
     }
 
     &__header {
@@ -41,7 +43,7 @@
 
   .footer {
     &__info {
-      padding: 0 50px;
+      padding: 0 3.5rem;
     }
 
     &__gmap {
@@ -50,8 +52,8 @@
   }
 }
 
-@media (min-width: 737px) {
-  .product {
+@media (min-width: 747px) {
+  .bestsellers .product {
     &__element:last-child {
       display: none;
     }
@@ -59,7 +61,7 @@
 
   .newsletter {
     &__box {
-      padding: 0 18%;
+      padding: 0 8.5rem;
     }
 
     &__header {
@@ -77,10 +79,10 @@
 @media (min-width: 850px) {
   .newsletter {
     margin: 100px 0 0 0;
-    padding: 0 14%;
+    padding: 0 7.7rem;
 
     &__box {
-      padding: 0 17%;
+      padding: 0 7rem;
       min-height: 500px;
     }
 
@@ -96,7 +98,7 @@
   .footer {
     &__header,
     &__info {
-      padding: 0 14%;
+      padding: 0 7.7rem;
     }
   }
 }

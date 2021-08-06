@@ -19,9 +19,13 @@ import '../assets/icons/map-pin.svg';
 import '../assets/img/test_baner.jpg';
 
 //js
-import './routing';
 import './navigation';
 import './input';
 import './occasion';
 import './products';
 import './comments';
+import './routing';
+
+//js components
+import '../components/home';
+import '../components/categoryProducts';

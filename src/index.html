@@ -11,20 +11,30 @@
       <header class="header">
         <h1 class="header__logo">Logo</h1>
         <nav class="header__userpanel userpanel">
-          <a href="" class="userpanel__link">
-            <img class="userpanel__link--icon" src="assets/search.svg" />
+          <button href="#search" class="userpanel__button search">
+            <img class="userpanel__link--icon" src="/assets/search.svg" />
+          </button>
+          <a href="/" class="userpanel__link userpanel">
+            <img class="userpanel__link--icon" src="/assets/user.svg" />
           </a>
-          <a href="/" class="userpanel__link">
-            <img class="userpanel__link--icon" src="assets/user.svg" />
-          </a>
-          <a href="/" class="userpanel__link">
-            <img class="userpanel__link--icon" src="assets/basket.svg" />
+          <a href="/" class="userpanel__link basket">
+            <img class="userpanel__link--icon" src="/assets/basket.svg" />
           </a>
         </nav>
       </header>
 
+      <dialog class="search__dialog">
+        <input type="text" class="search__dialog--input" placeholder="What are we looking for?" />
+        <button class="search__dialog--button">
+          <img class="search__dialog--icon" src="/assets/search.svg" />
+        </button>  
+      </dialog>
+      <div class="search__behind">
+
+      </div>
+
       <section class="baner">
-        <img class="baner__img" src="assets/test_baner.jpg" />
+        <img class="baner__img" src="/assets/test_baner.jpg" />
       </section>
 
       <nav class="navigation">
@@ -38,16 +48,16 @@
         </button>
         <ul class="navigation__list list">
           <li class="list__element">
-            <a class="list__element--link" href="/test">Electronics</a>
+            <a class="list__element--link" href="/electronics">Electronics</a>
           </li>
           <li class="list__element">
-            <a class="list__element--link" href="/">Jewelery</a>
+            <a class="list__element--link" href="/jewelery">Jewelery</a>
           </li>
           <li class="list__element">
-            <a class="list__element--link" href="/">Men</a>
+            <a class="list__element--link" href="/men%27s%20clothing">Mens</a>
           </li>
           <li class="list__element">
-            <a class="list__element--link" href="/">Woman</a>
+            <a class="list__element--link" href="/women%27s%20clothing">Womens</a>
           </li>
         </ul>
       </nav>

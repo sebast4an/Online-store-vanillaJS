@@ -1,4 +1,4 @@
-import { loaderAnimate } from './globalFunctions';
+import { baseURL, loaderAnimate } from './globalFunctions';
 
 const renderOccasion = (data, where, discountInPercent) => {
   const occasionProduct = document.createElement('section');
@@ -32,13 +32,14 @@ const renderOccasion = (data, where, discountInPercent) => {
 };
 
 const getOccasionFromAPI = async (productId, discountInPercent) => {
-  const URL = `https://fakestoreapi.com/products/${productId}`;
+  const URL = `${baseURL}products/${productId}`;
 
   try {
     const response = await fetch(URL);
     const data = await response.json();
 
     const containerOccasion = document.querySelector('.occasion');
+    if (!containerOccasion) return;
     loaderAnimate(containerOccasion);
     renderOccasion(data, containerOccasion, discountInPercent);
   } catch (error) {
@@ -46,8 +47,4 @@ const getOccasionFromAPI = async (productId, discountInPercent) => {
   }
 };
 
-const occasionComponent = `
-        <section class="occasion">
-        </section>`;
-
-export { getOccasionFromAPI, occasionComponent };
+export { getOccasionFromAPI };
