@@ -1,6 +1,12 @@
 window.addEventListener('DOMContentLoaded', () => {
   //search input
   const search = document.querySelector('.search');
+  const modal = document.querySelector('.search__dialog');
+
+  search.addEventListener('click', () => {
+    modal.showModal();
+  });
+
   console.log(search);
 
   //newsletter input

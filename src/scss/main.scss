@@ -45,13 +45,72 @@
 
 .search {
   &__dialog {
-    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    background-color: darken($blueColor, 25%);
+    border-radius: 8px;
+    border: 1px solid darken($blueColor, 35%);
+    box-shadow: inset 1px 1px 0 0 darken($blueColor, 5%), 0 3px 8px 0 #1f2023;
+    width: 80%;
+    height: 50%;
+    z-index: 2;
 
-    &__input {
-      display: block;
+    &--input {
+      margin: 20px 0 20px 20px;
       width: 75%;
+      height: 15%;
+      background-color: darken($blueColor, 35%);
+      border-radius: 8px 0 0 8px;
+      border: 2px solid $greenColor;
+      border-right: 0;
+      color: $whiteColor;
+      padding: 5px 20px;
+
+      &::placeholder {
+        color: darken($greyColor, 50%);
+      }
+
     }
+
+    &--button {
+      margin: 20px 20px 20px 0;
+      border-radius: 0 8px 8px 0;
+      width: 10%;
+      height: 15%;
+      border: 0;
+      border: 2px solid $greenColor;
+      background-color: darken($blueColor, 35%);
+      
+      img {
+        @include equivalentGreenColor();
+      }
+
+    }
+
   }
+
+  &__behind {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: calc(100vw - 15px);
+    height: 100vh;
+    background-color: $blackColor;
+    opacity: .8;
+    z-index: 1;
+  }
+
 }
 
 .baner {
