@@ -11,7 +11,7 @@
       <header class="header">
         <h1 class="header__logo">Logo</h1>
         <nav class="header__userpanel userpanel">
-          <button href="#search" class="userpanel__button search">
+          <button href="#search" class="userpanel__button modal-search--open">
             <img class="userpanel__link--icon" src="/assets/search.svg" />
           </button>
           <a href="/" class="userpanel__link userpanel">
@@ -23,15 +23,12 @@
         </nav>
       </header>
 
-      <dialog class="search__dialog">
-        <input type="text" class="search__dialog--input" placeholder="What are we looking for?" />
-        <button class="search__dialog--button">
-          <img class="search__dialog--icon" src="/assets/search.svg" />
+      <dialog class="modal-search">
+        <input type="text" class="modal-search__input" placeholder="What are we looking for?" />
+        <button class="modal-search__button">
+          <img class="modal-search__button--img" src="/assets/search.svg" />
         </button>  
       </dialog>
-      <div class="search__behind">
-
-      </div>
 
       <section class="baner">
         <img class="baner__img" src="/assets/test_baner.jpg" />

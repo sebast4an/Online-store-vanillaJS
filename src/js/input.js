@@ -1,15 +1,16 @@
 window.addEventListener('DOMContentLoaded', () => {
   //search input
-  const search = document.querySelector('.search');
-  const modal = document.querySelector('.search__dialog');
+  const openModalButton = document.querySelector('.modal-search--open');
+  const modal = document.querySelector('.modal-search');
+  const modalBehind = document.createElement('div');
+  modalBehind.classList.add('modal-search__behind');
 
-  search.addEventListener('click', () => {
+  openModalButton.addEventListener('click', () => {
+    modal.after(modalBehind);
     modal.showModal();
   });
 
-  console.log(search);
-
-  //newsletter input
+  //newsletter email input
   const newsletterInput = document.querySelector('#newsletter__input');
   const button = document.querySelector('.newsletter .form .input__button');
 
