@@ -1,11 +1,13 @@
 import { homeComponent, homeLoader } from '../components/home';
 import { categoryProductsComponent, categoryProductsLoader } from '../components/categoryProducts';
+import { userComponent } from '../components/userPanel';
 
 (() => {
   const content = document.querySelector('.content');
 
   const routes = {
     '/': homeComponent,
+    '/user-panel': userComponent,
     '/electronics': categoryProductsComponent,
     '/jewelery': categoryProductsComponent,
     '/men%27s%20clothing': categoryProductsComponent,
@@ -16,6 +18,10 @@ import { categoryProductsComponent, categoryProductsLoader } from '../components
     window.history.pushState({}, pathname, window.location.origin + pathname);
 
     switch (pathname) {
+      case '/user-panel':
+        document.title = `Online Store - Sign up or Sign in`;
+        content.innerHTML = routes[pathname];
+        break;
       case '/electronics':
         document.title = `Online Store - ${pathname.slice(1)}`;
         content.innerHTML = routes[pathname];
