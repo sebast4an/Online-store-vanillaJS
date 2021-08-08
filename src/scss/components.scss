@@ -1,5 +1,4 @@
 /*  home.js  */
-
 .recommend {
   @include productsGridInLine(240px);
   overflow: hidden;
@@ -13,7 +12,7 @@
   text-align: center;
 
   &__product {
-    padding: 20px;
+    padding: 1rem;
   }
 
   &__header {
@@ -31,7 +30,7 @@
     &--saving {
       background-color: darken($greyColor, 10%);
       color: $bgColor;
-      padding: 20px;
+      padding: 1rem;
       border-radius: 8px;
       font-weight: 500;
       font-size: 1.1rem;
@@ -159,4 +158,32 @@
   @include productsGrid(200px, 1fr);
 }
 
-/*  */
+/*  loginPanel.js  */
+.loginpanel {
+  display: flex;
+  flex-flow: column wrap;
+
+  &__form {
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  &__label {
+    margin: 0 0 0.2rem 0;
+  }
+
+  &__input {
+    margin: 0 0 1rem 0;
+    width: 100%;
+    max-width: 450px;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid darken($greyColor, 10%);
+    background-color: $greyColor;
+    
+  }
+
+}

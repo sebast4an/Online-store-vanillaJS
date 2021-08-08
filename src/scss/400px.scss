@@ -20,6 +20,8 @@
       border: 0;
       width: auto;
 
+      &:focus,
+      &:focus-visible,
       &:hover {
         background-color: lighten($blueColor, 20%);
         transform: scale(110%);
