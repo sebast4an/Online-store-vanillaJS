@@ -3,7 +3,7 @@ import { baseURL, loaderAnimate } from '../js/globalFunctions';
 export const categoryProductsComponent = `
   <section class="content__all-products all-products">
     <header class="all-products__header header__bottomline">
-      <h1 class="all-products__header--name header__bottomline--title">Category name</h1>
+      <h2 class="all-products__header--name header__bottomline--title">Category name</h2>
     </header>
 
     <article class="all-products__products product"></article>
@@ -23,9 +23,9 @@ export const categoryProductsLoader = question => {
                     <img class="product__img" src="${image}">
                   </figure>
                   <header class="product__header">
-                    <h2 class="product__name">
+                    <h3 class="product__name">
                       ${title}
-                    </h2>
+                    </h3>
                     <section class="product__price price">
                         <p class="price__price">
                           ${price} $

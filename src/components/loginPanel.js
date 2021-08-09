@@ -2,7 +2,7 @@ export const loginComponent = `
         <section class="loginpanel"> 
             <section class="loginpanel__sing-up">
                 <header class="loginpanel__header header__bottomline">
-                    <h1 class="loginpanel__header--title header__bottomline--title">Sign up</h1>
+                    <h2 class="loginpanel__header--title header__bottomline--title">Sign up</h2>
                 </header>
                 <form class="loginpanel__form">
                     <label class="loginpanel__label" for="loginpanel__sing-up--login">Email:</label>
@@ -13,7 +13,7 @@ export const loginComponent = `
             </section>
             <section class="loginpanel__sing-in">
             <header class="loginpanel__header header__bottomline">
-                <h1 class="loginpanel__header--title header__bottomline--title">Sign in</h1>
+                <h2 class="loginpanel__header--title header__bottomline--title">Sign in</h2>
             </header>
             <form class="loginpanel__form">
                 <label class="loginpanel__label" for="loginpanel__sing-in--login">Email:</label>

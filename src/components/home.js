@@ -5,7 +5,7 @@ import { getOccasionFromAPI } from '../js/occasion';
 const homeComponent = `
 <section class="content__recommend recommend">
     <header class="recommend__header header__bottomline">
-      <h1 class="header__bottomline--title">Recommend</h1>
+      <h2 class="header__bottomline--title">Recommend</h2>
     </header>
 
     <article class="recommend__products product"></article>
@@ -16,7 +16,7 @@ const homeComponent = `
 
   <section class="content__comments comments">
     <header class="comments__header header__bottomline">
-      <h1 class="header__bottomline--title">Comments</h1>
+      <h2 class="header__bottomline--title">Comments</h2>
     </header>
 
     <article class="comments__posts post"></article>
@@ -24,7 +24,7 @@ const homeComponent = `
 
   <section class="content__bestsellers bestsellers">
     <header class="bestsellers__header header__bottomline">
-      <h1 class="header__bottomline--title">Bestsellers</h1>
+      <h2 class="header__bottomline--title">Bestsellers</h2>
     </header>
 
     <article class="bestsellers__products product"></article>
