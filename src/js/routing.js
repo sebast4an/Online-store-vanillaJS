@@ -2,23 +2,31 @@ import { homeComponent, homeLoader } from '../components/home';
 import { categoryProductsComponent, categoryProductsLoader } from '../components/categoryProducts';
 import { loginComponent, loginLoader } from '../components/loginPanel';
 import { basketComponent, basketLoader } from '../components/basket';
+import { productPageComponent, productPageLoader } from '../components/productPage';
 
-(() => {
-  const content = document.querySelector('.content');
+const content = document.querySelector('.content');
 
-  const routes = {
-    '/': homeComponent,
-    '/basket': basketComponent,
-    '/login-panel': loginComponent,
-    '/electronics': categoryProductsComponent,
-    '/jewelery': categoryProductsComponent,
-    '/men%27s%20clothing': categoryProductsComponent,
-    '/women%27s%20clothing': categoryProductsComponent,
-  };
+const routes = {
+  '/': homeComponent,
+  '/basket': basketComponent,
+  '/login-panel': loginComponent,
+  '/electronics': categoryProductsComponent,
+  '/jewelery': categoryProductsComponent,
+  '/men%27s%20clothing': categoryProductsComponent,
+  '/women%27s%20clothing': categoryProductsComponent,
+  '/product-id': productPageComponent,
+};
 
-  const loaderComponents = pathname => {
-    window.history.pushState({}, pathname, window.location.origin + pathname);
+const loaderComponents = pathname => {
+  window.history.pushState({}, pathname, window.location.origin + pathname);
+  console.log(pathname.slice(12));
 
+  if (pathname.slice(1, 11) == 'product-id') {
+    document.title = `Online Store - ${pathname.slice(1)}`;
+    content.innerHTML = routes['/product-id'];
+    productPageLoader(pathname.slice(12));
+    console.log(pathname.slice(12));
+  } else {
     switch (pathname) {
       case '/login-panel':
         document.title = `Online Store - Sign up or Sign in`;
@@ -55,13 +63,11 @@ import { basketComponent, basketLoader } from '../components/basket';
         content.innerHTML = routes['/'];
         homeLoader();
     }
-  };
+  }
+  disableRefreshForAllLinks();
+};
 
-  //first website loading
-  content.innerHTML = routes[window.location.pathname];
-  loaderComponents(window.location.pathname);
-
-  //this loop gets all link and add routing
+const disableRefreshForAllLinks = () => {
   const allLinks = document.querySelectorAll('a');
   allLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -74,6 +80,13 @@ import { basketComponent, basketLoader } from '../components/basket';
       }
     });
   });
+};
+
+(() => {
+  //first website loading
+  content.innerHTML = routes[window.location.pathname];
+  loaderComponents(window.location.pathname);
+  disableRefreshForAllLinks();
 
   window.addEventListener('popstate', () => {
     loaderComponents(window.location.pathname);

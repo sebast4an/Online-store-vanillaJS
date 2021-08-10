@@ -22,9 +22,9 @@ import '../assets/img/test_baner.jpg';
 import './navigation';
 import './input';
 import './occasion';
+import './routing';
 import './products';
 import './comments';
-import './routing';
 
 //js components
 import '../components/home';

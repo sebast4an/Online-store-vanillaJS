@@ -77,11 +77,16 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: $blackColor;
       padding: 0 10px;
       margin: 12px 4px;
       text-align: left;
       height: 27%;
+
+      &--link {
+        color: $blackColor;
+        cursor: pointer;
+      }
+
     }
   }
 

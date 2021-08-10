@@ -14,7 +14,9 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                   </figure>
                   <header class="product__header">
                     <h3 class="product__name">
-                      ${data[key]['title']}
+                        <a href="/product-id-${data[key]['id']}" class="product__name--link">
+                         ${data[key]['title']}
+                        </a>
                     </h3>
                     <section class="product__price price">
                         <p class="price__price">
