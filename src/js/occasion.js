@@ -5,8 +5,7 @@ const renderOccasion = (data, where, discountInPercent) => {
   occasionProduct.classList.add('occasion__product');
   occasionProduct.innerHTML = `
             <header class="occasion__header">
-                <h2 class="occasion__header--title">Occasion of the day</h2>
-                <a class="occasion__header--title-link" href="/test">TEST</a>
+                <h2 class="occasion__header--title ">Occasion of the day</h2>
             </header>
             <img class="occasion__img" src="${data.image}">
             <section class="occasion__details">

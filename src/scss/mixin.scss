@@ -24,6 +24,15 @@
   text-transform: uppercase;
   color: $blueColor;
   margin: 0;
+
+  a {
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 41px;
+    text-transform: uppercase;
+    color: $blueColor;
+    margin: 0;
+  }
 }
 
 @mixin productsGrid($min, $max) {
@@ -86,7 +95,6 @@
         color: $blackColor;
         cursor: pointer;
       }
-
     }
   }
 
@@ -167,4 +175,3 @@
     }
   }
 }
-
