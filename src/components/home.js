@@ -34,7 +34,7 @@ const homeLoader = () => {
   getDataFromStoreAPI('products', '.recommend__products', 10);
   getOccasionFromAPI(14, 2);
   getDataFromStoreAPI('products', '.bestsellers__products', 4);
-  getNewsFromNewsAPI(5);
+  getNewsFromNewsAPI(6);
 };
 
 export { homeComponent, homeLoader };
