@@ -24,7 +24,7 @@ import './input';
 import './occasion';
 import './routing';
 import './products';
-import './comments';
+import './news';
 
 //js components
 import '../components/home';

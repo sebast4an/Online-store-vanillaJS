@@ -100,7 +100,11 @@ body {
 
   &--title {
     position: relative;
-    text-transform: capitalize;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    
   }
 
   &--title::after {
