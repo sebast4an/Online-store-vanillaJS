@@ -30,10 +30,10 @@ export const categoryProductsLoader = question => {
                         <p class="price__price">
                           ${price} $
                         </p>
-                        <button type="button" class="price__button">
+                        <a role="button" href="/product-id-${id}" class="price__button">
                             <span>Add</span> 
                             <img class="price__button--img" src="assets/add-basket.svg">
-                        </button>
+                        </a>
                     </section>
                   </header>
       `;

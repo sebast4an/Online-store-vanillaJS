@@ -132,6 +132,43 @@
   @include productsGrid(200px, 1fr);
 }
 
+/*  productPage.js  */
+.selected-product {
+  &__header {
+    margin: 35px 0 0 0;
+  }
+  &__card {
+    padding: 0 3.5rem;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+
+  &__info {
+    padding: 0;
+    margin: 0.5rem 0 3rem 1.1rem;
+
+    &--element {
+      color: lighten($blackColor, 15%);
+    }
+  }
+
+  &__image {
+    width: 45%;
+    height: auto;
+    align-self: center;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    color: $blueColor;
+    font-weight: 500;
+  }
+}
+
 /*  loginPanel.js  */
 .loginpanel {
   display: flex;

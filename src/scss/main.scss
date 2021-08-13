@@ -104,7 +104,6 @@ body {
     &::first-letter {
       text-transform: uppercase;
     }
-    
   }
 
   &--title::after {
@@ -736,8 +735,8 @@ body {
 @import 'components';
 
 /*  Breakpoints  */
-@import '580px';    /*    580px  -  600px    */
-@import '747px';    /*    747px  -  850px    */
-@import '900px';    /*    900px  -  978px    */
-@import '1070px';   /*    1070px -  1482px   */
-@import '1050px';   /*    1500px -  1724px   */
+@import '580px'; /*    580px  -  600px    */
+@import '747px'; /*    747px  -  850px    */
+@import '900px'; /*    900px  -  978px    */
+@import '1070px'; /*    1070px -  1482px   */
+@import '1500px'; /*    1500px -  1724px   */

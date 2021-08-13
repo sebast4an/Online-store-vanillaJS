@@ -1,63 +1,60 @@
 import { baseURL, loaderAnimate } from '../js/globalFunctions';
 
 export const productPageComponent = `
-  <section class="content__all-products all-products">
-    <header class="all-products__header header__bottomline">
-      <h2 class="all-products__header--name header__bottomline--title">Loading..</h2>
+  <section class="content__selected-product selected-product">
+    <header class="selected-product__header header__bottomline">
+      <h2 class="selected-product--name header__bottomline--title">Loading..</h2>
     </header>
 
-    <article class="all-products__products product"></article>
+    <div class="selected-product__card">
+    </div>
+
   </section>
 `;
 
 export const productPageLoader = id => {
-  const renderProducts = (data, where) => {
-    const fragment = document.createDocumentFragment();
-
-    const appendProducts = ({ id, title, image, price }) => {
-      const categoryName = document.querySelector('.all-products__header--name');
-      categoryName.innerText = title;
-
-      const product = document.createElement('section');
-      product.classList.add(`product__element`);
-      product.classList.add(`product__element-id${id}`);
-      product.innerHTML = `
-                  <figure class="product__border">
-                    <img class="product__img" src="${image}">
-                  </figure>
-                  <header class="product__header">
-                    <h3 class="product__name">
-                      ${title}
-                    </h3>
-                    <section class="product__price price">
-                        <p class="price__price">
-                          ${price} $
-                        </p>
-                        <button type="button" class="price__button">
-                            <span>Add</span> 
-                            <img class="price__button--img" src="assets/add-basket.svg">
-                        </button>
-                    </section>
-                  </header>
-      `;
-      fragment.appendChild(product);
-    };
-    if (!data) return;
-    else data.forEach(value => appendProducts(value));
+  const renderProducts = ({ category, description, id, image, price, title }, where) => {
+    const productTitle = document.querySelector('.selected-product--name');
+    productTitle.innerText = title;
+    const product = document.createElement('div');
+    product.classList.add('product-card');
+    product.innerHTML = `
+                <ul class="product-card__info">
+                  <li class="product-card__list">
+                    <span class="product-card__list--title">Product ID:</span>
+                    <span class="product-card__list--value">${id}</span>
+                   </li>
+                  <li class="product-card__info--element">
+                    <span class="product-card__list--title">Category:</span>
+                    <span class="product-card__list--value">${category}</span>
+                  </li>
+                </ul>
+                <img class="product-card__image" src="${image}">
+                <h3 class="product-card__price">Price: ${price} $</h3>
+                <section class="product-card__specification">
+                  <header class="product-card__specification--header">Product description</header>
+                  <p class="product-card__specification--description">${description}</p>
+                </section>
+                <button class="product-card__add-to-basket">
+                  <span>Add to basket</span>
+                  <img class="product-card__add-to-basket--img" src="assets/add-basket.svg">
+                </button>
+              `;
     where.innerHTML = '';
-    where.appendChild(fragment);
+    where.append(product);
   };
 
   const getProductsFromAPI = async id => {
     const URL = `${baseURL}products/${id}`;
 
-    const allProducts = document.querySelector('.all-products__products');
+    const allProducts = document.querySelector('.selected-product__card');
     if (!allProducts) return;
     loaderAnimate(allProducts);
 
     try {
       const response = await fetch(URL);
       const data = await response.json();
+      console.log(data);
       renderProducts(data, allProducts);
     } catch (error) {
       console.log(error);

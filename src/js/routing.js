@@ -19,13 +19,11 @@ const routes = {
 
 const loaderComponents = pathname => {
   window.history.pushState({}, pathname, window.location.origin + pathname);
-  console.log(pathname.slice(12));
 
   if (pathname.slice(1, 11) == 'product-id') {
     document.title = `Online Store - ${pathname.slice(1)}`;
     content.innerHTML = routes['/product-id'];
     productPageLoader(pathname.slice(12));
-    console.log(pathname.slice(12));
   } else {
     switch (pathname) {
       case '/login-panel':

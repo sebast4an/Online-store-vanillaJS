@@ -1,129 +1,126 @@
+@media (min-width: 900px) {
+  .header__bottomline,
+  .recommend .product,
+  .bestsellers .product,
+  .all-products .product,
+  .post,
+  .loginpanel__form,
+  .summary {
+    padding: 0;
+  }
 
-  @media (min-width: 900px) {
-    .header__bottomline,
-    .recommend .product,
-    .bestsellers .product,
-    .all-products .product,
-    .post,
-    .loginpanel__form,
-    .summary {
-      padding: 0;
-    }
-  
-    .content {
-      display: grid;
-      grid-template-rows: auto;
-      grid-template-columns: 36% 64%;
-      margin: 0 4rem;
-    }
-  
-    .recommend {
-      grid-area: 1 / 2 / 2 / 3;
-      position: relative;
-      margin: 0 2rem;
-      max-height: unset;
-  
-      .product {
-        padding: 0 0 2rem 0;
-        @include productsGrid(150px, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        overflow-x: hidden;
-        grid-auto-flow: column;
-        cursor: unset;
-  
-        &:after {
-          display: none;
-        }
-  
-        &__element:nth-child(n + 5) {
-          display: none;
-        }
-      }
-    }
-  
-    .occasion {
-      grid-area: 1 / 1 / 2 / 2;
-      margin: 0;
-  
-      &__img {
-        max-width: 70%;
-      }
-  
-      &__count {
-        align-self: center;
-        font-size: 1rem;
-        text-align: center;
-  
-        &--title {
-          display: block;
-          margin: 1rem;
-        }
-      }
-  
-      &__timer {
-        display: block;
-        font-size: 2rem;
-      }
-    }
-  
-    .news {
-      grid-area: 2 / 1 / 3 / 3;
-      height: auto;
-    }
-  
-    .post {
-      grid-template-rows: auto;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      grid-auto-flow: unset;
-      grid-gap: 10px;
-      padding: 0;
-      cursor: default;
-  
-      &::after {
+  .content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 36% 64%;
+    margin: 0 4rem;
+  }
+
+  .recommend {
+    grid-area: 1 / 2 / 2 / 3;
+    position: relative;
+    margin: 0 2rem;
+    max-height: unset;
+
+    .product {
+      padding: 0 0 2rem 0;
+      @include productsGrid(150px, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      overflow-x: hidden;
+      grid-auto-flow: column;
+      cursor: unset;
+
+      &:after {
         display: none;
       }
-  
-      &__element {
-        width: unset;
-      }
-    }
-  
-    .bestsellers {
-      grid-area: 3 / 1 / 4 / 3;
-    }
-  
-    .all-products,
-    .loginpanel,
-    .summary {
-      grid-area: 1 / 1 / 2 / 3;
-    }
-  
-    .footer {
-      &__info {
-        padding: 0;
-      }
-    }
-  
-    .footer {
-      padding: 2.5rem 0 0 0;
-      &__info {
-        margin: 0 8rem 2rem 8rem;
-      }
-  
-      &__header {
-        margin: 0 8rem;
+
+      &__element:nth-child(n + 5) {
+        display: none;
       }
     }
   }
-  
-  @media (min-width: 978px) {
-    .bestsellers {
-      .product {
-        &__element:last-child {
-          display: grid;
-        }
+
+  .occasion {
+    grid-area: 1 / 1 / 2 / 2;
+    margin: 0;
+
+    &__img {
+      max-width: 70%;
+    }
+
+    &__count {
+      align-self: center;
+      font-size: 1rem;
+      text-align: center;
+
+      &--title {
+        display: block;
+        margin: 1rem;
+      }
+    }
+
+    &__timer {
+      display: block;
+      font-size: 2rem;
+    }
+  }
+
+  .news {
+    grid-area: 2 / 1 / 3 / 3;
+    height: auto;
+  }
+
+  .post {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-flow: unset;
+    grid-gap: 10px;
+    padding: 0;
+    cursor: default;
+
+    &::after {
+      display: none;
+    }
+
+    &__element {
+      width: unset;
+    }
+  }
+
+  .bestsellers {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  .all-products,
+  .loginpanel,
+  .summary {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .footer {
+    &__info {
+      padding: 0;
+    }
+  }
+
+  .footer {
+    padding: 2.5rem 0 0 0;
+    &__info {
+      margin: 0 8rem 2rem 8rem;
+    }
+
+    &__header {
+      margin: 0 8rem;
+    }
+  }
+}
+
+@media (min-width: 978px) {
+  .bestsellers {
+    .product {
+      &__element:last-child {
+        display: grid;
       }
     }
   }
-  
-  
+}
