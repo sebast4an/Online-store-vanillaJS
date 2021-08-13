@@ -3,8 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
   }
 }
-
-@media (min-width: 1200px) {
+  @media (min-width: 1200px) {
   .content {
     grid-template-columns: 30% 70%;
     margin: 0 7.6rem;
@@ -49,7 +48,10 @@
   }
 
   .newsletter {
-    padding: 0 11rem;
+    padding: 0;
+    background: none;
+    background-color: $blueColor;
+    min-height: 600px;
 
     &__box {
       padding: 0 8rem;
