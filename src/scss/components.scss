@@ -149,10 +149,19 @@
 
   &__info {
     padding: 0;
-    margin: 0.5rem 0 3rem 1.1rem;
+    margin: 0.5rem 0 3rem 0;
+  }
 
-    &--element {
-      color: lighten($blackColor, 15%);
+  &__list {
+    list-style: none;
+    color: $blackColor;
+
+    &--title {
+      color: lighten($blackColor, 20%);
+    }
+
+    &--value {
+      color: $blackColor;
     }
   }
 
@@ -166,6 +175,24 @@
     font-size: 1.2rem;
     color: $blueColor;
     font-weight: 500;
+  }
+
+  &__description {
+    &--header {
+      font-weight: 500;
+    }
+  }
+
+  &__description-list {
+    color: $blackColor;
+
+    &--item {
+      color: $blackColor;
+    }
+  }
+
+  &__add-to-basket {
+    @include addToBasketButton();
   }
 }
 
