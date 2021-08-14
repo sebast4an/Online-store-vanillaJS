@@ -86,3 +86,11 @@
     }
   }
 }
+
+@media (min-width: 700px) {
+  .newsletter {
+    &__box {
+      background-position: left 210px bottom -40px;
+    }
+  }
+}

@@ -99,6 +99,16 @@
     grid-area: 1 / 1 / 2 / 3;
   }
 
+  .product-card__image {
+    width: 20%;
+  }
+
+  .newsletter {
+    &__box {
+      background-position: right bottom -40px;
+    }
+  }
+
   .footer {
     &__info {
       padding: 0;

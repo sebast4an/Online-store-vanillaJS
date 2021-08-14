@@ -29,3 +29,6 @@ import './news';
 //js components
 import '../components/home';
 import '../components/categoryProducts';
+import '../components/loginPanel';
+import '../components/productPage';
+import '../components/basket';
