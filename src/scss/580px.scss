@@ -1,0 +1,96 @@
+@media (min-width: 580px) {
+  /*  navigation */
+  .hamburger {
+    display: none;
+  }
+
+  .list {
+    position: static;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__element {
+      padding: 17px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+      border: 0;
+      width: auto;
+
+      &:focus,
+      &:focus-visible,
+      &:hover {
+        background-color: lighten($blueColor, 20%);
+        transform: scale(110%);
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .header__bottomline,
+  .recommend .product,
+  .bestsellers .product,
+  .all-products .product,
+  .post,
+  .loginpanel__form,
+  .summary,
+  .selected-product__card {
+    padding: 0 3.5rem;
+
+    &:after {
+      width: 40px;
+    }
+  }
+
+  .occasion {
+    margin: 0 3.5rem;
+  }
+
+  .newsletter {
+    padding: 0 3.5rem;
+    &__box {
+      padding: 0 5rem;
+      min-width: 400px;
+    }
+
+    &__header {
+      &--title {
+        font-size: 2.5rem;
+      }
+
+      &--subtitle {
+        font-size: 1.2rem;
+      }
+    }
+
+    &__description {
+      font-size: 0.9rem;
+    }
+  }
+
+  .form__label {
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    &__info {
+      padding: 0 3.5rem;
+    }
+
+    &__gmap {
+      min-height: 450px;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .newsletter {
+    &__box {
+      background-position: left 210px bottom -40px;
+    }
+  }
+}

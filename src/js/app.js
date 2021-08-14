@@ -22,10 +22,13 @@ import '../assets/img/test_baner.jpg';
 import './navigation';
 import './input';
 import './occasion';
-import './products';
-import './comments';
 import './routing';
+import './products';
+import './news';
 
 //js components
 import '../components/home';
 import '../components/categoryProducts';
+import '../components/loginPanel';
+import '../components/productPage';
+import '../components/basket';

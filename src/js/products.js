@@ -13,17 +13,17 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                     <img class="product__img" src="${data[key]['image']}">
                   </figure>
                   <header class="product__header">
-                    <h2 class="product__name">
-                      ${data[key]['title']}
-                    </h2>
+                    <h3 class="product__name">            
+                         ${data[key]['title']}
+                    </h3>
                     <section class="product__price price">
                         <p class="price__price">
                           ${data[key]['price']} $
                         </p>
-                        <button type="button" class="price__button">
+                        <a role="button" href="/product-id-${data[key]['id']}" class="price__button">
                             <span>Add</span> 
                             <img class="price__button--img" src="assets/add-basket.svg">
-                        </button>
+                        </a>
                     </section>
                   </header>
         `;

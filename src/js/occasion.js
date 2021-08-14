@@ -6,7 +6,6 @@ const renderOccasion = (data, where, discountInPercent) => {
   occasionProduct.innerHTML = `
             <header class="occasion__header">
                 <h2 class="occasion__header--title">Occasion of the day</h2>
-                <a class="occasion__header--title-link" href="/test">TEST</a>
             </header>
             <img class="occasion__img" src="${data.image}">
             <section class="occasion__details">
@@ -21,10 +20,12 @@ const renderOccasion = (data, where, discountInPercent) => {
                 </p>
             </section>
             <section class="occasion__count">
-              <span>Next occasion in:</span> 
-              <span class="occasion__count--timer">12</span> :
-              <span class="occasion__count--timer">12</span> :
-              <span class="occasion__count--timer">12</span>
+              <span class="occasion__count--title">Next occasion in:</span>
+              <div class="occasion__timer"> 
+                <span class="occasion__timer--element">12</span> :
+                <span class="occasion__timer--element">12</span> :
+                <span class="occasion__timer--element">12</span>
+              </div>
             </section>
             `;
   where.innerHTML = '';

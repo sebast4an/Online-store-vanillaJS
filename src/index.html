@@ -9,29 +9,29 @@
   <body>
     <section class="container">
       <header class="header">
-        <h1 class="header__logo">Logo</h1>
+        <h1 class="header__logo">
+          <a href="/">Logo</a>
+        </h1>
         <nav class="header__userpanel userpanel">
-          <button href="#search" class="userpanel__button search">
+          <button href="#search" class="userpanel__button modal-search--open">
             <img class="userpanel__link--icon" src="/assets/search.svg" />
           </button>
-          <a href="/" class="userpanel__link userpanel">
+          <a href="/login-panel" class="userpanel__link userpanel">
             <img class="userpanel__link--icon" src="/assets/user.svg" />
           </a>
-          <a href="/" class="userpanel__link basket">
+          <a href="/basket" class="userpanel__link basket">
             <img class="userpanel__link--icon" src="/assets/basket.svg" />
           </a>
         </nav>
       </header>
 
-      <dialog class="search__dialog">
-        <input type="text" class="search__dialog--input" placeholder="What are we looking for?" />
-        <button class="search__dialog--button">
-          <img class="search__dialog--icon" src="/assets/search.svg" />
-        </button>  
+      <dialog class="modal-search">
+        <input type="text" class="modal-search__input" placeholder="What are we looking for?" />
+        <button class="modal-search__button-search">
+          <img src="/assets/search.svg" />
+        </button>
+        <button class="modal-search--close">X</button>
       </dialog>
-      <div class="search__behind">
-
-      </div>
 
       <section class="baner">
         <img class="baner__img" src="/assets/test_baner.jpg" />
@@ -47,6 +47,9 @@
           <span class="hamburger__title"> Menu </span>
         </button>
         <ul class="navigation__list list">
+          <li class="list__element">
+            <a class="list__element--link" href="/">Home</a>
+          </li>
           <li class="list__element">
             <a class="list__element--link" href="/electronics">Electronics</a>
           </li>
@@ -71,9 +74,14 @@
             <p class="newsletter__header--subtitle">by subscribing to the newsletter</p>
           </header>
           <form class="newsletter__form form">
-            <label class="form__label" for="input">Mail:</label>
+            <label class="form__label" for="form__input">Mail:</label>
             <div class="form__input input">
-              <input class="input__input" id="newsletter__input" type="email" />
+              <input
+                class="input__input"
+                id="newsletter__input"
+                type="email"
+                placeholder="example@examplemail.com"
+              />
               <button class="input__button" type="submit">OK!</button>
             </div>
           </form>
@@ -87,7 +95,7 @@
 
       <footer class="footer">
         <header class="footer__header header__bottomline">
-          <h1 class="footer__header--title header__bottomline--title">Contact</h1>
+          <h2 class="footer__header--title header__bottomline--title">Contact</h2>
         </header>
         <section class="footer__info">
           <div class="footer__box">

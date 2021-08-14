@@ -1,5 +1,163 @@
-@import 'global-settings';
+/*  Variables  */
+$blackColor: #3a3a3a;
+$blueColor: #303f9f;
+$whiteColor: #e8eaf6;
+$greyColor: #d8d8d8;
+$lightGreyColor: #f0f0f0;
+$greenColor: #46ce7f;
+$redColor: #c0392b;
+$bgColor: #fff;
+$footerColor: #585858;
+$fontFamily: 'Roboto', sans-serif;
 
+/*  colors for social links hover  */
+$fbColor: #4267b2;
+$instaColor: #8a3ab9;
+$twColor: #00acee;
+$gmapsColor: #1ea362;
+/*  -----------------------------  */
+
+@import 'normalize.css';
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/*  Typography and global settings  */
+*,
+*::before,
+*::after,
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+button,
+input {
+  font-family: $fontFamily;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.1em;
+  font-weight: 400;
+  color: $blackColor;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.1em;
+  font-weight: 400;
+  color: $blackColor;
+}
+
+h3 {
+  color: $blackColor;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+a,
+li {
+  color: $whiteColor;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1em;
+  text-decoration: none;
+}
+
+p {
+  color: $blackColor;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+label {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.1em;
+  text-transform: capitalize;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: $bgColor;
+}
+
+/* for all icons */
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+/* for all headers  */
+.header__bottomline {
+  margin: 35px 0;
+  padding: 0 1rem;
+
+  &--title {
+    position: relative;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &--title::after {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid $greyColor;
+  }
+}
+
+/*  for loading animate function  */
+.loading {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__animate {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  &__animate::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid $blueColor;
+    border-color: $blueColor transparent $blueColor transparent;
+    animation: loading 0.9s linear infinite;
+  }
+}
+/*  End od typography and global settings  */
+
+/*  Website  */
 .header {
   display: flex;
   flex-flow: row nowrap;
@@ -24,6 +182,7 @@
     border: 0;
     padding: 0;
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    cursor: pointer;
 
     &--icon {
       margin: 2px 6px;
@@ -32,7 +191,8 @@
       height: 35px;
     }
 
-    &:hover {
+    &:focus,
+    &:focus-visible &:hover {
       transform: scale(115%);
 
       .userpanel__button--icon,
@@ -43,74 +203,130 @@
   }
 }
 
-.search {
-  &__dialog {
+.modal-search {
+  &[open] {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+    margin: 20% auto 0 auto;
+    display: flex;
     align-content: center;
     justify-content: center;
     align-items: flex-start;
     padding: 0;
-    background-color: darken($blueColor, 25%);
-    border-radius: 8px;
-    border: 1px solid darken($blueColor, 35%);
-    box-shadow: inset 1px 1px 0 0 darken($blueColor, 5%), 0 3px 8px 0 #1f2023;
+    background-color: darken($blackColor, 10%);
+    border: 1px solid darken($blackColor, 10%);
+    border-radius: 4px;
     width: 80%;
-    height: 50%;
-    z-index: 2;
+    max-width: 800px;
+    height: 8%;
+    z-index: 3;
+    box-shadow: 0 2.8px 2.2px rgba(24, 24, 24, 0.04), 0 6.7px 5.3px rgba(24, 24, 24, 0.08),
+      0 12.5px 10px rgba(24, 24, 24, 0.06), 0 22.3px 17.9px rgba(24, 24, 24, 0.02),
+      0 41.8px 33.4px rgba(24, 24, 24, 0.06), 0 100px 80px rgba(24, 24, 24, 0.1);
+  }
 
-    &--input {
-      margin: 20px 0 20px 20px;
-      width: 75%;
-      height: 15%;
-      background-color: darken($blueColor, 35%);
-      border-radius: 8px 0 0 8px;
-      border: 2px solid $greenColor;
-      border-right: 0;
-      color: $whiteColor;
-      padding: 5px 20px;
+  &__input {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    color: $whiteColor;
+    padding: 5px 20% 5px 20px;
+    border: 2px solid darken($blackColor, 10%);
+    background-color: darken($blackColor, 10%);
+    transition: border 0.4s ease;
+
+    &::placeholder {
+      color: $greyColor;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover::placeholder {
+      transform: translateX(-100%);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border: 2px solid darken($greyColor, 20%);
 
       &::placeholder {
-        color: darken($greyColor, 50%);
+        transform: translateX(-100%);
       }
+    }
+  }
 
+  &__button-search {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 2px;
+    margin: auto 0;
+    width: 19%;
+    height: 95%;
+    border-radius: 5px;
+    border: 2px solid darken($blackColor, 10%);
+    background-color: darken($blackColor, 10%);
+    transition: filter 0.4s ease, border 0.4s ease;
+
+    & img {
+      @include equivalentWhiteColor();
     }
 
-    &--button {
-      margin: 20px 20px 20px 0;
-      border-radius: 0 8px 8px 0;
-      width: 10%;
-      height: 15%;
-      border: 0;
-      border: 2px solid $greenColor;
-      background-color: darken($blueColor, 35%);
-      
+    &:focus,
+    &:focus-visible {
+      border: 2px solid darken($greyColor, 20%);
+    }
+
+    &:hover {
       img {
-        @include equivalentGreenColor();
+        @include equivalentBlueColor();
       }
-
     }
-
   }
 
   &__behind {
-    display: none;
     position: absolute;
     top: 0;
     left: 0;
     margin: 0;
     padding: 0;
-    width: calc(100vw - 15px);
+    width: calc(100vw - 17px);
     height: 100vh;
     background-color: $blackColor;
-    opacity: .8;
-    z-index: 1;
+    z-index: 2;
+    opacity: 0.8;
   }
 
+  &--close {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 5%;
+    margin: 5% 0;
+    width: 50px;
+    height: 50px;
+    color: $redColor;
+    background-color: darken($blackColor, 10%);
+    border: 2px solid darken($blackColor, 10%);
+    border-radius: 10px;
+    font-size: 2rem;
+    font-weight: 900;
+    box-shadow: 0 2.8px 2.2px rgba(24, 24, 24, 0.04), 0 6.7px 5.3px rgba(24, 24, 24, 0.08),
+      0 12.5px 10px rgba(24, 24, 24, 0.06), 0 22.3px 17.9px rgba(24, 24, 24, 0.02),
+      0 41.8px 33.4px rgba(24, 24, 24, 0.06), 0 100px 80px rgba(24, 24, 24, 0.1);
+    transition: background-color 0.4s ease, border 0.4s ease;
+
+    &:hover {
+      border: 2px solid $blackColor;
+      background-color: $blackColor;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border: 2px solid $greyColor;
+    }
+  }
 }
 
 .baner {
@@ -317,13 +533,13 @@
 
   &__box {
     padding: 0 10%;
-    background-color: $blueColor;
     border-radius: 10px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
-    min-height: 350px;
+    min-height: 400px;
+    background: darken($blueColor, 10%) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23c0392b' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23932c21' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23be2034' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23921928' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23ba174f' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%2391123d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23b60e6c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%238e0b55' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23b0078b' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%238b056e' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E") no-repeat right bottom -10px;
   }
 
   &__header {
@@ -403,6 +619,8 @@
       opacity: 1;
     }
 
+    &:focus,
+    &:focus-visible,
     &:hover {
       background-color: $greenColor;
       color: darken($greenColor, 30%);
@@ -482,30 +700,43 @@
     transition: transform 0.3s ease-in-out;
   }
 
+  &:focus .box__icon,
+  &:focus-visible .box__icon,
   &:hover .box__icon {
     transform: scale(110%);
   }
 
+  &.fb:focus,
+  &.fb:focus-visible,
   &.fb:hover {
     background-color: $fbColor;
   }
 
+  &.insta:focus,
+  &.insta:focus-visible,
   &.insta:hover {
     background-color: $instaColor;
   }
 
+  &.tw:focus,
+  &.tw:focus-visible,
   &.tw:hover {
     background-color: $twColor;
   }
 
+  &.gmaps:focus,
+  &.gmaps:focus-visible,
   &.gmaps:hover {
     background-color: $gmapsColor;
   }
 }
 
-/*  Components  */
+/*  Style for components  */
 @import 'components';
 
-/*  Breakpoint  */
-@import './breakpoints/400px'; /*  menu                               */
-@import './breakpoints/600px.scss'; /*  content, newsletter, footer        */
+/*  Breakpoints  */
+@import '580px'; /*    580px  -  600px    */
+@import '747px'; /*    747px  -  850px    */
+@import '900px'; /*    900px  -  978px    */
+@import '1070px'; /*    1070px -  1482px   */
+@import '1500px'; /*    1500px -  1724px   */

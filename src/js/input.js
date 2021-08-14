@@ -1,15 +1,29 @@
 window.addEventListener('DOMContentLoaded', () => {
   //search input
-  const search = document.querySelector('.search');
-  const modal = document.querySelector('.search__dialog');
+  const openModalButton = document.querySelector('.modal-search--open');
+  const modal = document.querySelector('.modal-search');
+  const modalCloseButton = document.querySelector('.modal-search--close');
+  const modalBehind = document.createElement('div');
+  modalBehind.classList.add('modal-search__behind');
 
-  search.addEventListener('click', () => {
+  openModalButton.addEventListener('click', () => {
+    modal.after(modalBehind);
+    modalCloseButton.style.display = 'block';
     modal.showModal();
   });
 
-  console.log(search);
+  modalCloseButton.addEventListener('click', () => {
+    modal.close();
+  });
 
-  //newsletter input
+  //I adding event listener for close because
+  //user posibli close modal by type esc button on keyboard
+  modal.addEventListener('close', () => {
+    modalCloseButton.style.display = '';
+    modalBehind.remove();
+  });
+
+  //newsletter email input
   const newsletterInput = document.querySelector('#newsletter__input');
   const button = document.querySelector('.newsletter .form .input__button');
 
