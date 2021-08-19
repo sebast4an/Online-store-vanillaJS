@@ -2,10 +2,10 @@
 It is e-commerce project build in vanilla JavaScript (pure JavaScript). Data is from REST API ([FakeStoreAPI](https://fakestoreapi.com)). Compliant with the rules DRY, mobile first and BEM methodology. Currently I work in commercial project so, this project is **temporary** stopped.
 
 ## Table of contents:
-- 📝 [Project description and technology](#pencil-project_brief)
-- 📋 [The current status of the project]
-- 💾 [How to install and run]
-- 📁 [All dependences list]
+📝  [Project description and technology](#-project-brief)  
+📋  [The current status of the project](https://github.com/sebast4an/online-store-vanillaJS/projects/1)  
+💾  [How to install and run](#-installation)  
+📁  [All dependences list](#-installation)  
 
 ***
 
@@ -18,12 +18,12 @@ It is e-commerce project build in vanilla JavaScript (pure JavaScript). Data is 
 - Drag and scroll for mobile (RWD)
 - Generating a full product card
 
-## 📝 Use:
+## Use:
 - Webpack 5 (all dependences list)
 - Preprocesor SASS (I'm using SCSS syntax)
-- BEM methodology
 - RWD (Brakpoints, relative units, CSS Grid, Flexbox)
 - ES6+ (e.g restAPI, promise, ES modules)
+- BEM methodology
 
 ***
 
@@ -33,7 +33,7 @@ Clone this repository and install by typing:
 npm i
 ```
 
-## 💾 Using:
+## Using:
 
 Development server:
 ``` bash
