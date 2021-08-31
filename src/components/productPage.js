@@ -1,4 +1,5 @@
 import { baseURL, loaderAnimate } from '../js/globalFunctions';
+import { basketStorage, saveBasket } from '../js/basketStorage';
 
 export const productPageComponent = `
   <section class="content__selected-product selected-product">
@@ -59,6 +60,24 @@ export const productPageLoader = id => {
     renderDescription('.product-card__description-list');
     where.innerHTML = '';
     where.append(product);
+
+    // where.addEventListener('click', e => {
+    //   if (e.target.classList.contains('product-card__add-to-basket')) {
+    //     basketStorage[`product-${id}`] = {
+    //       pieces: '1',
+    //     };
+    //   }
+    // });
+
+    const basketButton = product.querySelector('.product-card__add-to-basket');
+    basketButton.addEventListener('click', () => {
+      basketStorage[`product-${id}`] = {
+        pieces: '1',
+      };
+      saveBasket();
+
+      console.log(basketStorage);
+    });
   };
 
   const getProductsFromAPI = async id => {
@@ -71,7 +90,7 @@ export const productPageLoader = id => {
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      console.log(data);
+      if (!allProducts) return;
       renderProducts(data, allProducts);
     } catch (error) {
       console.log(error);

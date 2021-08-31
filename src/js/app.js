@@ -25,6 +25,7 @@ import './occasion';
 import './routing';
 import './products';
 import './news';
+import './basketStorage';
 
 //js components
 import '../components/home';

@@ -10,12 +10,14 @@ module.exports = {
   output: {
     filename: 'bundle.min.js',
     path: path.resolve(__dirname, `dist`),
-    publicPath: '/dist/',
     assetModuleFilename: 'assets/[name][ext][query]',
     clean: true,
   },
   devServer: {
-    contentBase: path.resolve(__dirname, `dist`),
+    liveReload: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     hot: true,
     historyApiFallback: {
       index: 'index.html',
@@ -84,7 +86,7 @@ module.exports = {
     new ESLintPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      title: 'My App',
+      title: 'onlineStore vanillaJS',
       filename: 'index.html',
       template: 'src/index.html',
     }),
