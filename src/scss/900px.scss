@@ -53,11 +53,11 @@
       align-self: center;
       font-size: 1rem;
       text-align: center;
+    }
 
-      &--title {
-        display: block;
-        margin: 1rem;
-      }
+    &__count-title {
+      display: block;
+      margin: 1rem;
     }
 
     &__timer {

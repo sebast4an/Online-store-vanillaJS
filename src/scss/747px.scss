@@ -10,14 +10,12 @@
       padding: 0 8.5rem;
     }
 
-    &__header {
-      &--title {
-        font-size: 3rem;
-      }
+    &__title {
+      font-size: 3rem;
+    }
 
-      &--subtitle {
-        font-size: 1.4rem;
-      }
+    &__subtitle {
+      font-size: 1.4rem;
     }
   }
 }

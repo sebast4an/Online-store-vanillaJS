@@ -20,7 +20,6 @@
       border: 0;
       width: auto;
 
-      &:focus,
       &:focus-visible,
       &:hover {
         background-color: lighten($blueColor, 20%);
@@ -57,14 +56,12 @@
       min-width: 400px;
     }
 
-    &__header {
-      &--title {
-        font-size: 2.5rem;
-      }
+    &__title {
+      font-size: 2.5rem;
+    }
 
-      &--subtitle {
-        font-size: 1.2rem;
-      }
+    &__subtitle {
+      font-size: 1.2rem;
     }
 
     &__description {

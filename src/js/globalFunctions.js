@@ -1,5 +1,7 @@
 export const baseURL = 'https://fakestoreapi.com/';
 
+export const currentSession = performance.now();
+
 export const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 //This function use in products and comments to generate unique numbers

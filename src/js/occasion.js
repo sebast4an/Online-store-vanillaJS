@@ -5,26 +5,26 @@ const renderOccasion = (data, where, discountInPercent) => {
   occasionProduct.classList.add('occasion__product');
   occasionProduct.innerHTML = `
             <header class="occasion__header">
-                <h2 class="occasion__header--title">Occasion of the day</h2>
+                <h2 class="occasion__title">Occasion of the day</h2>
             </header>
             <img class="occasion__img" src="${data.image}">
             <section class="occasion__details">
-                <h3 class="occasion__details--name">
+                <h3 class="occasion__name">
                 ${data.title}
                 </h3>
-                <p class="occasion__details--previous-price">
+                <p class="occasion__previous-price">
                 ${data.price} $  
                 </p>
-                <p class="occasion__details--promo-price">
+                <p class="occasion__promo-price">
                 ${data.price - discountInPercent} $
                 </p>
             </section>
             <section class="occasion__count">
-              <span class="occasion__count--title">Next occasion in:</span>
+              <span class="occasion__count-title">Next occasion in:</span>
               <div class="occasion__timer"> 
-                <span class="occasion__timer--element">12</span> :
-                <span class="occasion__timer--element">12</span> :
-                <span class="occasion__timer--element">12</span>
+                <span class="occasion__timer-element">12</span> :
+                <span class="occasion__timer-element">12</span> :
+                <span class="occasion__timer-element">12</span>
               </div>
             </section>
             `;

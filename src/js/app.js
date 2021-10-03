@@ -30,6 +30,6 @@ import './basketStorage';
 //js components
 import '../components/home';
 import '../components/categoryProducts';
-import '../components/loginPanel';
+import '../components/userPanel';
 import '../components/productPage';
 import '../components/basket';

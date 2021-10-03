@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //search input
   const openModalButton = document.querySelector('.modal-search--open');
   const modal = document.querySelector('.modal-search');
-  const modalCloseButton = document.querySelector('.modal-search--close');
+  const modalCloseButton = document.querySelector('.modal-search__button-close');
   const modalBehind = document.createElement('div');
   modalBehind.classList.add('modal-search__behind');
 
