@@ -35,7 +35,7 @@
   .bestsellers .product,
   .all-products .product,
   .post,
-  .loginpanel__form,
+  .user-panel__information,
   .summary,
   .selected-product__card {
     padding: 0 3.5rem;
@@ -51,6 +51,7 @@
 
   .newsletter {
     padding: 0 3.5rem;
+
     &__box {
       padding: 0 5rem;
       min-width: 400px;

@@ -10,10 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.after(modalBehind);
     modalCloseButton.style.display = 'block';
     modal.showModal();
-  });
 
-  modalCloseButton.addEventListener('click', () => {
-    modal.close();
+    modalCloseButton.addEventListener('click', () => {
+      modal.close();
+    });
   });
 
   //I adding event listener for close because

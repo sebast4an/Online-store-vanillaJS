@@ -4,7 +4,7 @@
   .bestsellers .product,
   .all-products .product,
   .post,
-  .loginpanel__form,
+  .user-panel__information,
   .summary,
   .selected-product__card {
     padding: 0;
@@ -93,7 +93,7 @@
   }
 
   .all-products,
-  .loginpanel,
+  .user-panel,
   .summary,
   .selected-product {
     grid-area: 1 / 1 / 2 / 3;

@@ -207,6 +207,10 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-start;
-  }
+    max-width: 400px;
 
+    p {
+      font-size: 1.2rem;
+    }
+  }
 }

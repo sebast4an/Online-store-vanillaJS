@@ -1,5 +1,5 @@
 import { baseURL, loaderAnimate } from '../js/globalFunctions';
-import { basketStorage, saveBasket } from '../js/basketStorage';
+import { checkBasketAndAdd } from '../js/basketStorage';
 
 export const productPageComponent = `
   <section class="content__selected-product selected-product">
@@ -61,22 +61,9 @@ export const productPageLoader = id => {
     where.innerHTML = '';
     where.append(product);
 
-    // where.addEventListener('click', e => {
-    //   if (e.target.classList.contains('product-card__add-to-basket')) {
-    //     basketStorage[`product-${id}`] = {
-    //       pieces: '1',
-    //     };
-    //   }
-    // });
-
     const basketButton = product.querySelector('.product-card__add-to-basket');
     basketButton.addEventListener('click', () => {
-      basketStorage[`product-${id}`] = {
-        pieces: '1',
-      };
-      saveBasket();
-
-      console.log(basketStorage);
+      checkBasketAndAdd(id);
     });
   };
 

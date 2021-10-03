@@ -1,14 +1,17 @@
 # Online Store 🛒
+
 It is project build in vanillaJS (pure JavaScript). Data is from REST API ([FakeStoreAPI](https://fakestoreapi.com)). Compliant with the BEM methodology. I created this project to refresh my skills in pure javascript. I designed and wrote the whole CSS style myself, but I focused the most on the functionalities in javascript. **I wanted to practice javascript by creating everything by myself so, i wrote all the functions from basket, "grab and scroll" to routing myself.**
 
 ## Table of contents:
-📝  [Project description and technology](#-project-brief)  
-💾  [How to install and run](#-installation)  
-📁  [All dependences list](#-installation)  
 
-***
+📝 [Project description and technology](#-project-brief)  
+💾 [How to install and run](#-installation)  
+📁 [All dependences list](#-installation)
+
+---
 
 ## 📝 Project brief:
+
 - **Only pure JavaScript**
 - Getting data from the REST API
 - Frontend routing (window.history)
@@ -18,46 +21,51 @@ It is project build in vanillaJS (pure JavaScript). Data is from REST API ([Fake
 - Generating a full product card
 
 ## Technologies:
-| Name | Description |
-|---|---|
-| [Webpack 5](https://webpack.js.org/) | Builder |
-| [ESlint](https://eslint.org/) | Static code analysis |
-| [Prettier](https://prettier.io/) | Code formatter |
-| [Babel](https://babeljs.io/) | Compiler new JS into a backwards version  |
-| [Autoprefixer](https://github.com/postcss/autoprefixer) | Add prefixes for browsers
-| [normalize.css](https://github.com/necolas/normalize.css) | CSS resets |
-| [SASS](https://github.com/sass/dart-sass) | SCSS syntax |
-| [ES6+](https://262.ecma-international.org/6.0/) |  E.g fetch, promise, ES modules |
+
+| Name                                                      | Description                              |
+| --------------------------------------------------------- | ---------------------------------------- |
+| [Webpack 5](https://webpack.js.org/)                      | Builder                                  |
+| [ESlint](https://eslint.org/)                             | Static code analysis                     |
+| [Prettier](https://prettier.io/)                          | Code formatter                           |
+| [Babel](https://babeljs.io/)                              | Compiler new JS into a backwards version |
+| [Autoprefixer](https://github.com/postcss/autoprefixer)   | Add prefixes for browsers                |
+| [normalize.css](https://github.com/necolas/normalize.css) | CSS resets                               |
+| [SASS](https://github.com/sass/dart-sass)                 | SCSS syntax                              |
+| [ES6+](https://262.ecma-international.org/6.0/)           | E.g fetch, promise, ES modules           |
 
 [All dependencies list...](https://github.com/sebast4an/online-store-vanillaJS#-dependencies)
 
 ## 💾 Installation:
+
 Clone this repository and install by typing:
-``` bash
+
+```bash
 npm i
 ```
 
 ## Using:
 
 Development server:
-``` bash
+
+```bash
 npm run serve
 ```
 
 Build:
-``` bash
+
+```bash
 npm run build
 ```
 
 Format all files by prettier:
-``` bash
+
+```bash
 npm run format
 ```
 
-
 ## 📁 Dependencies:
 
-``` json
+```json
 "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/eslint-parser": "^7.15.0",
