@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //search input
   const openModalButton = document.querySelector('.modal-search--open');
   const modal = document.querySelector('.modal-search');
-  const modalCloseButton = document.querySelector('.modal-search--close');
+  const modalCloseButton = document.querySelector('.modal-search__button-close');
   const modalBehind = document.createElement('div');
   modalBehind.classList.add('modal-search__behind');
 
@@ -10,10 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
     modal.after(modalBehind);
     modalCloseButton.style.display = 'block';
     modal.showModal();
-  });
 
-  modalCloseButton.addEventListener('click', () => {
-    modal.close();
+    modalCloseButton.addEventListener('click', () => {
+      modal.close();
+    });
   });
 
   //I adding event listener for close because

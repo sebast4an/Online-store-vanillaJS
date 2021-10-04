@@ -20,7 +20,6 @@
       border: 0;
       width: auto;
 
-      &:focus,
       &:focus-visible,
       &:hover {
         background-color: lighten($blueColor, 20%);
@@ -36,7 +35,7 @@
   .bestsellers .product,
   .all-products .product,
   .post,
-  .loginpanel__form,
+  .user-panel__information,
   .summary,
   .selected-product__card {
     padding: 0 3.5rem;
@@ -52,19 +51,18 @@
 
   .newsletter {
     padding: 0 3.5rem;
+
     &__box {
       padding: 0 5rem;
       min-width: 400px;
     }
 
-    &__header {
-      &--title {
-        font-size: 2.5rem;
-      }
+    &__title {
+      font-size: 2.5rem;
+    }
 
-      &--subtitle {
-        font-size: 1.2rem;
-      }
+    &__subtitle {
+      font-size: 1.2rem;
     }
 
     &__description {

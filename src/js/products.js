@@ -22,7 +22,7 @@ const renderRandomProducts = (data, where, howManyToAdd) => {
                         </p>
                         <a role="button" href="/product-id-${data[key]['id']}" class="price__button">
                             <span>Add</span> 
-                            <img class="price__button--img" src="assets/add-basket.svg">
+                            <img class="price__button-img" src="assets/add-basket.svg">
                         </a>
                     </section>
                   </header>

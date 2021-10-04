@@ -9,15 +9,13 @@ module.exports = {
   entry: './src/js/app.js',
   output: {
     filename: 'bundle.min.js',
-    path: path.resolve(__dirname, `dist`),
+    path: path.resolve(__dirname, `docs`),
     assetModuleFilename: 'assets/[name][ext][query]',
     clean: true,
   },
   devServer: {
     liveReload: true,
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+    contentBase: path.resolve(__dirname, `docs`),
     hot: true,
     historyApiFallback: {
       index: 'index.html',

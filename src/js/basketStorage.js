@@ -18,4 +18,18 @@ const loadingBasket = () => {
 //First website loading
 loadingBasket();
 
-export { basketStorage, saveBasket };
+const checkBasketAndAdd = id => {
+  if (Object.prototype.hasOwnProperty.call(basketStorage, `product-${id}`)) {
+    basketStorage[`product-${id}`] = {
+      pieces: `${Number(basketStorage[`product-${id}`].pieces) + 1}`,
+    };
+  } else {
+    basketStorage[`product-${id}`] = {
+      pieces: '1',
+    };
+  }
+  saveBasket();
+  console.log(basketStorage);
+};
+
+export { basketStorage, checkBasketAndAdd };

@@ -4,7 +4,7 @@
   .bestsellers .product,
   .all-products .product,
   .post,
-  .loginpanel__form,
+  .user-panel__information,
   .summary,
   .selected-product__card {
     padding: 0;
@@ -53,11 +53,11 @@
       align-self: center;
       font-size: 1rem;
       text-align: center;
+    }
 
-      &--title {
-        display: block;
-        margin: 1rem;
-      }
+    &__count-title {
+      display: block;
+      margin: 1rem;
     }
 
     &__timer {
@@ -93,7 +93,7 @@
   }
 
   .all-products,
-  .loginpanel,
+  .user-panel,
   .summary,
   .selected-product {
     grid-area: 1 / 1 / 2 / 3;

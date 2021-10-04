@@ -23,11 +23,11 @@
   &__header {
     margin: 0 0 45px 0;
     width: 100%;
+  }
 
-    &--title {
-      width: 100%;
-      font-weight: 500;
-    }
+  &__title {
+    width: 100%;
+    font-weight: 500;
   }
 
   &__img {
@@ -38,29 +38,29 @@
 
   &__details {
     text-align: center;
+  }
 
-    &--name {
-      font-weight: 400;
-      margin: 2.2rem 1.2rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
+  &__name {
+    font-weight: 400;
+    margin: 2.2rem 1.2rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-    &--previous-price {
-      text-decoration: line-through;
-      font-size: 1.3rem;
-      margin: 3rem 1rem 0 1rem;
-    }
+  &__previous-price {
+    text-decoration: line-through;
+    font-size: 1.3rem;
+    margin: 3rem 1rem 0 1rem;
+  }
 
-    &--promo-price {
-      font-size: 2.2rem;
-      margin: 1rem 1rem 1rem 1rem;
-      font-weight: 500;
-      color: $blueColor;
-    }
+  &__promo-price {
+    font-size: 2.2rem;
+    margin: 1rem 1rem 1rem 1rem;
+    font-weight: 500;
+    color: $blueColor;
   }
 
   &__count {
@@ -71,13 +71,13 @@
 
   &__timer {
     display: inline;
+  }
 
-    &--element {
-      background-color: darken($greyColor, 10%);
-      color: $bgColor;
-      padding: 4px;
-      border-radius: 4px;
-    }
+  &__timer-element {
+    background-color: darken($greyColor, 10%);
+    color: $bgColor;
+    padding: 4px;
+    border-radius: 4px;
   }
 }
 
@@ -196,30 +196,21 @@
   }
 }
 
-/*  loginPanel.js  */
-.loginpanel {
+/*  userPanel.js  */
+.user-panel {
   display: flex;
   flex-flow: column wrap;
 
-  &__form {
-    padding: 1rem;
+  &__information {
+    padding: 0 1rem;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: flex-start;
-  }
+    max-width: 400px;
 
-  &__label {
-    margin: 0 0 0.2rem 0;
-  }
-
-  &__input {
-    margin: 0 0 1rem 0;
-    width: 100%;
-    max-width: 450px;
-    padding: 0.8rem;
-    border-radius: 5px;
-    border: 1px solid darken($greyColor, 10%);
-    background-color: $lightGreyColor;
+    p {
+      font-size: 1.2rem;
+    }
   }
 }

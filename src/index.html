@@ -7,133 +7,132 @@
     <title>onlineStore vanillaJS</title>
   </head>
   <body>
-    <section class="container">
-      <header class="header">
-        <h1 class="header__logo">
-          <a href="/">Logo</a>
-        </h1>
-        <nav class="header__userpanel userpanel">
-          <button href="#search" class="userpanel__button modal-search--open">
-            <img class="userpanel__link--icon" src="/assets/search.svg" />
-          </button>
-          <a href="/login-panel" class="userpanel__link userpanel">
-            <img class="userpanel__link--icon" src="/assets/user.svg" />
-          </a>
-          <a href="/basket" class="userpanel__link basket">
-            <img class="userpanel__link--icon" src="/assets/basket.svg" />
-          </a>
-        </nav>
-      </header>
-
-      <dialog class="modal-search">
-        <input type="text" class="modal-search__input" placeholder="What are we looking for?" />
-        <button class="modal-search__button-search">
-          <img src="/assets/search.svg" />
+    <header class="header">
+      <h1 class="header__logo">
+        <a href="/">STORE</a>
+      </h1>
+      <nav class="header__userpanel userpanel">
+        <button href="#search" class="userpanel__button modal-search--open">
+          <img class="userpanel__icon" src="/assets/search.svg" />
         </button>
-        <button class="modal-search--close">X</button>
-      </dialog>
-
-      <section class="baner">
-        <img class="baner__img" src="/assets/test_baner.jpg" />
-      </section>
-
-      <nav class="navigation">
-        <button class="navigation__hamburger hamburger">
-          <section class="hamburger__icon">
-            <div class="hamburger__icon--line"></div>
-            <div class="hamburger__icon--line"></div>
-            <div class="hamburger__icon--line"></div>
-          </section>
-          <span class="hamburger__title"> Menu </span>
-        </button>
-        <ul class="navigation__list list">
-          <li class="list__element">
-            <a class="list__element--link" href="/">Home</a>
-          </li>
-          <li class="list__element">
-            <a class="list__element--link" href="/electronics">Electronics</a>
-          </li>
-          <li class="list__element">
-            <a class="list__element--link" href="/jewelery">Jewelery</a>
-          </li>
-          <li class="list__element">
-            <a class="list__element--link" href="/men%27s%20clothing">Mens</a>
-          </li>
-          <li class="list__element">
-            <a class="list__element--link" href="/women%27s%20clothing">Womens</a>
-          </li>
-        </ul>
+        <a href="/user-panel" class="userpanel__link userpanel">
+          <img class="userpanel__icon" src="/assets/user.svg" />
+        </a>
+        <a href="/basket" class="userpanel__link basket">
+          <img class="userpanel__icon" src="/assets/basket.svg" />
+        </a>
       </nav>
+    </header>
 
-      <main class="content"></main>
+    <dialog class="modal-search">
+      <input type="text" class="modal-search__input" placeholder="What are we looking for?" />
+      <button class="modal-search__button-search">
+        <img src="/assets/search.svg" />
+      </button>
+      <button class="modal-search__button-close">X</button>
+    </dialog>
 
-      <aside class="newsletter">
-        <div class="newsletter__box">
-          <header class="newsletter__header">
-            <h1 class="newsletter__header--title">save 10%</h1>
-            <p class="newsletter__header--subtitle">by subscribing to the newsletter</p>
-          </header>
-          <form class="newsletter__form form">
-            <label class="form__label" for="form__input">Mail:</label>
-            <div class="form__input input">
-              <input
-                class="input__input"
-                id="newsletter__input"
-                type="email"
-                placeholder="example@examplemail.com"
-              />
-              <button class="input__button" type="submit">OK!</button>
-            </div>
-          </form>
-          <p class="newsletter__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt nullam ut accumsan
-            maecenas semper enim nec augue. Quis semper enim morbi aenean. Congue et volutpat velit
-            justo, pellentesque.
-          </p>
-        </div>
-      </aside>
-
-      <footer class="footer">
-        <header class="footer__header header__bottomline">
-          <h2 class="footer__header--title header__bottomline--title">Contact</h2>
-        </header>
-        <section class="footer__info">
-          <div class="footer__box">
-            <img class="footer__box--icon" src="assets/phone.svg" />
-            <h3 class="footer__box--content">+48 555 666 444</h3>
-          </div>
-          <div class="footer__box">
-            <img class="footer__box--icon" src="assets/mail.svg" />
-            <h3 class="footer__box--content">contact@example.com</h3>
-          </div>
-          <div class="footer__box">
-            <img class="footer__box--icon" src="assets/clock.svg" />
-            <h3 class="footer__box--content">monday - friday: 8:00 - 16:00</h3>
-          </div>
-        </section>
-        <section class="footer__gmap">
-          <iframe
-            class="footer__gmap--frame"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163404.43961140903!2d18.867110072402557!3d50.21358819181318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce2336a1ccd1%3A0xb9af2a350559fabb!2sKatowice!5e0!3m2!1spl!2spl!4v1626001222683!5m2!1spl!2spl"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </section>
-        <section class="footer__social social">
-          <a class="social__box box fb">
-            <img class="box__icon" src="assets/facebook.svg" />
-          </a>
-          <a class="social__box box insta">
-            <img class="box__icon" src="assets/instagram.svg" />
-          </a>
-          <a class="social__box box tw">
-            <img class="box__icon" src="assets/twitter.svg" />
-          </a>
-          <a class="social__box box gmaps">
-            <img class="box__icon" src="assets/map-pin.svg" />
-          </a>
-        </section>
-      </footer>
+    <section class="baner">
+      <img class="baner__img" src="/assets/test_baner.jpg" />
     </section>
+
+    <nav class="navigation">
+      <button class="navigation__hamburger hamburger">
+        <section class="hamburger__icon">
+          <div class="hamburger__icon--line"></div>
+          <div class="hamburger__icon--line"></div>
+          <div class="hamburger__icon--line"></div>
+        </section>
+        <span class="hamburger__title"> Menu </span>
+      </button>
+      <ul class="navigation__list list">
+        <li class="list__element">
+          <a class="list__link" href="/">Home</a>
+        </li>
+        <li class="list__element">
+          <a class="list__link" href="/electronics">Electronics</a>
+        </li>
+        <li class="list__element">
+          <a class="list__link" href="/jewelery">Jewelery</a>
+        </li>
+        <li class="list__element">
+          <a class="list__link" href="/men%27s%20clothing">Mens</a>
+        </li>
+        <li class="list__element">
+          <a class="list__link" href="/women%27s%20clothing">Womens</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="content"></main>
+
+    <aside class="newsletter">
+      <div class="newsletter__box">
+        <header class="newsletter__header">
+          <h1 class="newsletter__title">save 10%</h1>
+          <p class="newsletter__subtitle">by subscribing to the newsletter</p>
+        </header>
+        <form class="newsletter__form form">
+          <label class="form__label" for="form__input">Mail:</label>
+          <div class="form__input input">
+            <input
+              class="input__input"
+              id="newsletter__input"
+              type="email"
+              placeholder="example@examplemail.com"
+            />
+            <button class="input__button" type="submit">OK!</button>
+          </div>
+        </form>
+        <p class="newsletter__description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tincidunt nullam ut accumsan
+          maecenas semper enim nec augue. Quis semper enim morbi aenean. Congue et volutpat velit
+          justo, pellentesque.
+        </p>
+      </div>
+    </aside>
+
+    <footer class="footer">
+      <header class="footer__header header__bottomline">
+        <h2 class="footer__title header__bottomline--title">Contact</h2>
+      </header>
+      <section class="footer__info">
+        <div class="footer__box">
+          <img class="footer__icon" src="assets/phone.svg" />
+          <h3 class="footer__content">+48 555 666 444</h3>
+        </div>
+        <div class="footer__box">
+          <img class="footer__icon" src="assets/mail.svg" />
+          <h3 class="footer__content">contact@example.com</h3>
+        </div>
+        <div class="footer__box">
+          <img class="footer__icon" src="assets/clock.svg" />
+          <h3 class="footer__content">monday - friday: 8:00 - 16:00</h3>
+        </div>
+      </section>
+      <section class="footer__gmap">
+        <iframe
+          title="Localizaction in google maps"
+          class="footer__gmap-frame"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163404.43961140903!2d18.867110072402557!3d50.21358819181318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716ce2336a1ccd1%3A0xb9af2a350559fabb!2sKatowice!5e0!3m2!1spl!2spl!4v1626001222683!5m2!1spl!2spl"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </section>
+      <section class="footer__social social">
+        <a class="social__box box fb">
+          <img class="box__icon" src="assets/facebook.svg" />
+        </a>
+        <a class="social__box box insta">
+          <img class="box__icon" src="assets/instagram.svg" />
+        </a>
+        <a class="social__box box tw">
+          <img class="box__icon" src="assets/twitter.svg" />
+        </a>
+        <a class="social__box box gmaps">
+          <img class="box__icon" src="assets/map-pin.svg" />
+        </a>
+      </section>
+    </footer>
   </body>
 </html>

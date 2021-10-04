@@ -1,6 +1,6 @@
 import { homeComponent, homeLoader } from '../components/home';
 import { categoryProductsComponent, categoryProductsLoader } from '../components/categoryProducts';
-import { loginComponent, loginLoader } from '../components/loginPanel';
+import { userComponent, userLoader } from '../components/userPanel';
 import { basketComponent, basketLoader } from '../components/basket';
 import { productPageComponent, productPageLoader } from '../components/productPage';
 
@@ -10,7 +10,7 @@ import { productPageComponent, productPageLoader } from '../components/productPa
   const routes = {
     '/': homeComponent,
     '/basket': basketComponent,
-    '/login-panel': loginComponent,
+    '/user-panel': userComponent,
     '/electronics': categoryProductsComponent,
     '/jewelery': categoryProductsComponent,
     '/men%27s%20clothing': categoryProductsComponent,
@@ -27,10 +27,10 @@ import { productPageComponent, productPageLoader } from '../components/productPa
       productPageLoader(pathname.slice(12));
     } else {
       switch (pathname) {
-        case '/login-panel':
+        case '/user-panel':
           document.title = `Online Store - Sign up or Sign in`;
           content.innerHTML = routes[pathname];
-          loginLoader();
+          userLoader();
           break;
         case '/basket':
           document.title = `Online Store - ${pathname.slice(1)}`;

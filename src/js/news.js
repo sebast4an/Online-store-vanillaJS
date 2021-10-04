@@ -14,7 +14,7 @@ const renderNews = (data, howMany) => {
     commentPost.innerHTML = `
                 <img class="post__image" src="https://picsum.photos/300/300.webp/?random=${key}">
                 <header class="post__header">
-                  <h3 class="post__header--title">${data[key]['title']}</h3>
+                  <h3 class="post__title">${data[key]['title']}</h3>
                 </header>
                `;
     fragment.appendChild(commentPost);
