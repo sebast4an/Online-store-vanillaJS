@@ -1,6 +1,8 @@
 # Online Store 🛒
 
-It is project build in vanillaJS (pure JavaScript). Data is from REST API ([FakeStoreAPI](https://fakestoreapi.com)). Compliant with the BEM methodology. I created this project to refresh my skills in pure javascript. I designed and wrote the whole CSS style myself, but I focused the most on the functionalities in javascript. **I wanted to practice javascript by creating everything by myself so, i wrote all the functions from basket, "grab and scroll" to routing myself.**
+It is project build in vanillaJS (pure JavaScript). Data is from REST API ([FakeStoreAPI](https://fakestoreapi.com)). I created this project to refresh my skills in pure javascript. I designed and wrote the whole CSS style myself, but I don't focus on it or accessibility in this project. My goal was to create functions in javascript. I focused the most on  javascript. **I wanted to practice javascript by creating everything by myself so, i wrote all the functions from basket, "grab and scroll" to routing myself.**
+
+### Project still in development  ⚠️
 
 ## Table of contents:
 
@@ -15,8 +17,8 @@ It is project build in vanillaJS (pure JavaScript). Data is from REST API ([Fake
 - **Only pure JavaScript**
 - Getting data from the REST API
 - Frontend routing (window.history)
-- Support for old browsers
-- Shopping cart service
+- Grab and scroll for mobile
+- Simple basket in localStorage
 - Drag and scroll for mobile (RWD)
 - Generating a full product card
 
