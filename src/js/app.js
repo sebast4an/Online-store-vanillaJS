@@ -1,22 +1,10 @@
 // scss
 import '../scss/main.scss';
 
-//svg
-import '../assets/icons/search.svg';
-import '../assets/icons/user.svg';
-import '../assets/icons/basket.svg';
-import '../assets/icons/add-basket.svg';
-import '../assets/icons/mail.svg';
-import '../assets/icons/phone.svg';
-import '../assets/icons/mail.svg';
-import '../assets/icons/clock.svg';
-import '../assets/icons/facebook.svg';
-import '../assets/icons/instagram.svg';
-import '../assets/icons/twitter.svg';
-import '../assets/icons/map-pin.svg';
-
-//img
-import '../assets/img/test_baner.jpg';
+//svg and images loader
+const importAll = r => r.keys().forEach(r);
+importAll(require.context('../assets/icons', true, /\.svg$/));
+importAll(require.context('../assets/img', true, /\.jpg/));
 
 //js
 import './navigation';

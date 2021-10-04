@@ -24,11 +24,16 @@ export const basketLoader = () => {
 
   const renderProducts = (where, data) => {
     const fragment = document.createDocumentFragment();
+    let summaryBasket = Number();
 
     const appendProducts = (id, data) => {
       const product = document.createElement('div');
       product.classList.add('basket-product');
       product.classList.add(`basket-product--id${id}`);
+
+      const summaryProduct =
+        Number(data[id]['price']) * Number(basketStorage[`product-${id}`]['pieces']);
+      summaryBasket += summaryProduct;
 
       product.innerHTML = `
             <img class="basket-product__image" src="${data[id]['image']}" />
@@ -38,25 +43,27 @@ export const basketLoader = () => {
                 </h2>
             </header>
             <section class="basket-product__information">
-                <p class="basket-product__price">Price: ${data[id]['price']} </p>
+                <p class="basket-product__price">Price: ${data[id]['price']} $</p>
                 <p class="basket-product__pieces">Pieces: ${
                   basketStorage[`product-${id}`]['pieces']
                 }
                 <p class="basket-product__summary">
-                    Together: ${
-                      Number(data[id]['price']) * Number(basketStorage[`product-${id}`]['pieces'])
-                    }
+                    Together: 
+                    ${summaryProduct} $
                 </p>
             </section>
       `;
-
       fragment.appendChild(product);
     };
     idArray.forEach(id => appendProducts(id, data));
     where.innerHTML = ``;
     where.append(fragment);
+    console.log(summaryBasket);
 
-    const summaryBasket = () => {};
+    const summaryContainer = document.querySelector('.summary');
+    summaryContainer.innerHTML = `
+        <h2>Total: ${summaryBasket} $</h2>;
+      `;
   };
 
   const getDataFromStoreAPI = async where => {
