@@ -19,7 +19,7 @@ import { productPageComponent, productPageLoader } from '../components/productPa
   };
 
   const loaderComponents = pathname => {
-    window.history.pushState({}, pathname, window.location.origin + '/online-store-vanillaJS' + pathname);
+    window.history.pushState({}, pathname, window.location.origin + pathname);
 
     if (pathname.slice(1, 11) == 'product-id') {
       document.title = `Online Store - ${pathname.slice(1)}`;
@@ -83,6 +83,6 @@ import { productPageComponent, productPageLoader } from '../components/productPa
   });
 
   window.addEventListener('popstate', () => {
-    loaderComponents(window.location);
+    loaderComponents(window.location.pathname);
   });
 })();
