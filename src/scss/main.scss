@@ -220,9 +220,8 @@ body {
     max-width: 800px;
     height: 8%;
     z-index: 3;
-    box-shadow: 0 2.8px 2.2px rgba(24, 24, 24, 0.04), 0 6.7px 5.3px rgba(24, 24, 24, 0.08),
-      0 12.5px 10px rgba(24, 24, 24, 0.06), 0 22.3px 17.9px rgba(24, 24, 24, 0.02),
-      0 41.8px 33.4px rgba(24, 24, 24, 0.06), 0 100px 80px rgba(24, 24, 24, 0.1);
+    box-shadow: 0 2.8px 2.2px rgba(24, 24, 24, 0.04), 0 6.7px 5.3px rgba(24, 24, 24, 0.08), 0 12.5px 10px rgba(24, 24, 24, 0.06),
+      0 22.3px 17.9px rgba(24, 24, 24, 0.02), 0 41.8px 33.4px rgba(24, 24, 24, 0.06), 0 100px 80px rgba(24, 24, 24, 0.1);
   }
 
   &__input {
@@ -310,9 +309,8 @@ body {
     border-radius: 10px;
     font-size: 2rem;
     font-weight: 900;
-    box-shadow: 0 2.8px 2.2px rgba(24, 24, 24, 0.04), 0 6.7px 5.3px rgba(24, 24, 24, 0.08),
-      0 12.5px 10px rgba(24, 24, 24, 0.06), 0 22.3px 17.9px rgba(24, 24, 24, 0.02),
-      0 41.8px 33.4px rgba(24, 24, 24, 0.06), 0 100px 80px rgba(24, 24, 24, 0.1);
+    box-shadow: 0 2.8px 2.2px rgba(24, 24, 24, 0.04), 0 6.7px 5.3px rgba(24, 24, 24, 0.08), 0 12.5px 10px rgba(24, 24, 24, 0.06),
+      0 22.3px 17.9px rgba(24, 24, 24, 0.02), 0 41.8px 33.4px rgba(24, 24, 24, 0.06), 0 100px 80px rgba(24, 24, 24, 0.1);
     transition: background-color 0.4s ease, border 0.4s ease;
 
     &:hover {
@@ -610,8 +608,7 @@ body {
     color: $whiteColor;
     border: 1px solid darken($blueColor, 10%);
     opacity: 0;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out,
-      opacity 0.5s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out, opacity 0.5s ease-in-out;
 
     &--active {
       opacity: 1;

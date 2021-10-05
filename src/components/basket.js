@@ -31,8 +31,7 @@ export const basketLoader = () => {
       product.classList.add('basket-product');
       product.classList.add(`basket-product--id${id}`);
 
-      const summaryProduct =
-        Number(data[id]['price']) * Number(basketStorage[`product-${id}`]['pieces']);
+      const summaryProduct = Number(data[id]['price']) * Number(basketStorage[`product-${id}`]['pieces']);
       summaryBasket += summaryProduct;
 
       product.innerHTML = `
@@ -44,9 +43,7 @@ export const basketLoader = () => {
             </header>
             <section class="basket-product__information">
                 <p class="basket-product__price">Price: ${data[id]['price']} $</p>
-                <p class="basket-product__pieces">Pieces: ${
-                  basketStorage[`product-${id}`]['pieces']
-                }
+                <p class="basket-product__pieces">Pieces: ${basketStorage[`product-${id}`]['pieces']}
                 <p class="basket-product__summary">
                     Together: 
                     ${summaryProduct} $
