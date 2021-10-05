@@ -7,8 +7,6 @@ import { productPageComponent, productPageLoader } from '../components/productPa
 (() => {
   const content = document.querySelector('.content');
 
-  const locationWithDoublePath = '/online-store-vanillaJS';
-
   const routes = {
     '/': homeComponent,
     '/basket': basketComponent,
@@ -21,7 +19,7 @@ import { productPageComponent, productPageLoader } from '../components/productPa
   };
 
   const loaderComponents = pathname => {
-    window.history.pushState({}, pathname, window.location.origin + locationWithDoublePath + pathname);
+    window.history.pushState({}, window.location.origin, window.location.origin + pathname);
 
     if (pathname.slice(1, 11) == 'product-id') {
       document.title = `Online Store - ${pathname.slice(1)}`;

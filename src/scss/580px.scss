@@ -36,8 +36,9 @@
   .all-products .product,
   .post,
   .user-panel__information,
-  .summary,
-  .selected-product__card {
+  .selected-product__card,
+  .basket-products,
+  .summary__info {
     padding: 0 3.5rem;
 
     &:after {

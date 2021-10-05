@@ -127,7 +127,7 @@
 }
 /* ---------------- */
 
-/*  allProducts.js  */
+/*  categoryProducts.js  */
 .all-products {
   @include productsGrid(200px, 1fr);
 }
@@ -212,5 +212,46 @@
     p {
       font-size: 1.2rem;
     }
+  }
+}
+
+/*  basket.js  */
+.basket-products {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-gap: 1rem;
+}
+
+.basket-product {
+  border: 2px solid $greyColor;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 200px;
+
+  &__title {
+    font-size: 1.2rem;
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+}
+
+.summary {
+  &__info {
+    padding: 1rem;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__clearbasketbutton {
+    margin: 1rem 0 0 0;
+    @include standard-button;
   }
 }

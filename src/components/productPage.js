@@ -54,7 +54,7 @@ export const productPageLoader = id => {
                 </section>
                 <button class="product-card__add-to-basket">
                   <span>Add to basket</span>
-                  <img class="product-card__add-to-basket--img" src="assets/add-basket.svg">
+                  <img class="product-card__add-to-basket--img" src="./assets/add-basket.svg">
                 </button>
               `;
     renderDescription('.product-card__description-list');
