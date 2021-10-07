@@ -1,4 +1,4 @@
-import { basketStorage } from '../js/basketStorage';
+import { basketStorage, clearBasket } from '../js/basketStorage';
 import { baseURL, loaderAnimate } from '../js/globalFunctions';
 
 export const basketComponent = `
@@ -31,25 +31,21 @@ export const basketLoader = () => {
       product.classList.add('basket-product');
       product.classList.add(`basket-product--id${id}`);
 
-      const summaryProduct =
-        Number(data[id]['price']) * Number(basketStorage[`product-${id}`]['pieces']);
+      const summaryProduct = Number(data[id]['price']) * Number(basketStorage[`product-${id}`]['pieces']);
       summaryBasket += summaryProduct;
 
       product.innerHTML = `
             <img class="basket-product__image" src="${data[id]['image']}" />
-            <header class="basket-product__header">
-                <h2 class="basket-product__title">
+            <header class="basket-product__header ">
+                <h2 class="basket-product__title header__bottomline--title">
                     ${data[id]['title']}
                 </h2>
             </header>
             <section class="basket-product__information">
                 <p class="basket-product__price">Price: ${data[id]['price']} $</p>
-                <p class="basket-product__pieces">Pieces: ${
-                  basketStorage[`product-${id}`]['pieces']
-                }
+                <p class="basket-product__pieces">Pieces: ${basketStorage[`product-${id}`]['pieces']}
                 <p class="basket-product__summary">
-                    Together: 
-                    ${summaryProduct} $
+                    <strong> Together: ${summaryProduct} $ </strong>
                 </p>
             </section>
       `;
@@ -62,8 +58,22 @@ export const basketLoader = () => {
 
     const summaryContainer = document.querySelector('.summary');
     summaryContainer.innerHTML = `
-        <h2>Total: ${summaryBasket} $</h2>;
-      `;
+      <header class="header__bottomline">
+        <h2 class="header__bottomline--title">Total: ${summaryBasket} $</h2>
+      </header> 
+      <p class="summary__info"> 
+        <span>Thank you for testing the mini demo of the store.</span>
+        <span> I wrote it for the purpose of refreshing my skills in pure javascript. </span>
+        <button type="button" class="summary__clearbasketbutton">
+          <span>Clear basket</span>
+        </button>
+      </p>
+        `;
+
+    summaryContainer.querySelector('.summary__clearbasketbutton').addEventListener('click', () => {
+      clearBasket();
+      location.reload();
+    });
   };
 
   const getDataFromStoreAPI = async where => {

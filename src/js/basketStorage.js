@@ -15,9 +15,6 @@ const loadingBasket = () => {
   console.log(basketStorage);
 };
 
-//First website loading
-loadingBasket();
-
 const checkBasketAndAdd = id => {
   if (Object.prototype.hasOwnProperty.call(basketStorage, `product-${id}`)) {
     basketStorage[`product-${id}`] = {
@@ -32,4 +29,9 @@ const checkBasketAndAdd = id => {
   console.log(basketStorage);
 };
 
-export { basketStorage, checkBasketAndAdd };
+const clearBasket = () => localStorage.clear();
+
+//First website loading
+loadingBasket();
+
+export { basketStorage, clearBasket, checkBasketAndAdd };

@@ -15,10 +15,12 @@ module.exports = {
   },
   devServer: {
     liveReload: true,
-    contentBase: path.resolve(__dirname, `docs`),
     hot: true,
     historyApiFallback: {
       index: 'index.html',
+    },
+    static: {
+      directory: path.join(__dirname, 'docs'),
     },
   },
   devtool: 'source-map',

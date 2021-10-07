@@ -1,8 +1,10 @@
 # Online Store 🛒
+It is project build in vanillaJS (pure JavaScript). Data is from REST API ([FakeStoreAPI](https://fakestoreapi.com)). I created this project to refresh my skills in pure javascript. I designed and wrote the whole CSS style myself, but I don't focus on it or accessibility in this project. My goal was to create functions in javascript. I focused the most on javascript. **I wanted to practice javascript by creating everything by myself so, i wrote all the functions from basket, "grab and scroll" to routing myself.**
 
-It is project build in vanillaJS (pure JavaScript). Data is from REST API ([FakeStoreAPI](https://fakestoreapi.com)). I created this project to refresh my skills in pure javascript. I designed and wrote the whole CSS style myself, but I don't focus on it or accessibility in this project. My goal was to create functions in javascript. I focused the most on  javascript. **I wanted to practice javascript by creating everything by myself so, i wrote all the functions from basket, "grab and scroll" to routing myself.**
+### Project still in development ⚠️
 
-### Project still in development  ⚠️
+## Live demo:
+https://onlinestorejs.pl/
 
 ## Table of contents:
 

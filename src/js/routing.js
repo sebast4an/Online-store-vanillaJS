@@ -27,15 +27,15 @@ import { productPageComponent, productPageLoader } from '../components/productPa
       productPageLoader(pathname.slice(12));
     } else {
       switch (pathname) {
-        case '/user-panel':
-          document.title = `Online Store - Sign up or Sign in`;
-          content.innerHTML = routes[pathname];
-          userLoader();
-          break;
         case '/basket':
           document.title = `Online Store - ${pathname.slice(1)}`;
           content.innerHTML = routes[pathname];
           basketLoader();
+          break;
+        case '/user-panel':
+          document.title = `Online Store - Sign up or Sign in`;
+          content.innerHTML = routes[pathname];
+          userLoader();
           break;
         case '/electronics':
           document.title = `Online Store - ${pathname.slice(1)}`;
@@ -67,7 +67,7 @@ import { productPageComponent, productPageLoader } from '../components/productPa
 
   //first website loading
   content.innerHTML = routes[window.location.pathname];
-  loaderComponents(window.location.pathname);
+  loaderComponents(document.location.pathname);
 
   const allLinks = document.querySelectorAll('a');
   allLinks.forEach(link => {

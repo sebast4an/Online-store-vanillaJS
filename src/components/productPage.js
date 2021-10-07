@@ -54,7 +54,7 @@ export const productPageLoader = id => {
                 </section>
                 <button class="product-card__add-to-basket">
                   <span>Add to basket</span>
-                  <img class="product-card__add-to-basket--img" src="assets/add-basket.svg">
+                  <img class="product-card__add-to-basket--img" src="./assets/add-basket.svg">
                 </button>
               `;
     renderDescription('.product-card__description-list');
@@ -64,6 +64,17 @@ export const productPageLoader = id => {
     const basketButton = product.querySelector('.product-card__add-to-basket');
     basketButton.addEventListener('click', () => {
       checkBasketAndAdd(id);
+      basketButton.innerHTML = `
+      <span>Added!</span>
+      <img class="product-card__add-to-basket--img" src="./assets/add-basket.svg">
+      `;
+
+      setTimeout(() => {
+        basketButton.innerHTML = `
+        <span>Add to basket</span>
+        <img class="product-card__add-to-basket--img" src="./assets/add-basket.svg">
+      `;
+      }, 500);
     });
   };
 

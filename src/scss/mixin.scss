@@ -139,8 +139,7 @@
         }
 
         img {
-          filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%)
-            contrast(92%);
+          filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%) contrast(92%);
         }
       }
     }
@@ -204,8 +203,44 @@
     }
 
     img {
-      filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%)
-        contrast(92%);
+      filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%) contrast(92%);
+    }
+  }
+}
+
+@mixin standard-button {
+  border: 1px solid $blackColor;
+  border-radius: 5px;
+  padding: 5px 16px;
+  background: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+  span {
+    color: $blackColor;
+    margin: 2px;
+  }
+
+  img {
+    width: 15px;
+    height: auto;
+    margin: 2px;
+  }
+
+  &:hover {
+    background-color: $blueColor;
+    border: 1px solid $whiteColor;
+
+    span {
+      color: $whiteColor;
+    }
+
+    img {
+      filter: invert(88%) sepia(91%) saturate(2394%) hue-rotate(180deg) brightness(111%) contrast(92%);
     }
   }
 }

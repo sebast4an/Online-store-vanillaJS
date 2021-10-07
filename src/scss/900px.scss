@@ -5,8 +5,9 @@
   .all-products .product,
   .post,
   .user-panel__information,
-  .summary,
-  .selected-product__card {
+  .selected-product__card,
+  .basket-products,
+  .summary__info {
     padding: 0;
   }
 
@@ -94,13 +95,21 @@
 
   .all-products,
   .user-panel,
-  .summary,
   .selected-product {
     grid-area: 1 / 1 / 2 / 3;
   }
 
   .product-card__image {
     width: 20%;
+  }
+
+  .basket {
+    grid-area: 1 / 2 / 3 / 2;
+  }
+
+  .summary {
+    grid-area: 1 / 1 / 2 / 2;
+    margin-right: 2rem;
   }
 
   .newsletter {
